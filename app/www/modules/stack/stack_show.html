@@ -1,0 +1,192 @@
+<mobile-bar></mobile-bar>
+<div class="row" >
+    <!--favourite button-->
+    <div class="col-md-1" >
+        <span ng-show="(StackCtrl.stack_code != '0') && StackCtrl.state.stackfields"
+              ng-click="StackCtrl.toggleFavourite()" 
+              uib-tooltip="{{(StackCtrl.state.stackfields.favourite == '1'?MainCtrl.getString('remove_favourite'):MainCtrl.getString('add_favourite'))}}" 
+              class="text-success fa fa-3x {{StackCtrl.state.stackfields.favourite == '1'?'fa-star':'fa-star-o'}}">
+        </span>
+    </div>
+    <!-- Actions on stack -->
+    <div class="btn-toolbar" ng-show="(StackCtrl.stack_code != '0') && StackCtrl.state.stackfields">
+        <!--owner's menu-->
+        <div class="btn-group pull-right" 
+             ng-if="StackCtrl.userIsLogged && ((StackCtrl.state.stackfields.is_owner && StackCtrl.state.stackfields.is_owner!=0) || MainCtrl.current_role.moderator)">
+            <button class="btn btn-default" type="button" ng-click="StackCtrl.previewStack()"><span class="fa fa-eye"></span>&nbsp; <translate>Preview</translate></button>
+            <button class="btn btn-primary" type="button" ng-click="StackCtrl.editStack()"><span class="fa fa-pencil-square-o"></span>&nbsp; <translate>Edit</translate></button>
+           
+            <div class="btn-group" uib-dropdown 
+                        on-toggle="new_pub = StackCtrl.state.stackfields.public; new_acc = StackCtrl.state.stackfields.access_level;">
+                <button class="btn {{StackCtrl.state.stackfields.public?'btn-success':'btn-warning'}}"
+                        uib-dropdown-toggle
+                        id="btn-publish"
+                        type="button">
+                    <span ng-if="!StackCtrl.state.stackfields.public">
+                        <i class="fa fa-lock"></i>&nbsp; <translate>Private</translate>
+                    </span>
+                    <span ng-if="StackCtrl.state.stackfields.public && StackCtrl.state.stackfields.access_level == '0'">
+                        <i class="fa fa-globe"></i> 
+                        <i class="fa fa-eye-slash" ng-if="StackCtrl.state.stackfields.public === 2"></i>
+                        &nbsp; <translate>Anonymous access</translate>
+                    </span> 
+                    <span ng-if="StackCtrl.state.stackfields.public && StackCtrl.state.stackfields.access_level == '1'" >
+                        <i class="fa fa-user"></i>
+                        <i class="fa fa-eye-slash" ng-if="StackCtrl.state.stackfields.public === 2"></i>
+                        &nbsp; <translate>Authenticated users</translate>
+                    </span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu-right"
+                    uib-dropdown-menu role="menu" 
+                    aria-labelledby="btn-publish">
+                    <li role="menuitem" 
+                        class="{{new_pub === 0?'active':''}}"
+                        style="display: flex;align-items: center;white-space: nowrap">
+                        <a ng-click="$event.stopPropagation(); new_pub = 0; new_acc=1"
+                           style="width: 100%">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square fa-stack-2x text-warning"></i>
+                                <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                            </span>
+                            &nbsp; <translate>Private</translate>
+                        </a>    
+                    </li>
+                    <li role="menuitem" 
+                        class="{{new_pub === 2?'active':''}}"
+                        style="display: flex;align-items: center;white-space: nowrap">
+                        <a ng-click="$event.stopPropagation(); new_pub = 2;"
+                           style="width: 100%">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square fa-stack-2x text-success"></i>
+                                <i class="fa fa-eye-slash fa-stack-1x fa-inverse"></i>
+                            </span>
+                            &nbsp; <translate>Hidden</translate>
+                        </a>    
+                    </li>
+                    <li role="menuitem" 
+                        class="{{new_pub === 1?'active':''}}"
+                        style="display: flex;align-items: center;white-space: nowrap">
+                        <a ng-click="$event.stopPropagation(); new_pub = 1;"
+                           style="width: 100%">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square fa-stack-2x text-success"></i>
+                                <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
+                            </span>
+                            &nbsp; <translate>Public</translate>
+                        </a>    
+                    </li>
+                    
+                    <li class="divider"></li>
+                    
+                    <li role="menuitem" 
+                        class="{{new_pub > 0 && new_acc === 0?'active':''}}"
+                        style="display: flex;align-items: center;white-space: nowrap">
+                        <a ng-click="$event.stopPropagation(); new_acc = (new_pub > 0)? 0:1;"
+                           style="width: 100%">
+                            <span class="fa-stack fa-lg">
+                                <i ng-if="new_pub === 0" class="fa fa-square fa-stack-2x text-muted"></i>
+                                <i ng-if="new_pub > 0" class="fa fa-square fa-stack-2x text-success"></i>
+                                <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+                            </span>
+                            &nbsp; <translate>Allow anonymous access</translate>
+                        </a>    
+                    </li>
+                    <li role="menuitem" 
+                        class="{{new_pub > 0 && new_acc === 1?'active':''}}"
+                        style="display: flex;align-items: center;white-space: nowrap">
+                        <a ng-click="$event.stopPropagation(); new_acc = (new_pub > 0)? 1:1;"
+                           style="width: 100%">
+                            <span class="fa-stack fa-lg">
+                                <i ng-if="new_pub === 0" class="fa fa-square fa-stack-2x text-muted"></i>
+                                <i ng-if="new_pub > 0" class="fa fa-square fa-stack-2x text-success"></i>
+                                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                            </span>
+                            &nbsp; <translate>Allow access by authenticated users only</translate>
+                        </a>    
+                    </li>
+                    
+					<li class="divider"></li>
+                    
+					<li role="menuitem" 
+                        style="display: flex;align-items: center;white-space: nowrap">
+                        <div style="width: 100%; padding: 3px 20px;">
+							<div class="btn-group" >
+								<button class="btn {{new_pub ===0?'btn-warning':'btn-success'}}"
+										ng-click="StackCtrl.publishStack(new_pub, new_acc)" translate>Apply</button>
+								<button class="btn btn-default" translate>Cancel</button>
+							</div>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+            
+            <button class="btn btn-default" type="button" ng-click="StackCtrl.copyStack()"><span class="fa fa-clone"></span>&nbsp; <translate>Copy</translate></button>
+            <button class="btn btn-default" type="button" ng-click="StackCtrl.openManagementMessages()"><span class="fa fa-envelope-o"></span>&nbsp; <translate>Messages</translate></button>
+            <button class="btn btn-danger"  type="button" ng-click="StackCtrl.deleteStack()"><span class="fa fa-trash-o"></span>&nbsp; <translate>Delete</translate></button>
+        </div>
+        
+        <!--public menu-->
+        <div class="btn-group pull-right" 
+             ng-if="StackCtrl.userIsLogged && (!StackCtrl.state.stackfields.is_owner || StackCtrl.state.stackfields.is_owner==0) && ! MainCtrl.current_role.moderator">
+            <button class="btn btn-default" type="button" ng-click="StackCtrl.previewStack()"><span class="fa fa-eye"></span>&nbsp; <translate>Preview</translate></button>
+            <button class="btn btn-default" type="button" ng-click="StackCtrl.copyStack()"><span class="fa fa-clone"></span>&nbsp; <translate>Copy</translate></button>
+        </div>
+        
+        <!--anonymous menu-->
+        <div class="btn-group pull-right" 
+             ng-if="!StackCtrl.userIsLogged">
+            <button class="btn btn-default" type="button" ng-click="StackCtrl.previewStack()"><span class="fa fa-eye"></span>&nbsp; <translate>Preview</translate></button>
+        </div>
+                
+    </div>
+</div>    
+<waiting-condition-icon
+    class="text-warning" 
+    waitingcondition="StackCtrl.loading.saveStack || StackCtrl.loading.deleteStack || StackCtrl.loading.deleteFavouriteStack || StackCtrl.loading.setFavouriteStack">
+</waiting-condition-icon>
+<!-- Details Stack -->
+<div class="row" style="margin-top:30px">
+    <div class="col-md-3">
+        <div class="panel {{StackCtrl.state.stackfields.public?'panel-success':'panel-warning'}} frontpanel" ng-show="StackCtrl.state.stackfields">
+            <div class="panel-heading" uib-tooltip="{{StackCtrl.state.stackfields.public?MainCtrl.getString('public_stack'):MainCtrl.getString('private_stack')}}">
+				<span ng-if="!StackCtrl.state.stackfields.public">
+					<i class="fa fa-lock"></i>
+				</span>
+				<span ng-if="StackCtrl.state.stackfields.public && StackCtrl.state.stackfields.access_level == '0'">
+					<i class="fa fa-globe"></i>
+				</span> 
+				<span ng-if="StackCtrl.state.stackfields.public && StackCtrl.state.stackfields.access_level == '1'">
+					<i class="fa fa-user"></i>
+				</span>
+				<span ng-if="StackCtrl.state.stackfields.public === 2">
+					  &nbsp; <i class="fa fa-eye-slash"></i>
+				</span>
+				&nbsp; {{StackCtrl.state.stackfields.name}}
+            </div>
+            <div class="panel-body">
+                <div class="frontpaneldetails">
+					<div class="clearfix">
+						<span class="owner pull-left small" uib-tooltip="{{'Owner'|translate}}">{{StackCtrl.state.stackfields.owner_name}}</span>
+						<span class="small pull-right" uib-tooltip="{{'Last updated'|translate}}">{{StackCtrl.state.stackfields.update_ts  * 1000 | date:'d MMM yyyy'}}</span>
+					</div>
+					
+                    <div class="text-info" >{{StackCtrl.state.stackfields.description}}</div>
+					<p class="paneltags" ng-show="StackCtrl.state.stackfields.current_tags" >
+						<span class="smalltag label label-primary wordwrap" ng-repeat="tag in StackCtrl.state.stackfields.current_tags">{{tag.text}}</span>
+					</p>
+				</div>
+                <div>
+                    <qrcode version="5" error-correction-level="M" size="150" data="{{StackCtrl.qrUrl()}}" download></qrcode>
+                    <a ng-href="{{StackCtrl.qrUrl()}}" class="small">{{StackCtrl.qrUrl()}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preview -->
+    <div class="col-md-4" style="padding-left:20px">
+       <stackemulate></stackemulate>
+    </div>
+</div>

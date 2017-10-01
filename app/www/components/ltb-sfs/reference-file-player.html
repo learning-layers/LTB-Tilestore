@@ -1,0 +1,33 @@
+<div id="content" >
+    <reference-image-player 
+        show="sfsPCtrl.is_type(ref, 'image')" 
+        ref="ref">
+    </reference-image-player>
+    
+    <reference-pdf-player 
+        show="sfsPCtrl.is_type(ref, 'application', 'pdf')" 
+        url="ref.url"
+        ref="ref">
+    </reference-pdf-player>
+
+    <reference-video-player
+        show="sfsPCtrl.is_type(ref, 'video')"
+        ref="ref">
+    </reference-video-player>
+    
+    <reference-audio-player
+        show="sfsPCtrl.is_type(ref, 'audio')"
+        ref="ref">
+    </reference-audio-player>
+    
+    <reference-html-player
+        show="sfsPCtrl.is_type(ref, 'text', 'html')"
+        url="ref.url"
+        ref="ref">
+    </reference-html-player>
+</div>
+
+<p><strong>{{ref.name}}</strong><i class="pull-right"><translate>by</translate>: {{ref["user.name"]}}</i></p>
+<div class="text-bd">
+    {{ref.description}}
+</div>

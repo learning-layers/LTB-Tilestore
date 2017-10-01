@@ -1,0 +1,29 @@
+<div class="form-group">
+    <div class="input-group" ng-show="reftype === 'link' && show">
+        <input type="text" ng-model="sfsCtrl.new_url" class="form-control">
+        <span class="input-group-btn">
+            <button 
+                class="btn btn-default" 
+                type="button" 
+                ng-click="sfsCtrl.addRef(reftype)" 
+                
+                ><waiting-condition-icon-inline class=""
+            waitingclass="fa fa-spinner fa-pulse"
+            waitingcontent="'Add'|translate"
+            waitingcondition="sfsCtrl.loading.getLinkInformation || sfsCtrl.loading.saveNewReference">
+           </waiting-condition-icon-inline></button>
+        </span>
+    </div>
+    <div ng-show="reftype === 'file'  && show">
+        <div ngf-drop="sfsCtrl.uploadFile($file)" 
+             ngf-select="sfsCtrl.uploadFile($file)" 
+             class="sfs-drop-box"
+            ngf-drag-over-class="'dragover'" 
+            ngf-multiple="false" 
+            ng-show="sfsCtrl.progressperc === false"
+            ><translate>Drop file here or click to select</translate>
+        </div>
+        <uploadprogress ng-show="sfsCtrl.progressperc !== false" perc="sfsCtrl.progressperc"></uploadprogress>
+        
+    </div>
+</div>

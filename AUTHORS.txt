@@ -1,0 +1,2 @@
+The Learning Toolbox is developed by RayCom BV in the Learning Layers European research project (http://learning-layers.eu).
+The development is partly funded by the FP7 Programme of the European Commission under Grant Agreement FP7-ICT-318209.

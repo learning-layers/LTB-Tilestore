@@ -1,0 +1,2006 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/www/components/tile-types/default/settings.html:27
+msgid "(on the actual screen it might look different)"
+msgstr "(dies kann anders aussehen auf dem eigentlichen Display)"
+
+#: app/www/components/tile-types/tile-properties.html:14
+msgid "[Choose a Colour]"
+msgstr "[Wählen Sie eine Farbe]"
+
+#: app/www/components/tile-types/tile-properties.html:6
+msgid "[Choose a Size]"
+msgstr "[Wählen Sie eine Größe]"
+
+#: app/www/modules/stack-app/settings.html:31
+msgid "[Choose your preferred stack]"
+msgstr "[Wählen Sie Ihren bevorzugten Stack]"
+
+#: app/www/components/tile-types/app/settings.html:17
+msgid "[no app selected]"
+msgstr "[keine App gewählt]"
+
+#: app/www/components/tools/tools.js:143
+msgid "[untitled]"
+msgstr "[ohne Titel]"
+
+#: app/www/components/tools/tools.js:144
+msgid "[Untitled] on"
+msgstr "[Ohne Titel] auf"
+
+#: app/www/components/tile-types/collection/tile.js:11
+#: app/www/components/tile-types/externalcontent/tile.js:12
+msgid "A listing of one or more external content items"
+msgstr "Eine Liste von einem oder mehreren externen Inhalten"
+
+#: app/www/modules/stack-app/search.js:107
+msgid "A minimum length of %s is required for the search string"
+msgstr "Der Suchbegriff muss eine Mindestlänge von %s haben"
+
+#: app/www/components/tile-types/collection/full.html:220
+msgid "Abort"
+msgstr "Abbrechen"
+
+#: app/www/assets/navbar-bottom.html:18 app/www/assets/navbar-top-app.html:57
+msgid "About"
+msgstr "Über"
+
+#: app/www/modules/about/about.html:2
+msgid "About Learning Toolbox"
+msgstr "Über die Learning Toolbox"
+
+#: app/www/components/ltb-sfs/reference-add.html:10
+#: app/www/components/tile-types/collection/full.html:14
+#: app/www/components/tile-types/collection/settings.html:97
+#: app/www/components/tile-types/externalcontent/settings.html:13
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: app/www/modules/stack/stack_edit.html:202
+msgid "Add a tag"
+msgstr "Tag hinzufügen"
+
+#: app/www/components/tile-types/collection/settings.html:102
+msgid "Add File"
+msgstr "Datei hinzufügen"
+
+#: app/www/components/tile-types/collection/settings.html:101
+msgid "Add Link"
+msgstr "Link hinzufügen"
+
+#: app/www/modules/stack/stack_edit.html:131
+msgid "Add new screen"
+msgstr "Neue Ansicht hinzufügen"
+
+#: app/www/modules/stack-app/popup-favourite.html:4
+msgid "Add this Stack to your favourites?"
+msgstr "Diesen Stack zu Ihren Favoriten hinzufügen?"
+
+#: app/www/components/tools/tools.js:138
+msgid "Add to favourites"
+msgstr "Ihren Favoriten hinzufügen"
+
+#: app/www/components/tile-types/externalcontent/settings.html:9
+msgid "Add url to list"
+msgstr "URL zur Liste hinzufügen"
+
+#: app/www/components/ltb-api/ltb-api.js:1350
+#: app/www/components/ltb-api/ltb-api.js:1353
+msgid "Adding favourite did not succeed."
+msgstr "Hinzufügen als Favorit fehlgeschlagen"
+
+#: app/www/assets/navbar-bottom.html:20
+msgid "Administration"
+msgstr "Administration"
+
+#: app/www/modules/admin/admin.html:3
+msgid "Administration page"
+msgstr "Administrationsseite"
+
+#: app/www/modules/messages/messagesList.html:8
+msgid "All"
+msgstr "Alles\t"
+
+#: app/www/modules/stack-app/search.html:10
+msgid "All options"
+msgstr "Alle Optionen"
+
+#: app/www/modules/stack/stack_show.html:107
+msgid "Allow access by authenticated users only"
+msgstr "Zugang nur für authentifizierte Benutzer erlaubt"
+
+#: app/www/modules/stack/stack_show.html:94
+msgid "Allow anonymous access"
+msgstr "Anonymer Zugang erlaubt"
+
+#: app/www/modules/stack/stack_edit.html:193
+msgid "Allow chat"
+msgstr "Chat zulassen"
+
+#: app/www/components/tile-types/collection/settings.html:50
+msgid "Allow users to add files or urls"
+msgstr "Dem Benutzer erlauben Dateien oder URLs hinzuzufügen"
+
+#: app/www/components/ltb-api/ltb-api.js:1540
+#: app/www/components/ltb-api/ltb-api.js:616
+msgid "An error occurred."
+msgstr "Ein Fehler ist aufgetreten."
+
+#: app/www/modules/admin/admin.html:11
+msgid "and end date"
+msgstr "und Enddatum"
+
+#: app/www/modules/stack/stack_show.html:33
+msgid "Anonymous access"
+msgstr "Anonymer Zugang"
+
+#: app/www/modules/stack-app/settings.js:205
+msgid "Api location can never be empty"
+msgstr "Das Feld ‘Api location’ darf nicht leer sein"
+
+#: app/www/components/tile-types/app/tile.js:12
+msgid "App link"
+msgstr "App Link"
+
+#: app/www/modules/stack-app/settings.html:12
+#: app/www/modules/stack/stack_show.html:115
+msgid "Apply"
+msgstr "Übernehmen"
+
+#: app/www/modules/messages/management-messages.js:41
+msgid "Are you sure you want to delete this message?"
+msgstr "Wollen Sie diese Nachricht wirklich löschen?"
+
+#: app/www/modules/stack/stack.js:246
+msgid "Are you sure you want to delete this screen with all the tiles?"
+msgstr "Wollen Sie diese Ansicht mit allen Tiles wirklich löschen?"
+
+#: app/www/modules/stack/stack_show.js:89 app/www/modules/stack/stack.js:330
+msgid "Are you sure you want to delete this Stack?"
+msgstr "Wollen Sie dieses Stack wirklich löschen?"
+
+#: app/www/components/tile-types/general.js:125
+msgid "Are you sure you want to delete this tile?"
+msgstr "Wollen Sie dieses Tile wirklich löschen?"
+
+#: app/www/components/ltb-api/ltb-api.js:701
+msgid "Argument list is empty for the update"
+msgstr "Die Argumentliste ist leer für den Update"
+
+#: app/www/components/ltb-sfs/ltb-sfs.js:27
+msgid "Audio"
+msgstr "Audio"
+
+#: app/www/modules/stack/stack_show.html:38
+msgid "Authenticated users"
+msgstr "Authentifizierter Benutzer"
+
+#: app/www/modules/stack-app/search.html:22
+msgid "Author only"
+msgstr "Nur Autor"
+
+#: app/www/components/tile-types/navigate/tile.js:80
+msgid "back"
+msgstr "Zurück"
+
+#: app/www/modules/stack/stack_edit.html:121
+msgid "Back to previous screen"
+msgstr "Zurück zur vorherigen Ansicht"
+
+#: app/www/components/tile-types/general.js:282
+msgid "black"
+msgstr "schwarz"
+
+#: app/www/components/tile-types/general.js:283
+msgid "blue"
+msgstr "blau"
+
+#: app/www/components/ltb-sfs/reference-file-player.html:30
+#: app/www/components/ltb-sfs/reference-link-player.html:21
+#: app/www/components/tile-types/externalcontent/full.html:71
+msgid "by"
+msgstr "von"
+
+#: app/www/components/ltb-sfs/reference-view.html:77
+#: app/www/components/tile-types/collection/full.html:197
+#: app/www/components/tile-types/general.js:122
+#: app/www/modules/messages/management-messages.html:61
+#: app/www/modules/messages/management-messages.js:38
+#: app/www/modules/stack-app/settings.html:13
+#: app/www/modules/stack-app/settings.html:57
+#: app/www/modules/stack/stack_show.html:117
+#: app/www/modules/stack/stack_show.js:86 app/www/modules/stack/stack.js:243
+#: app/www/modules/stack/stack.js:327
+msgid "Cancel"
+msgstr "Abbrechen\t"
+
+#: app/www/modules/stack-app/settings.js:202
+msgid "Choose a new preferred Stack"
+msgstr "Wählen Sie ein neues bevorzugtes Stack"
+
+#: app/www/modules/home/home.html:8
+msgid ""
+"Choose from a range of Stacks and tiles provided to you for free. Browse \n"
+"            Stacks and tiles and mark those you particularly like as your "
+"favourites. \n"
+"            Customise tiles at any time and arrange your Stacks to suit your "
+"particular \n"
+"            needs. Create new Stacks for your users, either from scratch or "
+"building on \n"
+"            Stacks brought to you by the Tilestore. And share them with your "
+"colleagues \n"
+"            and the wider world. Create QR codes so others can quickly find "
+"your Stacks. \n"
+"            Using these QR codes, you can also link your Stacks to "
+"locations, machines, \n"
+"            tools or any other physical element so that others can get them "
+"where and \n"
+"            when they need them. We also provide you with a push messaging "
+"feature to \n"
+"            keep in touch with your users."
+msgstr ""
+"Schauen Sie sich die zahlreichen, freiverfügbaren Stacks und Tiles an und "
+"markieren Sie die für Sie geeigneten als Favoriten. Sie können die einzelnen "
+"Tiles auch noch speziell an ihre Bedürfnisse anpassen. Erstellen Sie ganz "
+"neue Stacks oder bearbeiten Sie im Tilestore vorhandene Stacks für Ihre "
+"Nutzer und teilen Sie diese mit Kollegen. Mit den Stack eigenen QR-Codes "
+"sind diese überall verfügbar. Sie können QR-Codes an den entsprechenden "
+"Maschinen, Orten, Werkzeugen oder jeder anderem Objekt befestigen und so "
+"jedem mit der Learning Toolbox den Zugriff durch bloßes Einscannen "
+"ermöglichen, wenn er gebraucht wird. Außerdem gibt es auch ein Push-"
+"Nachrichtensystem mit dem sie in Verbindung mit ihren Nutzern bleiben."
+
+#: app/www/modules/stack-app/popup-login.html:14
+msgid "Click here to open a public Stack"
+msgstr "Klicken Sie hier um einen öffentlich zugänglichen Stack zu öffnen"
+
+#: app/www/components/mobilebar/mobilebar.js:27
+msgid "Click to open this Stack in the Learning Toolbox app for Android."
+msgstr ""
+"Klicken sie hier, um das Stack in der Learning Toolbox app für Android zu "
+"öffnen."
+
+#: app/www/components/mobilebar/mobilebar.js:31
+msgid "Click to open this Stack in the Learning Toolbox app for iOS."
+msgstr ""
+"Klicken sie hier, um das Stack in der Learning Toolbox app für iOS zu öffnen."
+
+#: app/www/components/mobilebar/mobilebar.js:35
+msgid ""
+"Click to open this Stack in the Learning Toolbox app for Windows Phone (beta "
+"only)."
+msgstr ""
+"Klicken sie hier, um das Stack in der Learning Toolbox app für Windows Phone "
+"(beta Fassung) zu öffnen."
+
+#: app/www/modules/admin/eval.html:13 app/www/modules/admin/eval.html:26
+#: app/www/modules/messages/management-messages.html:43
+#: app/www/modules/messages/management-messages.html:50
+#: app/www/modules/stack/preview.html:4
+#: app/www/modules/stack/stack_edit.html:69
+msgid "Close"
+msgstr "Schließen"
+
+#: app/www/modules/messages/management-messages.html:6
+#: app/www/modules/stack/stack_edit.html:12
+msgid "Close Editor"
+msgstr "Editor schließen"
+
+#: app/www/components/tile-types/default/settings.html:34
+msgid "Close Preview"
+msgstr "Vorschau schliessen"
+
+#: app/www/modules/messages/messagesList.html:2
+msgid "Close this screen"
+msgstr "Diese Ansicht schliessen"
+
+#: app/www/components/tile-types/collection/tile.js:10
+msgid "Collection"
+msgstr "Kollektion"
+
+#: app/www/modules/stack/stack_edit.html:189
+msgid "Communication"
+msgstr "Kommunikation"
+
+#: app/www/components/tile-types/general.js:124
+#: app/www/modules/messages/management-messages.js:40
+#: app/www/modules/stack/stack_show.js:88 app/www/modules/stack/stack.js:245
+#: app/www/modules/stack/stack.js:329
+msgid "Confirm delete"
+msgstr "Bestätigen Sie das Löschen"
+
+#: app/www/assets/navbar-bottom.html:19
+msgid "Contact"
+msgstr "Kontakt"
+
+#: app/www/modules/contact/contact.html:2
+msgid "Contact us"
+msgstr "Kontaktieren Sie uns"
+
+#: app/www/components/tile-types/default/settings.html:14
+msgid "Content"
+msgstr "Inhalte"
+
+#: app/www/components/tile-types/default/tile.js:10
+msgid "Content tile"
+msgstr "Inhalte Tile"
+
+#: app/www/components/ltb-api/ltb-api.js:484
+#: app/www/modules/stack/stack_show.html:125
+#: app/www/modules/stack/stack_show.html:134
+msgid "Copy"
+msgstr "Kopieren"
+
+#: app/www/components/ltb-api/ltb-api.js:484
+msgid "Copy from"
+msgstr "Kopieren von"
+
+#: app/www/components/ltb-api/ltb-api.js:1046
+msgid "Could not retrieve the stacks; an error occurred in retrieving them"
+msgstr "Beim Übertragen der Stacks ist ein Fehler aufgetreten"
+
+#: app/www/components/ltb-api/ltb-api.js:1076
+msgid ""
+"Could not retrieve your favourites; an error occurred in retrieving them"
+msgstr "Beim Übertragen ihrer Favoriten ist ein Fehler aufgetreten"
+
+#: app/www/components/ltb-api/ltb-api.js:1062
+msgid "Could not retrieve your stacks; an error occurred in retrieving them"
+msgstr "Beim Übertragen ihrer Stacks ist ein Fehler aufgetreten"
+
+#: app/www/components/ltb-api/ltb-api.js:1692
+msgid "Could not set status of message:"
+msgstr "Der Nachrichtenstatus konnten nicht festgesetzt werden:"
+
+#: app/www/components/tile-types/collection/full.html:11
+msgid "Create a new collection item"
+msgstr "Einen neuen Kollektionsinhalt erstellen"
+
+#: app/www/components/tile-types/navigate/settings.html:22
+msgid "Create new screen"
+msgstr "Neue Ansicht erstellen"
+
+#: app/www/modules/stack/stacks_my.html:4
+msgid "Create new Stack"
+msgstr "Neues Stack erstellen"
+
+#: app/www/assets/navbar-top-web.html:24
+msgid "Create Stack"
+msgstr "Stack erstellen"
+
+#: app/www/modules/stack-app/settings.html:5
+msgid "Data Server"
+msgstr "Datenserver"
+
+#: app/www/modules/stack/stacks_my.html:27
+#: app/www/modules/stack/stacks_my.html:53 app/www/modules/store/store.html:55
+msgid "Date created"
+msgstr "Erstellt am"
+
+#: app/www/modules/admin/admin.html:18
+msgid "Debug Code"
+msgstr "Debug Code"
+
+#: app/www/modules/stack-app/settings.html:49
+msgid "Debug Recording"
+msgstr "Debug protokollieren"
+
+#: app/www/modules/admin/admin.html:15
+msgid "Debugging Messages"
+msgstr "Debugging Nachrichten"
+
+#: app/www/components/tile-types/navigate/tile.js:78
+msgid "default"
+msgstr "Default"
+
+#: app/www/components/ltb-sfs/reference-view.html:76
+#: app/www/components/tile-types/general.js:123
+#: app/www/modules/messages/management-messages.html:62
+#: app/www/modules/messages/management-messages.js:39
+#: app/www/modules/stack/stack_edit.html:66
+#: app/www/modules/stack/stack_show.html:127
+#: app/www/modules/stack/stack_show.js:87 app/www/modules/stack/stack.js:244
+#: app/www/modules/stack/stack.js:328
+msgid "Delete"
+msgstr "Löschen"
+
+#: app/www/modules/admin/admin.html:21
+msgid "Delete Messages"
+msgstr "Nachrichten löschen"
+
+#: app/www/components/ltb-api/ltb-api.js:1417
+msgid "Delete of favourite failed"
+msgstr "Löschen des Favoriten fehlgeschlagen"
+
+#: app/www/modules/stack/stack_edit.html:159
+msgid "Delete Screen"
+msgstr "Ansicht löschen"
+
+#: app/www/modules/stack/stack_edit.html:9
+msgid "Delete Stack"
+msgstr "Stack löschen"
+
+#: app/www/components/oauth-ng-custom/button.html:15
+msgid "Denied by"
+msgstr "Abgelehnt von"
+
+#: app/www/components/ltb-sfs/ltb-sfs.js:341
+#: app/www/components/ltb-sfs/reference-view.html:22
+#: app/www/components/ltb-sfs/reference-view.html:46
+#: app/www/components/tile-types/collection/full.html:182
+#: app/www/modules/stack/stack_edit.html:181
+#: app/www/modules/stack/stacks_my.html:18
+#: app/www/modules/stack/stacks_my.html:44 app/www/modules/store/store.html:37
+msgid "Description"
+msgstr "Beschreibung"
+
+#: app/www/components/tile-types/collection/settings.html:69
+#: app/www/components/tile-types/externalcontent/settings.html:26
+msgid "Description (max 100 char)"
+msgstr "Beschreibung (max 100 Zeichen)"
+
+#: app/www/modules/stack/stack.js:105
+msgid "Do not leave"
+msgstr "Nicht verlassen"
+
+#: app/www/modules/stack/stack.js:108
+msgid "Do you want to leave the page anyway?"
+msgstr "Wollen Sie die Seite trotzdem verlassen"
+
+#: app/www/components/tile-types/general.js:291
+msgid "double"
+msgstr "doppelt"
+
+#: app/www/components/tile-types/general.js:292
+msgid "double-down"
+msgstr "doppelt-senkrecht"
+
+#: app/www/components/tile-types/navigate/tile.js:82
+msgid "down"
+msgstr "runter"
+
+#: app/www/components/ltb-sfs/reference-add.html:24
+msgid "Drop file here or click to select"
+msgstr "Datei auswählen oder drag-and drop eine Datei"
+
+#: app/www/modules/stack/stack_edit.html:68
+msgid "Duplicate"
+msgstr "Kopieren"
+
+#: app/www/modules/stack/stack_edit.html:125
+msgid "Duplicate this screen"
+msgstr "Ansicht kopieren"
+
+#: app/www/modules/stack/stack_show.html:17
+msgid "Edit"
+msgstr "Editieren"
+
+#: app/www/components/tile-types/embed/settings.html:12
+#: app/www/components/tile-types/embed/tile.js:10
+msgid "Embed"
+msgstr "Einbetten"
+
+#: app/www/components/tile-types/embed/tile.js:11
+msgid "Embed external content"
+msgstr "Externe Inhalte einbetten"
+
+#: app/www/modules/admin/eval.html:22
+msgid "End"
+msgstr "Ende"
+
+#: app/www/components/tile-types/collection/full.html:170
+#: app/www/components/tile-types/collection/full.html:172
+msgid "Enter a title and description and press upload below."
+msgstr "Bitte Titel und Beschreibung eingeben und Hochladen anklicken."
+
+#: app/www/components/tile-types/collection/tile.js:367
+msgid "Error"
+msgstr "Fehler"
+
+#: app/www/assets/navbar-bottom.html:21 app/www/modules/admin/eval.html:2
+msgid "Evaluation"
+msgstr "Auswertung"
+
+#: app/www/components/tile-types/externalcontent/tile.js:11
+msgid "External Content"
+msgstr "Externe Inhalte"
+
+#: app/www/modules/stack-app/stack-favourites.html:7
+msgid "Favourites"
+msgstr "Favoriten"
+
+#: app/www/components/ltb-sfs/ltb-sfs.js:33
+msgid "File"
+msgstr "Datei"
+
+#: app/www/components/ltb-sfs/reference-view.html:19
+msgid "File Type"
+msgstr "Datei-Typ"
+
+#: app/www/components/tile-types/collection/tile.js:490
+msgid "File upload aborted"
+msgstr "Hochladen der Datei abgebrochen"
+
+#: app/www/components/ltb-sfs/ltb-sfs.js:378
+msgid "File upload failed."
+msgstr "Hochladen der Datei fehlgeschlagen"
+
+#: app/www/modules/help/help.html:7
+msgid "Fill in your verification code"
+msgstr "Füllen Sie den Bestätigungscode aus"
+
+#: app/www/modules/admin/eval.html:7
+msgid ""
+"For every action of a user we keep an anonymised log at the data server. If "
+"you are an evaluator you can download these in csv-format."
+msgstr ""
+"Wir speichern Daten über die detaillierte Benutzung der Learning Toolbox auf "
+"unseren Servern anonym ab. Wenn Sie in eine Auswertungsrolle im Layers "
+"Projekt haben, können Sie diese Daten im CSV Format herunterladen."
+
+#: app/www/components/tile-types/collection/settings.html:27
+msgid "Force Tile title for single item collection"
+msgstr "Angegebener Title für Einzelinhaltskollektion benutzen"
+
+#: app/www/components/tile-types/navigate/tile.js:79
+msgid "forward"
+msgstr "vorwärts"
+
+#: app/www/components/tile-types/rss/settings.html:12
+msgid "Get Feed"
+msgstr "Feed abrufen"
+
+#: app/www/modules/admin/eval.html:32
+msgid "Get Log file"
+msgstr "Logdatei abrufen"
+
+#: app/www/modules/admin/admin.html:20
+msgid "Get Messages"
+msgstr "Nachrichten abrufen"
+
+#: app/www/components/tile-types/general.js:284
+msgid "green"
+msgstr "grün"
+
+#: app/www/components/tile-types/default/settings.html:10
+msgid "Heading"
+msgstr "Titel"
+
+#: app/www/assets/navbar-top-web.html:25
+msgid "Help"
+msgstr "Hilfe"
+
+#: app/www/modules/stack/stack_show.html:66
+msgid "Hidden"
+msgstr "Unsichtbar"
+
+#: app/www/components/tile-types/navigate/tile.js:83
+msgid "home"
+msgstr "home"
+
+#: app/www/assets/navbar-top-web.html:21
+msgid "Home"
+msgstr "Home"
+
+#: app/www/modules/help/help.html:2
+msgid "How to use Learning Toolbox"
+msgstr "Benutzen der Learning Toolbox"
+
+#: app/www/components/tile-types/tile-properties.html:33
+msgid "Icon"
+msgstr "Icon"
+
+#: app/www/modules/contact/contact.html:3
+msgid "If you have feedback, please contact the people at...."
+msgstr "Wir sind Ihnen dankbar für jeden Feedback. Bitte richten Sie sich an…"
+
+#: app/www/modules/store/store.html:8
+msgid ""
+"If you want to narrow your search, separate search terms with commas. If you "
+"want to widen your search, add more terms separated by spaces. You can group "
+"words by enclosing them with quotes."
+msgstr ""
+"Um Ihre Suche einzuschränken, können sie die Begriffe durch Kommas trennen. "
+"Um Ihre Suche zu erweitern, können sie mehr Begriffe durch Leerzeichen "
+"getrennt eingeben. Begriffe können mit Anführungszeichen als Gruppen "
+"definiert werden."
+
+#: app/www/modules/stack/stack.js:106
+msgid "Ignore changes"
+msgstr "Änderungen ignorieren"
+
+#: app/www/components/ltb-sfs/reference-view.html:53
+msgid "Image"
+msgstr "Bild"
+
+#: app/www/modules/help/help.html:4
+msgid ""
+"In case you encounter unexpected behaviour, we may be able to help you "
+"better if you switch on debugging mode. Ask for the code to be able to "
+"switch it on"
+msgstr ""
+"Falls Sie auf unerwartete Problem stossen, können Sie den Debugmodus "
+"anschalten so dass wir Ihnen weiterhelfen können. Beantragen Sie einen "
+"Debugcode um diese Funktion freizuschalten."
+
+#: app/www/components/ltb-api/ltb-api.js:1221
+msgid "Invalid Stack"
+msgstr "Ungültiges Stack"
+
+#: app/www/components/tile-types/collection/settings.html:125
+msgid "Items in the collection"
+msgstr "Inhalte in der Kollektion"
+
+#: app/www/components/tile-types/localcontent/settings.html:24
+msgid "Keywords"
+msgstr "Stichwörter"
+
+#: app/www/modules/stack-app/settings.html:21
+msgid "Last opened Stack"
+msgstr "Zuletzt geöffnetes Stack"
+
+#: app/www/modules/stack/stack_show.html:182
+msgid "Last updated"
+msgstr "Letztes Update am"
+
+#: app/www/components/tile-types/app/settings.html:8
+msgid "Launch App"
+msgstr "App starten"
+
+#: app/www/modules/stack/stack_edit.html:85
+msgid "Layout"
+msgstr "Layout"
+
+#: app/www/components/tile-types/app/tile.js:13
+msgid "Link to a mobile app"
+msgstr "Link zu einer mobilen App"
+
+#: app/www/modules/stack/stack_view.html:1
+msgid "loading tiles..."
+msgstr "Tiles werden geladen ..."
+
+#: app/www/components/tile-types/localcontent/tile.js:12
+msgid "Local Content"
+msgstr "Lokale Inhalte"
+
+#: app/www/assets/navbar-top-app.html:59
+msgid "Log In"
+msgstr "Anmelden"
+
+#: app/www/assets/navbar-top-app.html:58
+msgid "Log Out"
+msgstr "Abmelden"
+
+#: app/www/components/tools/tools.js:141
+msgid "Mark as read"
+msgstr "Als gelesen markieren"
+
+#: app/www/components/tools/tools.js:142
+msgid "Mark as unread"
+msgstr "Als ungelesen markieren"
+
+#: app/www/components/tile-types/collection/full.html:187
+msgid "Message"
+msgstr "Nachricht"
+
+#: app/www/modules/messages/management-messages.html:35
+msgid "Message content"
+msgstr "Nachrichteninhalt"
+
+#: app/www/modules/messages/management-messages.html:16
+#: app/www/modules/messages/messagesList.html:3
+#: app/www/modules/stack/stack_show.html:126
+msgid "Messages"
+msgstr "Nachrichten"
+
+#: app/www/modules/messages/management-messages.html:9
+msgid "Messages of"
+msgstr "Nachrichten von"
+
+#: app/www/modules/help/help.html:3
+msgid "More information on how to use the tool is coming up."
+msgstr "Mehr Information zum Tool wird in Kürze bereitgestellt. "
+
+#: app/www/assets/navbar-top-app.html:54
+#: app/www/modules/stack-app/stack-favourites.html:3
+#: app/www/modules/stack/stacks_my.html:32
+msgid "My Favourites"
+msgstr "Meine Favoriten"
+
+#: app/www/assets/navbar-top-web.html:23 app/www/modules/stack/stacks_my.html:6
+msgid "My Stacks"
+msgstr "Meine Stacks"
+
+#: app/www/modules/stack/stack_edit.html:149
+#: app/www/modules/stack/stack_edit.html:176
+msgid "Name"
+msgstr "Name"
+
+#: app/www/components/tile-types/collection/settings.html:77
+#: app/www/components/tile-types/collection/settings.html:82
+msgid "Name of collection"
+msgstr "Name der Kollektion"
+
+#: app/www/components/tile-types/navigate/tile.js:13
+msgid "Navigate to screen or stack"
+msgstr "Zur Ansicht oder zum Stack"
+
+#: app/www/components/tile-types/navigate/tile.js:12
+msgid "Navigation"
+msgstr "Navigation"
+
+#: app/www/components/tile-types/navigate/settings.html:35
+msgid "Navigation icon"
+msgstr "Navigationssymbol"
+
+#: app/www/components/tile-types/app/tile.js:18
+msgid "New App"
+msgstr "Neue App"
+
+#: app/www/components/tile-types/collection/tile.js:15
+msgid "New Collection"
+msgstr "Neue Kollektion"
+
+#: app/www/components/tile-types/default/tile.js:16
+msgid "New Content"
+msgstr "Neuer Inhalt"
+
+#: app/www/components/tile-types/embed/tile.js:15
+msgid "New Embed"
+msgstr "Neues Einbetten"
+
+#: app/www/components/tile-types/externalcontent/tile.js:20
+msgid "New External Content"
+msgstr "Neuer externar Inhalt"
+
+#: app/www/components/tile-types/localcontent/tile.js:18
+msgid "New Local Content"
+msgstr "Neuer lokaler Inhalt"
+
+#: app/www/modules/messages/management-messages.html:4
+msgid "New Message"
+msgstr "Neue Nachricht"
+
+#: app/www/components/tile-types/navigate/tile.js:18
+msgid "New Navigation"
+msgstr "Neue Navigation"
+
+#: app/www/components/tile-types/rss/tile.js:17
+msgid "New RSS"
+msgstr "Neues RSS"
+
+#: app/www/modules/about/about.html:8
+msgid "Next token refresh:"
+msgstr "Nächste Tokenaktualisierung"
+
+#: app/www/modules/stack-app/popup-favourite.html:10
+msgid "No"
+msgstr "Nein"
+
+#: app/www/modules/stack-app/popup-login.html:12
+msgid "No account yet? Click the login button to create an account"
+msgstr "Noch kein Account? Auf ‘Anmelden’ klicken und ein Account anlegen"
+
+#: app/www/modules/stack-app/search.js:101
+msgid "No additional results found."
+msgstr "Keine weiteren Ergebnisse gefunden."
+
+#: app/www/modules/stack-app/settings.html:51
+msgid "No Debug Recording"
+msgstr "Kein Debug aufzeichnen"
+
+#: app/www/components/tile-types/localcontent/full.html:6
+msgid "No entities found"
+msgstr "Keine Elemente gefunden"
+
+#: app/www/components/tile-types/navigate/settings.html:39
+msgid "No Icon"
+msgstr "Kein Symbol"
+
+#: app/www/components/ltb-sfs/reference-view.html:15
+#: app/www/components/ltb-sfs/reference-view.html:62
+msgid "No image"
+msgstr "Kein Bild"
+
+#: app/www/modules/messages/messagesList.js:28
+msgid "No messages found."
+msgstr "Keine Nachrichten gefunden."
+
+#: app/www/modules/messages/messagesList.js:36
+msgid "No new messages found."
+msgstr "Keine neue Nachrichten gefunden."
+
+#: app/www/modules/messages/messagesList.js:32
+msgid "No read messages found."
+msgstr "Keine gelesene Nachrichten gefunden"
+
+#: app/www/modules/stack-app/search.js:101
+msgid "No results found."
+msgstr "Keine Ergebnisse gefunden."
+
+#: app/www/modules/store/store.html:25
+msgid "No Stacks found"
+msgstr "Keine Stacks gefunden"
+
+#: app/www/components/ltb-api/ltb-api.js:385
+msgid "No valid information returned for all urls entered"
+msgstr "Keine gültige Information erhalten für all vorgegebenen URLs"
+
+#: app/www/modules/admin/admin.js:252
+msgid "No value"
+msgstr "Kein Wert"
+
+#: app/www/modules/stack-app/settings.js:143
+msgid "No verification code was supplied"
+msgstr "Kein Bestätigungscode wurde erhalten"
+
+#: app/www/components/tile-types/general.js:290
+msgid "normal"
+msgstr "normal"
+
+#: app/www/modules/admin/admin.html:23
+msgid "Number of messages"
+msgstr "Anzahl der Nachrichten"
+
+#: app/www/modules/messages/management-messages.html:23
+msgid "number of readers"
+msgstr "Anzahl der Benutzer die die Nachricht gelesen haben"
+
+#: app/www/components/tile-types/collection/full.html:119
+msgid "Open gallery"
+msgstr "Galerie öffnen"
+
+#: app/www/components/tile-types/collection/full.html:120
+msgid "Open Gallery"
+msgstr "Galerie öffnen"
+
+#: app/www/components/tile-types/collection/full.html:43
+#: app/www/components/tile-types/collection/full.html:72
+msgid "Open url in external browser"
+msgstr "Im externen Browser öffnen"
+
+#: app/www/components/tile-types/general.js:287
+msgid "orange"
+msgstr "orange"
+
+#: app/www/modules/stack/stack_show.html:181
+#: app/www/modules/stack/stacks_my.html:25
+#: app/www/modules/stack/stacks_my.html:51 app/www/modules/store/store.html:53
+msgid "Owner"
+msgstr "Eigentümer"
+
+#: app/www/modules/home/unknown.html:3
+msgid "Page not found"
+msgstr "Seite nicht gefunden"
+
+#: app/www/components/ltb-sfs/ltb-sfs.js:15
+msgid "Photo"
+msgstr "Foto"
+
+#: app/www/components/ltb-sfs/reference-view.html:66
+msgid "Pick an image or supply an alternative image URL below"
+msgstr "Bild wählen oder unten eine andere Bild URL eingeben"
+
+#: app/www/components/tile-types/collection/full.html:28
+#: app/www/components/tile-types/collection/full.html:55
+msgid "Play this item"
+msgstr "Diesen Inhalt abspielen"
+
+#: app/www/components/ltb-api/ltb-api.js:948
+msgid "Please enter your verification code"
+msgstr "Bitte den Bestätigungscode eingeben"
+
+#: app/www/components/mobilebar/mobilepage.html:4
+msgid "Please login to proceed."
+msgstr "Zum weitergehen, bitte einloggen"
+
+#: app/www/modules/stack/stack.js:152
+msgid "Please save you Stack first"
+msgstr "Bitte zuerst den Stack speichern"
+
+#: app/www/components/ltb-api/ltb-api.js:366
+msgid "Please supply max 20 urls at a time."
+msgstr "Bitte nur bis zu 20 URLs angeben"
+
+#: app/www/modules/stack-app/settings.html:35
+msgid "Preferred Language"
+msgstr "Bevorzugte Sprache"
+
+#: app/www/modules/stack-app/settings.html:23
+#: app/www/modules/stack-app/settings.html:27
+msgid "Preferred Stack"
+msgstr "Bevorzugtes Stack"
+
+#: app/www/components/tile-types/collection/full.html:171
+msgid "Prepare your contribution for upload"
+msgstr "Beitrag vorbereiten zum hochladen"
+
+#: app/www/components/tile-types/default/settings.html:21
+#: app/www/components/tile-types/default/settings.html:26
+#: app/www/modules/messages/management-messages.html:69
+#: app/www/modules/stack/preview.html:3 app/www/modules/stack/stack_edit.html:4
+#: app/www/modules/stack/stack_show.html:133
+#: app/www/modules/stack/stack_show.html:140
+#: app/www/modules/stack/stack_show.html:16
+msgid "Preview"
+msgstr "Vorschau"
+
+#: app/www/modules/stack/stack_edit.html:142
+msgid "previous screen"
+msgstr "vorherige Ansicht"
+
+#: app/www/modules/stack/stack_show.html:28
+#: app/www/modules/stack/stack_show.html:54
+msgid "Private"
+msgstr "Privat"
+
+#: app/www/components/tools/tools.js:139
+msgid "Private Stack"
+msgstr "Privates Stack"
+
+#: app/www/components/tile-types/collection/settings.html:46
+msgid "Provide download link of files to users"
+msgstr "Benutzer können Inhalte direkt herunterladen"
+
+#: app/www/modules/stack/stack_show.html:78
+msgid "Public"
+msgstr "Öffentlich"
+
+#: app/www/components/tools/tools.js:140
+msgid "Public Stack"
+msgstr "Öffentliches Stack"
+
+#: app/www/modules/messages/management-messages.html:41
+msgid "Publish from"
+msgstr "Veröffentlicht von"
+
+#: app/www/components/ltb-sfs/reference-link-player.html:20
+#: app/www/components/tile-types/externalcontent/full.html:70
+msgid "Published on"
+msgstr "Veröffentlicht am"
+
+#: app/www/components/tile-types/general.js:285
+msgid "purple"
+msgstr "lila"
+
+#: app/www/assets/navbar-top-app.html:26
+#: app/www/modules/stack-app/stack-app.js:411
+msgid "QR reader not available"
+msgstr "QR-Scanner nicht verfügbar"
+
+#: app/www/modules/messages/messagesList.html:17
+msgid "Read"
+msgstr "Lesen"
+
+#: app/www/components/ltb-sfs/reference-link-player.html:16
+#: app/www/components/tile-types/externalcontent/full.html:67
+msgid "read full article"
+msgstr "lesen Sie den vollständigen Artikel"
+
+#: app/www/components/ltb-api/ltb-api.js:389
+msgid "Received bad result"
+msgstr "Ungültiges Resultat erhalten"
+
+#: app/www/components/tile-types/collection/full.html:146
+#: app/www/components/tile-types/collection/full.html:155
+msgid "Record note"
+msgstr "Notiz aufzeichnen"
+
+#: app/www/components/tile-types/collection/full.html:147
+msgid "Record Note"
+msgstr "Notiz aufzeichnen"
+
+#: app/www/components/tile-types/collection/full.html:137
+msgid "Record video"
+msgstr "Video aufzeichnen"
+
+#: app/www/components/tile-types/collection/full.html:138
+msgid "Record Video"
+msgstr "Video aufzeichnen"
+
+#: app/www/components/tile-types/general.js:286
+msgid "red"
+msgstr "rot"
+
+#: app/www/modules/admin/admin.html:62
+msgid "Refactor files"
+msgstr ""
+
+#: app/www/components/tools/tools.js:137
+#: app/www/modules/stack-app/stack-favourites.html:20
+msgid "Remove from favourites"
+msgstr "Aus Ihren Favoriten entfernen"
+
+#: app/www/components/tile-types/default/settings.html:20
+msgid "Reset"
+msgstr "Rücksetzen"
+
+#: app/www/modules/stack-app/search.html:28
+msgid "Results for"
+msgstr "Resultate für"
+
+#: app/www/components/tile-types/rss/tile.js:10
+msgid "RSS"
+msgstr "RSS"
+
+#: app/www/components/ltb-sfs/reference-view.html:75
+#: app/www/components/tile-types/default/settings.html:19
+#: app/www/modules/stack-app/settings.html:56
+msgid "Save"
+msgstr "Speichern"
+
+#: app/www/modules/messages/management-messages.html:60
+msgid "Save and Close"
+msgstr "Speichern und schließen"
+
+#: app/www/modules/messages/management-messages.html:59
+msgid "Save and New"
+msgstr "Speichern und neu"
+
+#: app/www/modules/stack/stack_edit.html:6
+msgid "Save Stack"
+msgstr "Stack speichern"
+
+#: app/www/components/ltb-api/ltb-api.js:1566
+#: app/www/components/ltb-api/ltb-api.js:1596
+#: app/www/components/ltb-api/ltb-api.js:762
+msgid "Saving failed"
+msgstr "Speichern fehlgeschlagen"
+
+#: app/www/components/ltb-api/ltb-api.js:397
+#: app/www/components/ltb-api/ltb-api.js:409
+msgid "screen"
+msgstr "Schirm"
+
+#: app/www/components/tile-types/navigate/settings.html:10
+#: app/www/components/tile-types/navigate/settings.html:17
+#: app/www/modules/stack/stack_edit.html:134
+msgid "Screen"
+msgstr "Ansicht"
+
+#: app/www/assets/navbar-top-app.html:55 app/www/assets/navbar-top-web.html:22
+#: app/www/modules/stack-app/search.html:2
+msgid "Search"
+msgstr "Ansicht"
+
+#: app/www/components/tile-types/localcontent/settings.html:10
+msgid "Search for"
+msgstr "Suchen für"
+
+#: app/www/components/tile-types/localcontent/settings.html:19
+msgid "Search on"
+msgstr "Suchen für"
+
+#: app/www/modules/store/store.html:6
+msgid "Search Stacks"
+msgstr "Stacks suchen"
+
+#: app/www/components/tile-types/localcontent/settings.html:32
+msgid "Search terms"
+msgstr "Suchwörter"
+
+#: app/www/modules/stack-app/stack-favourites.html:3
+msgid "Select favourites you want to delete"
+msgstr "Wählen sie den zu löschenden Favoriten aus"
+
+#: app/www/modules/admin/admin.html:41
+msgid "Session details"
+msgstr "Details der Sitzung"
+
+#: app/www/modules/stack/stack_edit.html:157
+msgid "Set as Start Screen"
+msgstr "Als Start-Ansicht festlegen"
+
+#: app/www/assets/navbar-top-app.html:56
+#: app/www/modules/stack/stack_edit.html:77
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: app/www/components/tile-types/collection/settings.html:42
+msgid "Sharing"
+msgstr "Teilen"
+
+#: app/www/modules/admin/admin.html:55
+msgid "Show device"
+msgstr "Gerät zeigen"
+
+#: app/www/modules/stack-app/search.html:37
+msgid "Show more results"
+msgstr "Mehr Ergebnisse anzeigen"
+
+#: app/www/components/tile-types/rss/tile.js:11
+msgid "Show RSS Feed"
+msgstr "RSS Feed anzeigen"
+
+#: app/www/components/tile-types/tile-properties.html:19
+msgid "Show Tile on Screen"
+msgstr "Tile in der Ansicht anzeigen"
+
+#: app/www/components/oauth-ng-custom/button.html:2
+#: app/www/modules/stack-app/popup-login.html:9
+msgid "Sign in with"
+msgstr "Anmelden mit"
+
+#: app/www/components/oauth-ng-custom/button.html:10
+msgid "Sign out"
+msgstr "Abmelden"
+
+#: app/www/components/oauth-ng-custom/button.html:7
+msgid "Signed in"
+msgstr "Angemeldet"
+
+#: app/www/components/tile-types/collection/settings.html:33
+msgid "Size of tiles in collection"
+msgstr "Größe der Tiles in der Kollektion"
+
+#: app/www/components/ltb-api/ltb-api.js:551
+msgid "Some unexpected error occurred."
+msgstr "Ein unerwarteter Fehler ist aufgetreten."
+
+#: app/www/components/tile-types/navigate/settings.html:13
+#: app/www/components/tile-types/navigate/settings.html:26
+msgid "Stack"
+msgstr "Stack"
+
+#: app/www/components/ltb-api/ltb-api.js:1215
+msgid "Stack cannot be rendered correctly"
+msgstr "Das Stack kann nicht korrekt angezeigt werden"
+
+#: app/www/modules/stack/stack_edit.html:179
+msgid "Stack description"
+msgstr "Stack Beschreibung"
+
+#: app/www/components/ltb-api/ltb-api.js:1209
+msgid "Stack details were not wellformed"
+msgstr "Die Details des Stacks entsprechen nicht den Regeln"
+
+#: app/www/modules/stack/stack_edit.html:174
+msgid "Stack name"
+msgstr "Stack Name"
+
+#: app/www/modules/stack/stack_edit.html:169
+msgid "Stack Settings"
+msgstr "Stack Einstellungen"
+
+#: app/www/modules/stack/stack_edit.html:14
+msgid "Stack status"
+msgstr "Stack Status"
+
+#: app/www/components/ltb-api/ltb-api.js:472
+msgid "start"
+msgstr "start"
+
+#: app/www/modules/admin/eval.html:9
+msgid "Start"
+msgstr "Start"
+
+#: app/www/modules/admin/admin.html:8
+msgid "Start Debug Option"
+msgstr "Debug Option starten"
+
+#: app/www/modules/help/help.html:6
+msgid "Start Recording Session"
+msgstr "Starten der Debug Protokollierung"
+
+#: app/www/modules/admin/admin.html:10
+msgid "Start Test Session"
+msgstr "Starten einer Test Session"
+
+#: app/www/modules/stack-app/settings.html:19
+msgid "Start with"
+msgstr "Starten mit"
+
+#: app/www/modules/help/help.html:5
+msgid "Stop Recording Session"
+msgstr "Stoppen der Protokollierung"
+
+#: app/www/modules/messages/management-messages.html:31
+#: app/www/modules/messages/management-messages.html:32
+msgid "Subject"
+msgstr "Betreff"
+
+#: app/www/components/ltb-api/ltb-api.js:782
+#: app/www/components/ltb-sfs/ltb-sfs.js:168
+msgid "Succesfully removed the item"
+msgstr "Das Element wurde erfolgreich gelöscht"
+
+#: app/www/components/ltb-sfs/ltb-sfs.js:373
+msgid "Successfully added the file to your collection."
+msgstr "Die Tile wurde mit Erfolg zur Kollektion hinzugefügt."
+
+#: app/www/components/ltb-sfs/ltb-sfs.js:410
+msgid "Successfully added the url to your collection."
+msgstr "Die URL wurde mit Erfolg zur Kollektion hinzugefügt."
+
+#: app/www/components/tile-types/default/tile.js:11
+msgid "Supply content"
+msgstr "Inhalte eingeben"
+
+#: app/www/components/tile-types/localcontent/tile.js:13
+msgid "Supply local content"
+msgstr "Lokale Inhalte eingeben"
+
+#: app/www/modules/stack-app/settings.html:42
+msgid "Switch on/off Debugging"
+msgstr "Debugging an/ausschalten"
+
+#: app/www/modules/stack/stack_edit.html:106
+msgid "Switch to screen"
+msgstr "Zur Ansicht wechseln"
+
+#: app/www/modules/stack-app/settings.html:44
+msgid "switched off"
+msgstr "ausgeschaltet"
+
+#: app/www/modules/stack-app/settings.html:43
+msgid "switched on"
+msgstr "angeschaltet"
+
+#: app/www/components/tile-types/localcontent/settings.html:21
+#: app/www/components/tile-types/localcontent/settings.html:28
+#: app/www/modules/stack/stack_edit.html:200
+#: app/www/modules/stack/stack_show.html:178
+#: app/www/modules/stack/stacks_my.html:22
+#: app/www/modules/stack/stacks_my.html:47 app/www/modules/store/store.html:40
+msgid "Tags"
+msgstr "Tags"
+
+#: app/www/modules/stack-app/search.html:14
+msgid "Tags only"
+msgstr "Nur Tags"
+
+#: app/www/components/tile-types/collection/full.html:128
+msgid "Take photo"
+msgstr "Photo machen"
+
+#: app/www/components/tile-types/collection/full.html:129
+msgid "Take Picture"
+msgstr "Photo machen"
+
+#: app/www/components/ltb-sfs/ltb-sfs.js:39
+msgid "Text"
+msgstr "Text"
+
+#: app/www/modules/about/about.html:11 app/www/modules/home/home.html:5
+msgid ""
+"The Learning Toolbox is a fully customisable application for people involved "
+"in work related learning that facilitates, supports and enables mobile and "
+"context based learning."
+msgstr ""
+"Die Learning Toolbox ist eine vielfältig anpassbare Anwendung, welche das "
+"mobile Lernen im beruflichen Kontext und am Arbeitsplatz unterstützt und "
+"ermöglicht. "
+
+#: app/www/modules/about/about.html:12
+msgid "The Learning Toolbox Team"
+msgstr "Das Learning Toolbox Team"
+
+#: app/www/components/ltb-api/ltb-api.js:1238
+msgid "The Stack could not be retrieved."
+msgstr "Das Stack konnte nicht abgerufen werden"
+
+#: app/www/components/ltb-api/ltb-api.js:1511
+msgid "The Stack is empty."
+msgstr "Das Stack ist leer."
+
+#: app/www/modules/home/home.html:6
+msgid ""
+"The Tilestore is the marketplace for the Learning Toolbox and provides you "
+"with the tools to customise your learning experience."
+msgstr ""
+"Der Tilestore ist der Markplatz der Learning Toolbox, der Ihnen die Tools an "
+"die Hand gibt es Ihrem eigenen Lernen anzupassen."
+
+#: app/www/components/tile-types/externalcontent/full.html:28
+msgid "There are no content items"
+msgstr "Es liegen keine Inhalte vor"
+
+#: app/www/components/tile-types/collection/tile.js:110
+msgid "There are no items to view"
+msgstr "Es gibt keine Elemente zu zeigen"
+
+#: app/www/modules/stack/stack_edit.html:24
+msgid "There are unsaved changes"
+msgstr "Es gibt nicht gespeicherte Änderungen"
+
+#: app/www/components/ltb-api/ltb-api.js:1557
+#: app/www/components/ltb-api/ltb-api.js:1586
+msgid "There was no response"
+msgstr "Es gab keine Reaktion"
+
+#: app/www/components/tile-types/app/tile.js:51
+msgid "This application cannot be directly opened from LTB"
+msgstr "Diese App can nicht direkt von der LTB aus gestartet werden"
+
+#: app/www/components/tile-types/app/tile.js:73
+msgid "This application is not available for Android"
+msgstr "Diese App ist nicht erhältlich auf Android"
+
+#: app/www/components/tile-types/app/tile.js:54
+msgid "This application is not available for iOS"
+msgstr "Diese App ist nicht erhältlich auf iOS"
+
+#: app/www/modules/stack/stack_show.js:204
+msgid "This is not a valid Stack"
+msgstr "Dies ist kein gültiger Stack"
+
+#: app/www/modules/stack/stack_show.js:63
+#: app/www/modules/stack/stack_show.js:72
+msgid "This is not a valid Stack code"
+msgstr "Dies ist kein gültiger Stackcode"
+
+#: app/www/modules/stack-app/popup-login.html:4
+msgid "This requires you to log in"
+msgstr "Dies bedarf der Anmeldung"
+
+#: app/www/components/tile-types/collection/tile.js:360
+msgid "This type of file is not allowed."
+msgstr "Dieser Datei-Typ ist nicht erlaubt"
+
+#: app/www/components/tile-types/app/tile.js:86
+#: app/www/components/tile-types/app/tile.js:90
+#: app/www/components/tile-types/collection/tile.js:380
+#: app/www/components/tile-types/collection/tile.js:413
+#: app/www/components/tile-types/collection/tile.js:421
+#: app/www/components/tile-types/collection/tile.js:430
+#: app/www/components/tile-types/collection/tile.js:446
+msgid "This will only open on your mobile device"
+msgstr "Dies kann nur auf dem Handy geöffnet werden"
+
+#: app/www/components/tile-types/tile-properties.html:28
+msgid "Tile background"
+msgstr "Tile Hintergrund"
+
+#: app/www/components/tile-types/tile-properties.html:11
+msgid "Tile colour"
+msgstr "Tile Farbe"
+
+#: app/www/modules/stack/stack_edit.html:37
+msgid "Tile library"
+msgstr "Tile Bibliothek"
+
+#: app/www/components/tile-types/tile-properties.html:41
+msgid "Tile on screen"
+msgstr "Tile in der Ansicht"
+
+#: app/www/components/tile-types/tile-properties.html:3
+msgid "Tile size"
+msgstr "Tile Größe"
+
+#: app/www/components/tile-types/app/settings.html:3
+#: app/www/components/tile-types/collection/settings.html:22
+#: app/www/components/tile-types/default/settings.html:5
+#: app/www/components/tile-types/embed/settings.html:3
+#: app/www/components/tile-types/externalcontent/settings.html:4
+#: app/www/components/tile-types/localcontent/settings.html:5
+#: app/www/components/tile-types/navigate/settings.html:3
+#: app/www/components/tile-types/rss/settings.html:3
+msgid "Tile title"
+msgstr "Tile Titel"
+
+#: app/www/components/ltb-sfs/ltb-sfs.js:342
+#: app/www/components/ltb-sfs/reference-view.html:21
+#: app/www/components/ltb-sfs/reference-view.html:39
+#: app/www/components/tile-types/collection/full.html:177
+msgid "Title"
+msgstr "Titel"
+
+#: app/www/modules/stack-app/search.html:18
+msgid "Title only"
+msgstr "Nur Titel"
+
+#. Published from [date] to [date]
+#: app/www/modules/messages/management-messages.html:48
+msgid "to"
+msgstr "zu"
+
+#: app/www/components/ltb-sfs/reference-view.html:18
+msgid "Type"
+msgstr "Typ"
+
+#: app/www/components/ltb-api/ltb-api.js:955
+msgid "Unknow debug session"
+msgstr "Unbekannte Debugsitzung"
+
+#: app/www/components/tile-types/default/tile.html:13
+#: app/www/components/tools/tools.js:145
+msgid "Unknown type"
+msgstr "Unbekannter Typ"
+
+#: app/www/modules/messages/messagesList.html:13
+msgid "Unread"
+msgstr "Ungelesen"
+
+#: app/www/components/tile-types/navigate/tile.js:81
+msgid "up"
+msgstr "rauf"
+
+#: app/www/components/tile-types/default/tile.js:123
+msgid "Updated the content tile. Note that the stack has not been saved yet."
+msgstr ""
+"Dwe Inhalt dieser Tile wurde aktualisiert. Bitte beachten Sie dass dieser "
+"Stack noch nicht gespeichert worden ist."
+
+#: app/www/components/ltb-api/ltb-api.js:678
+#: app/www/components/ltb-api/ltb-api.js:732
+msgid "Updating failed"
+msgstr "Aktualisierung fehlgeschlagen"
+
+#: app/www/components/tile-types/collection/full.html:203
+#: app/www/components/tile-types/collection/full.html:209
+msgid "Upload"
+msgstr "Hochladen"
+
+#: app/www/components/tile-types/collection/tile.js:482
+msgid "Upload succeeded"
+msgstr "Hochladen erfolgreich"
+
+#: app/www/components/tile-types/collection/full.html:216
+msgid "Uploading"
+msgstr "Hochladen"
+
+#: app/www/components/ltb-sfs/reference-view.html:20
+#: app/www/components/tile-types/embed/settings.html:8
+#: app/www/components/tile-types/rss/settings.html:8
+msgid "Url"
+msgstr "Url"
+
+#: app/www/modules/admin/admin.html:19
+msgid "User id"
+msgstr "Benutzer ID"
+
+#: app/www/components/tile-types/collection/settings.html:63
+msgid "Users can only see their own content"
+msgstr "Benutzer können nur ihre eigenen Inhalte sehen"
+
+#: app/www/modules/admin/admin.html:16
+#: app/www/modules/stack-app/settings.html:45
+msgid "Verification code"
+msgstr "Bestätigungscode"
+
+#: app/www/modules/about/about.html:5
+msgid "Version"
+msgstr "Version"
+
+#: app/www/components/ltb-sfs/ltb-sfs.js:21
+msgid "Video"
+msgstr "Video"
+
+#: app/www/modules/home/home.html:3
+msgid "Welcome to Learning Toolbox"
+msgstr "Willkommen bei der Learning Toolbox"
+
+#: app/www/modules/admin/admin.html:8
+msgid "with end date"
+msgstr "mit Enddatum"
+
+#: app/www/modules/admin/admin.html:10 app/www/modules/help/help.html:6
+msgid "with verification"
+msgstr "mit Bestätigung"
+
+#: app/www/components/tile-types/collection/full.html:156
+msgid "Write Note"
+msgstr "Notiz Schreiben"
+
+#: app/www/modules/stack-app/popup-favourite.html:6
+msgid "Yes"
+msgstr "Ja"
+
+#: app/www/modules/stack-app/stack-app.js:34
+msgid "You are connected to a mobile network"
+msgstr "Sie sind am Handynetzwerk angeschlossen"
+
+#: app/www/modules/stack-app/stack-app.js:31
+msgid "You are connected to a WIFI network"
+msgstr "Sie sind am WiFi-Netzwerk angeschlossen"
+
+#: app/www/modules/stack-app/stack-app.js:28
+msgid "You are connected to a wired network"
+msgstr "Sie sind an einem Netzwerk angebunden"
+
+#: app/www/modules/admin/admin.html:4 app/www/modules/admin/eval.html:3
+msgid "You are not allowed to see this page"
+msgstr "Sie sind nicht berechtigt diese Seite anzusehen"
+
+#: app/www/modules/stack-app/stack-app.js:43
+msgid "You are NOT connected to a network"
+msgstr "Sie sind nicht an einem Netzwerk angebunden"
+
+#: app/www/components/mobilebar/mobilepage.html:3
+msgid "You can also use Learning Toolbox from a mobile browser"
+msgstr "Sie können die Learning Toolbox auch in einem mobilen Browser benutzen"
+
+#: app/www/components/tile-types/navigate/tile.js:51
+msgid "You can not navigate to another stack in this mode"
+msgstr "Sie können nicht zu einem anderen Stack navigieren in diesem Modus"
+
+#: app/www/modules/stack-app/search.html:3
+msgid ""
+"You can search on terms and tags. By separating them by a comma, you "
+"indicate you want stacks only with all these terms and/or tags. Separating "
+"them by one or more spaces, indicates you want stacks to match any of these "
+"terms and/or tags. You can freely combine them and mark literal string by "
+"using quotes around it. Furthermore, you can restrict the search to the "
+"title, the author or the tags only."
+msgstr ""
+"Sie können sich auf Begriffe und Tags suchen. Indem man sie durch ein Komma "
+"zu trennen, geben Sie Sie Stapel wollen nur mit all diesen Bedingungen und / "
+"oder Tags. Die Trennung sie durch ein oder mehrere Leerzeichen, zeigt Sie "
+"Stapel wollen eine dieser Bedingungen anzupassen und / oder Tags. Sie können "
+"sie frei kombinieren und Literalzeichenfolge markieren, indem Sie "
+"Anführungszeichen um es zu benutzen. Darüber hinaus können Sie die Suche auf "
+"den Titel, den Autor oder die Tags nur beschränken."
+
+#: app/www/modules/admin/admin.html:6
+msgid ""
+"You can start a debugging session for an individual or a group of people. "
+"That only depends on who you share the generated key with. If you generate a "
+"key, it will be shown here:"
+msgstr ""
+"Eine Debugging-Session kann für ein Individuum oder eine Gruppe gestartet "
+"werden. Das hängt davon ob mit wem Sie den den erzeugten Schlüssel teilen. "
+"Wenn Sie einen Schlüssel erzeugt haben, sehen Sie ihn hier:"
+
+#: app/www/components/tools/tools.js:147
+msgid "You can view the tiles in the Preview or Edit screens"
+msgstr ""
+"Sie können sich die Tiles in der Vorschau oder der Editieransicht anschauen"
+
+#: app/www/components/tools/tools.js:146
+msgid "You cannot edit this tile. You can only remove it"
+msgstr "Sie können dieses Tile nicht bearbeiten. Sie können es nur entfernen"
+
+#: app/www/modules/stack-app/stack-app.js:581
+msgid "You have new unread messages for this Stack."
+msgstr "Sie haben ungelesene Nachrichten für dieses Stack."
+
+#: app/www/modules/stack/stack.js:107
+msgid "You have unsaved changes"
+msgstr "Änderungen sind noch nicht gespeichert"
+
+#: app/www/components/ltb-api/ltb-api.js:1239
+msgid "You must be the owner of this Stack to open it."
+msgstr "Sie müssen Besitzer diese Stacks sein um es öffnen zu können"
+
+#: app/www/modules/admin/admin.js:134 app/www/modules/admin/admin.js:143
+msgid "You must fill at least one of the input fields"
+msgstr "Sie müssen mindestens eines der Felder ausfüllen."
+
+#: app/www/components/ltb-api/ltb-api.js:1544
+#: app/www/components/ltb-api/ltb-api.js:1574
+msgid "You succesfully saved your Stack"
+msgstr "Ihr Stack wurde erfolgreich gespeichert"
+
+#: app/www/components/tile-types/externalcontent/settings.html:18
+msgid "Your Content Items"
+msgstr "Ihre Inhalte"
+
+#: app/www/components/tile-types/collection/full.html:169
+msgid "Your contribution is ready for upload"
+msgstr "Ihr Beitrag can jetzt hochgeladen werden"
+
+#: app/www/modules/messages/management-messages.js:55
+msgid "Your message could not be removed"
+msgstr "Ihre Nachricht konnte nicht entfernt werden"
+
+#: app/www/components/ltb-api/ltb-api.js:1740
+msgid "Your message could not be saved"
+msgstr "Ihre Nachricht konnte nicht gespeichert werden"
+
+#: app/www/modules/messages/management-messages.js:50
+msgid "Your message has been successfully deleted"
+msgstr "Ihre Nachricht ist erfolgreich gelöscht worden"
+
+#: app/www/components/ltb-api/ltb-api.js:1728
+msgid "Your message was successfully created"
+msgstr "Ihre Nachricht wurde erfolgreich erstellt"
+
+#: app/www/components/ltb-api/ltb-api.js:1712
+msgid "Your message was successfully saved"
+msgstr "Ihre Nachricht wurde erfolgreich gespeichert"
+
+#: app/www/modules/stack/stack.js:255
+msgid "Your screen has been successfully deleted"
+msgstr "Ihre Ansicht wurde erfolgreich gelöscht"
+
+#: app/www/modules/stack/stack_show.js:146
+msgid "Your Stack could not be changed"
+msgstr "Ihr Stack konnte nicht verändert werden"
+
+#: app/www/modules/stack/stack_show.js:107 app/www/modules/stack/stack.js:357
+msgid "Your Stack could not be removed"
+msgstr "Ihr Stack konnte nicht gelöscht werden"
+
+#: app/www/modules/stack/stack_show.js:97
+msgid "Your Stack has been successfully deleted"
+msgstr "Ihr Stack ist erfolgreich gelöscht worden"
+
+#: app/www/modules/stack/stack.js:339
+msgid "Your Stack has been successfully deleted."
+msgstr "Ihr Stack ist erfolgreich gelöscht worden."
+
+#: app/www/modules/stack/stack_show.js:141 app/www/modules/stack/stack.js:248
+msgid "Your Stack is now private"
+msgstr "Ihr Stack ist jetzt privat"
+
+#: app/www/modules/stack/stack_show.js:139
+msgid "Your Stack is now published"
+msgstr "Ihr Stack ist jetzt öffentlich"
+
+#~ msgid "Make Private"
+#~ msgstr "zu Privat erkären"
+
+#~ msgid ""
+#~ "You can search on terms and tags. By separating them by a comma, \n"
+#~ "            you indicate you want stacks only with all these terms and/or "
+#~ "tags. Separating them by one or\n"
+#~ "            more spaces, indicates you want stacks to match any of these "
+#~ "terms and/or tags. \n"
+#~ "            You can freely combine them and mark literal string by using "
+#~ "quotes around it.\n"
+#~ "        Furthermore, you can restrict the search to the title, the author "
+#~ "or the tags only."
+#~ msgstr ""
+#~ "Sie können sich auf Begriffe und Tags suchen. Indem man sie durch ein "
+#~ "Komma zu trennen, geben Sie Sie Stapel wollen nur mit all diesen "
+#~ "Bedingungen und / oder Tags. Die Trennung sie durch ein oder mehrere "
+#~ "Leerzeichen, zeigt Sie Stapel wollen eine dieser Bedingungen anzupassen "
+#~ "und / oder Tags. Sie können sie frei kombinieren und Literalzeichenfolge "
+#~ "markieren, indem Sie Anführungszeichen um es zu benutzen. Darüber hinaus "
+#~ "können Sie die Suche auf den Titel, den Autor oder die Tags nur "
+#~ "beschränken."
+
+#~ msgid "Close this window or return to"
+#~ msgstr "Dieses Fenster schließen oder zurückkehren zur"
+
+#~ msgid "Deleting the message failed"
+#~ msgstr "Löschen der Nachricht fehlgeschlagen"
+
+#~ msgid "Learning Toolbox"
+#~ msgstr "Learning Toolbox"
+
+#~ msgid "Make Public"
+#~ msgstr "Öffentlich zugänglich machen"
+
+#~ msgid "You are no longer logged in"
+#~ msgstr "Sie sind nicht mehr eingeloggt"
+
+#~ msgid "Added this Stack to your favourites"
+#~ msgstr "Dieses Stack wurde ihren Favoriten hinzugefügt"
+
+#~ msgid "You have deleted this stack from your favourites."
+#~ msgstr "Sie haben dieses Stack aus ihren Favoriten gelöscht"
+
+#~ msgid ""
+#~ "If you want to narrow your search, separate search terms with comma's. If "
+#~ "you want to widen your search, add more terms separated by spaces. You "
+#~ "can group words by enclosing them with quotes."
+#~ msgstr ""
+#~ "Um Ihre Suche einzuschränken, können sie die Begriffe durch Kommas "
+#~ "trennen. Um Ihre Suche zu erweitern, können sie mehr Begriffe durch "
+#~ "Leerzeichen getrennt eingeben. Begriffe können mit Anführungszeichen als "
+#~ "Gruppen definiert werden."
+
+#~ msgid "[Choose a Color]"
+#~ msgstr "Wählen Sie eine Farbe"
+
+#~ msgid "Results"
+#~ msgstr "Ergebnisse"
+
+#~ msgid "Tile on Screen"
+#~ msgstr "Tile in der Ansicht"
+
+#~ msgid "Your items in the collection"
+#~ msgstr "Ihre Elemente in der Kollektion"
+
+#~ msgid "Error when uploading"
+#~ msgstr "Fehler beim hochladen"
+
+#~ msgid "Name of application"
+#~ msgstr "Name der App"
+
+#~ msgid "Stack properties"
+#~ msgstr "Stack Eigenschaften"
+
+#~ msgid "Switch"
+#~ msgstr "Wechseln"
+
+#~ msgid "You have unread messages for this Stack."
+#~ msgstr "Sie haben ungelesene Nachrichten für diesen Stack."
+
+#~ msgid ""
+#~ "If you encountered unexpected behaviour, we might be able to help you "
+#~ "better, if you switch on debugging mode. Ask for the code to be able to "
+#~ "switch it on\n"
+#~ "    <button class=\"btn-default\" ng-show=\"HelpCtrl.debugging_on\" ng-"
+#~ "click=\"HelpCtrl.stopDebugSession()\" translate=\"\">Stop Recording "
+#~ "Session</button>\n"
+#~ "    <span ng-show=\"!HelpCtrl.debugging_on\"><button class=\"btn-primary"
+#~ "\" ng-click=\"HelpCtrl.startDebugSession()\" translate=\"\">Start "
+#~ "Recording Session</button> <translate> with verification</translate>: \n"
+#~ "        <input type=\"input\" class=\"form-control inline long\" "
+#~ "placeholder=\"{{'Fill in your verification code'| translate}}\" ng-model="
+#~ "\"HelpCtrl.verify_code\"></span>"
+#~ msgstr ""
+#~ "Falls Sie auf unerwartete Problem stossen, können Sie den Debugmodus "
+#~ "anschalten so dass wir Ihnen weiterhelfen können. Beantragen Sie einen "
+#~ "Debugcode um diese Funktion freizuschalten\n"
+#~ "    <button class=\"btn-default\" ng-show=\"HelpCtrl.debugging_on\" ng-"
+#~ "click=\"HelpCtrl.stopDebugSession()\" translate=\"\">Aufzeichnung "
+#~ "beenden</button>\n"
+#~ "    <span ng-show=\"!HelpCtrl.debugging_on\"><button class=\"btn-primary"
+#~ "\" ng-click=\"HelpCtrl.startDebugSession()\" translate=\"\">Aufzeichnung "
+#~ "starten</button> <translate> mit Verifikation</translate>: \n"
+#~ "        <input type=\"input\" class=\"form-control inline long\" "
+#~ "placeholder=“{{‘Verifikationscode eingeben'| translate}}\" ng-model="
+#~ "\"HelpCtrl.verify_code\"></span>"
+
+#~ msgid "This application is not available on Android"
+#~ msgstr "Dies App is nicht auf Android erhältlich"
+
+#~ msgid "This application is not available on iOS"
+#~ msgstr "Dies App is nicht auf iOS erhältlich"
+
+#~ msgid "You can not open apps from the browser version of LTB"
+#~ msgstr "Sie können keine Apps in der Browserversion der LTB öffnen"
+
+#~ msgid "You must be on a tablet or phone to start an app"
+#~ msgstr "Sie müssen die App von einem Tablet oder Handy starten"
+
+#~ msgid "Admin Page"
+#~ msgstr "Admin Seite"
+
+#~ msgid "Delete Tile"
+#~ msgstr "Tile löschen"
+
+#~ msgid "Edit Stack"
+#~ msgstr "Stack editieren"
+
+#~ msgid "Manage Messages"
+#~ msgstr "Nachrichten verwalten"
+
+#~ msgid "New Stack"
+#~ msgstr "Neues Stack"
+
+#~ msgid "properties"
+#~ msgstr "Eigenschaften"
+
+#~ msgid "Ready/Close"
+#~ msgstr "Fertig/Schließen"
+
+#~ msgid "View Stack"
+#~ msgstr "Stack ansehen"
+
+#~ msgid ""
+#~ "<waiting-condition-icon-inline class=\"\" waitingclass=\"fa fa-spinner fa-"
+#~ "pulse\" waitingcontent=\"'Add'\" waitingcondition=\"sfsCtrl.loading."
+#~ "getLinkInformation || sfsCtrl.loading.saveNewReference\">\n"
+#~ "           </waiting-condition-icon-inline>"
+#~ msgstr ""
+#~ "<waiting-condition-icon-inline class=\"\" waitingclass=\"fa fa-spinner fa-"
+#~ "pulse\" waitingcontent=\"'Hinzufügen'\" waitingcondition=\"sfsCtrl."
+#~ "loading.getLinkInformation || sfsCtrl.loading.saveNewReference\">\n"
+#~ "           </waiting-condition-icon-inline>"
+
+#~ msgid "add to favourites"
+#~ msgstr "Ihren Favoriten hinzufügen"
+
+#~ msgid "Added this stack as one of your favourites"
+#~ msgstr "Dieses Stack wurde ihren Favoriten hinzugefügt"
+
+#~ msgid "Are you sure you want to delete this stack?"
+#~ msgstr "Wollen Sie dieses Stack wirklich löschen?"
+
+#~ msgid ""
+#~ "Choose from a range of stacks and tiles provided to you for free. "
+#~ "Browse \n"
+#~ "            stacks and tiles and mark those you particularly like as your "
+#~ "favourites. \n"
+#~ "            Customise tiles at any time and arrange your stacks to suit "
+#~ "your particular \n"
+#~ "            needs. Create new stacks for your users, either from scratch "
+#~ "or building on \n"
+#~ "            stacks brought to you by the Tilestore. And share them with "
+#~ "your colleagues \n"
+#~ "            and the wider world. Create QR codes so others can quickly "
+#~ "find your stacks. \n"
+#~ "            Using these QR codes, you can also link your stacks to "
+#~ "locations, machines, \n"
+#~ "            tools or any other physical element so that others can get "
+#~ "them where and \n"
+#~ "            when they need them. We also provide you with a push "
+#~ "messaging feature to \n"
+#~ "            keep in touch with your users."
+#~ msgstr ""
+#~ "Schauen Sie sich die zahlreichen, freiverfügbaren Stacks und Tiles an und "
+#~ "markieren Sie die für Sie geeigneten als Favoriten. Sie können die "
+#~ "einzelnen Tiles auch noch speziell an ihre Bedürfnisse anpassen. "
+#~ "Erstellen Sie ganz neue Stacks oder bearbeiten Sie im Tilestore "
+#~ "vorhandene Stacks für Ihre Nutzer und teilen Sie diese mit Kollegen. Mit "
+#~ "den Stack eigenen QR-Codes sind diese überall verfügbar. Sie können QR-"
+#~ "Codes an den entsprechenden Maschinen, Orten, Werkzeugen oder jeder "
+#~ "anderem Objekt befestigen und so jedem mit der Learning Toolbox den "
+#~ "Zugriff durch bloßes Einscannen ermöglichen, wenn er gebraucht wird. "
+#~ "Außerdem gibt es auch ein Push-Nachrichtensystem mit dem sie in "
+#~ "Verbindung mit ihren Nutzern bleiben."
+
+#~ msgid "close"
+#~ msgstr "schließen"
+
+#~ msgid ""
+#~ "Close this window or return to <a href=\"../index.html\">Learning "
+#~ "Toolbox</a>"
+#~ msgstr ""
+#~ "Dieses Fenster schließen oder zur <a href=\"../index.html\">Learning "
+#~ "Toolbox</a> zurückkehren"
+
+#~ msgid "Current version: {{MainCtrl.version}}"
+#~ msgstr "Aktuelle Version: {{MainCtrl.version}}"
+
+#~ msgid "Date created:"
+#~ msgstr "Erstellt am:"
+
+#~ msgid "Delete of favourite did not seem necessary"
+#~ msgstr "Löschen des Favoriten nicht notwendig"
+
+#~ msgid "Denied by <i>Learning Layers</i>"
+#~ msgstr "Abgelehnt von <i>Learning Layers</i>"
+
+#~ msgid "Description:"
+#~ msgstr "Beschreibung:"
+
+#~ msgid "Edit stack"
+#~ msgstr "Stack editieren"
+
+#~ msgid "Failed for server request with status"
+#~ msgstr "Fehler bei Serveranfrage mit Status"
+
+#~ msgid ""
+#~ "If you want to narrow your search, separate search terms by a ',' and "
+#~ "if \n"
+#~ "                        you want to widen your search, add more terms "
+#~ "separated by spaces. You can group \n"
+#~ "                        words or protect commas by enclosing them in "
+#~ "quotes."
+#~ msgstr ""
+#~ "Um Ihre Suche einzuschränken, können sie die Begriffe durch ',' trennen. "
+#~ "Um Ihre Suche zu erweitern können sie mehr Begriffe durch Leerzeichen "
+#~ "getrennt eingeben. Begriffe können mit Anführungszeichen als Gruppen "
+#~ "definiert werden."
+
+#~ msgid "Invalid stack"
+#~ msgstr "Ungültiges Stack"
+
+#~ msgid "Messages of {{MngMessgCtrl.state.stackfields.name}}"
+#~ msgstr "Nachrichten von {{MngMessgCtrl.state.stackfields.name}}"
+
+#~ msgid "My stacks"
+#~ msgstr "Meine Stacks"
+
+#~ msgid "New stack"
+#~ msgstr "Neues Stack"
+
+#~ msgid "No QR scanners available to perform function."
+#~ msgstr "Kein QR-Scanner für die Ausführung verfügbar."
+
+#~ msgid "No stacks were found"
+#~ msgstr "Keine Stacks gefunden"
+
+#~ msgid ""
+#~ "Not all parts of the json are correct. Cannot show the stack correctly"
+#~ msgstr ""
+#~ "Nicht alle JSON-Teile sind korrekt. Das Stack kann nicht korrekt "
+#~ "angezeigt werden."
+
+#~ msgid "Number of messages: {{AdminCtrl.messages_count}}"
+#~ msgstr "Anzahl der Nachrichten: {{AdminCtrl.messages_count}}"
+
+#~ msgid "Owner:"
+#~ msgstr "Eigentümer:"
+
+#~ msgid "Page:"
+#~ msgstr "Seite:"
+
+#~ msgid "remove from favourites"
+#~ msgstr "Aus Ihren Favoriten entfernen"
+
+#~ msgid "Saving failed:"
+#~ msgstr "Speichern fehlgeschlagen:"
+
+#~ msgid "Search stacks"
+#~ msgstr "Stacks suchen"
+
+#~ msgid "session details"
+#~ msgstr "Details der Sitzung"
+
+#~ msgid "show device"
+#~ msgstr "Gerät zeigen"
+
+#~ msgid "Sign in with <i>Learning Layers</i>"
+#~ msgstr "Anmelden mit <i>Learning Layers</i>"
+
+#~ msgid "Some error occurred."
+#~ msgstr "Ein Fehler ist aufgetreten."
+
+#~ msgid "Some unexpected error occurred. Got invalid Json from server for"
+#~ msgstr ""
+#~ "Ein unerwarteter Fehler ist aufgetreten. Ungültiges JSON vom Server "
+#~ "erhalten für"
+
+#~ msgid ""
+#~ "Somehow you have navigated here or you were sent here, but the page does "
+#~ "not exist."
+#~ msgstr "Sie wurden hierhin verlinkt aber die Seite existiert nicht."
+
+#~ msgid "Tags:"
+#~ msgstr "Tags:"
+
+#~ msgid ""
+#~ "The Learning Toolbox is a fully customisable application for people "
+#~ "involved \n"
+#~ "            in work related learning that facilitates, supports and "
+#~ "enables mobile and \n"
+#~ "            context based learning. The Tilestore is the marketplace for "
+#~ "the Learning \n"
+#~ "            Toolbox and provides you with the tools to customise your "
+#~ "learning experience."
+#~ msgstr ""
+#~ "Die Learning Toolbox ist eine vielfältig anpassbare Anwendung, welche das "
+#~ "mobile Lernen im beruflichen Kontext und am Arbeitsplatz unterstützt und "
+#~ "ermöglicht. Der Tilestore ist der Markplatz der Learning Toolbox, der "
+#~ "Ihnen die Tools an die Hand gibt es Ihrem eigenen Lernen anzupassen."
+
+#~ msgid ""
+#~ "The server seemed to have added your stack, but empty result was returned"
+#~ msgstr ""
+#~ "Der Server scheint Ihren Stack hinzugefügt zu haben aber ein leeres "
+#~ "Resultat wurde zurück gemeldet."
+
+#~ msgid ""
+#~ "The stack could not be retrieved. In the settings you can choose a "
+#~ "different one."
+#~ msgstr ""
+#~ "Dieses Stack konnte nicht erhalten werden. In den Einstellungen können "
+#~ "Sie ein anderes wählen."
+
+#~ msgid "The stack was empty or not retrieved well."
+#~ msgstr "Das Stack ist leer oder wurde nicht korrekt empfangen"
+
+#~ msgid "Verify Code"
+#~ msgstr "Überprüfe Code"
+
+#~ msgid "You have unread messages for this stack."
+#~ msgstr "Sie haben eine ungelesene Nachricht für dieses Stack\t"
+
+#~ msgid "You succesfully saved your stack"
+#~ msgstr "Ihr Stack wurde erfolgreich gespeichert"
+
+#~ msgid "Your message was successfully deleted"
+#~ msgstr "Ihre Nachricht wurde erfolgreich gelöscht"
+
+#~ msgid "Your stack could not be changed:"
+#~ msgstr "Ihr Stack konnte nicht verändert werden:"
+
+#~ msgid "Your stack could not be removed"
+#~ msgstr "Ihr Stack konnte nicht entfernt werden"
+
+#~ msgid "Your stack has been successfully deleted"
+#~ msgstr "Ihr Stack wurde erfolgreich gelöscht"
+
+#~ msgid "Your stack is now private"
+#~ msgstr "Ihr Stack ist nun privat"
+
+#~ msgid "Your stack is now published"
+#~ msgstr "Ihr Stack wurde veröffentlicht"

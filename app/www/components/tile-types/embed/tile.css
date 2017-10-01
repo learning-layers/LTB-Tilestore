@@ -1,0 +1,23 @@
+/* 
+    Created on : 4-dec-2014, 18:46:44
+    Author     : Raymond
+*/
+.tile-embed{
+    min-height: 50px !important;
+}
+.embed-responsive-object {
+  position: relative;
+  padding-bottom: 67.5%;
+  height: 0;
+  /* margin: 40px 0; */
+  overflow: hidden;
+}
+.embed-responsive-object iframe,
+  .embed-responsive-object object,
+  .embed-responsive-object embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

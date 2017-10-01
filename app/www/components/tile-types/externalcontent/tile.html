@@ -1,0 +1,29 @@
+<div class="corner" ng-show="!tilereadonly"></div>
+<div class="check"  ng-show="!tilereadonly" ng-click="TileCtrl.tileEdit($event)"></div>
+<div class="tile-inner" ng-click="TileCtrl.tileClick($event)">
+    <div class="tile-header" ng-show="tile.template || (TileCtrl.reference_count !== 1)">
+        <i ng-show="tile.icon !== '' && !(tile.settings && TileCtrl.reference_count)" class="tile-icon fa fa-{{tile.icon}} "></i>
+        <div ng-show="TileCtrl.reference_count" class="tile-icon"
+             >{{TileCtrl.reference_count}}
+        </div>        
+        <div class="tile-headertxt">{{tile.name | cut:true:50:' ...'}}&nbsp;</div>
+    </div>
+    <div class="tile-main" ng-show="!TileCtrl.references || TileCtrl.reference_count !== 1">
+        <div class="tile-content small" style="margin-top: 15px;">{{tile.settings.description}}</div>
+    </div>
+    
+    <div class="tile-header" ng-show="TileCtrl.reference_count === 1"> 
+        <div class="tile-icon">
+            <span class="fa fa-globe" ng-show="!TileCtrl.references[0].favicon_url"></span>
+            <span class="provider-favicon" ng-show="TileCtrl.references[0].favicon_url">
+                <img src="{{TileCtrl.references[0].favicon_url}}" width="16" height="16" class="provider-favicon">
+            </span>
+        </div>
+        <div class="tile-headertxt">{{TileCtrl.references[0].title}}</div>
+    </div>
+    <div ng-show="TileCtrl.reference_count === 1 
+                && !(TileCtrl.references[0].media && TileCtrl.references[0].media.html)" 
+         class="tile-icon tile-icon-link" 
+         ng-click="$event.stopPropagation(); TileCtrl.openExternal(tile.settings.externalcontent[0].url);"><i class="fa fa-external-link"></i>
+    </div>
+</div>

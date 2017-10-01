@@ -1,0 +1,23 @@
+<div ng-controller="rssFullController as FullCtrl">
+
+    <div class="tile tile-full tile-{{FullCtrl.tile.colour}}">
+        <div class="corner" ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <div class="tile-close"  ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        
+
+        <div class="tile-header" title="{{FullCtrl.tile.name}}">
+            <div class="tile-full-title">{{FullCtrl.tile.name | cut:true:50:' ...'}}</div>
+        </div>
+        <ul class="rss_list">
+            <span class="badge badge-warning" ng-show="FullCtrl.tile.settings.feed.entries.length > 0">{{(FullCtrl.tile.settings.feed.entries).length}} Items</span>
+            <li ng-repeat="entry in FullCtrl.tile.settings.feed.entries ">                    
+                <h5><a ng-click="MainCtrl.openExternal(entry.link)">{{entry.title}}</a></h5>                                        
+                <p class="text-left">{{entry.contentSnippet}}</p>                    
+                <span class="small">{{entry.publishedDate}}</span>
+            </li>                
+        </ul>
+        <div class="tile-object">  <!--class="tile-emulate-object"-->
+        </div>
+        
+    </div>
+</div>

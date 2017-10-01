@@ -1,0 +1,73 @@
+<nav class="navbar navbar-default navbar-fixed-top {{MainCtrl.ltbTopbar}}">
+    <div class="navbar-header pull-left">
+        <a ng-if="!StackCtrl.inNav()" 
+           style="" >
+            <img class="ltb-logo-web" ng-src='assets/resources/ltb-logo-2016-rgb-white-notext.gif' alt="logo" />
+        </a>
+        <ul class="nav navbar-nav" 
+            ng-if="StackCtrl.inNav()">
+            <li ng-click="StackCtrl.navigate()" href="#/">
+                <i class="fa fa-arrow-left"></i>
+            </li>
+        </ul>        
+    </div>
+    <div class="items-nav-bar center">
+        <ul class="nav navbar-nav">
+            <li ng-click="StackCtrl.checkConnection()">
+                <i class="fa {{StackCtrl.getNetworkClass()}} fa-fw"></i>
+            </li>
+            <li ng-click="StackCtrl.toggleComm(true); StackCtrl.loadPreferredStack()" href="#/">
+                <i class="fa fa-home fa-fw"></i>
+            </li>
+            <li ng-show="MainCtrl.inapp" ng-click="StackCtrl.scanQR()">
+                <i class="fa fa-qrcode fa-fw "></i>
+            </li>
+            <li ng-show="!MainCtrl.inapp">
+                <i class="fa fa-qrcode fa-fw text-danger" uib-tooltip="{{'QR reader not available'|translate}}" tooltip-placement="right"></i>
+            </li>
+            <li ng-click="StackCtrl.navigate('messages')">
+                <i class="fa fa-envelope-o fa-fw"></i>
+                <span class="topbar-menu-indicator" 
+                      ng-show="StackCtrl.unread_messages_count && StackCtrl.unread_messages_count > 0"
+                >{{StackCtrl.unread_messages_count}}
+                </span>
+            </li>
+            <li ng-click="StackCtrl.toggleComm()" ng-show="StackCtrl.state.stack.settings.chat">
+                <stack-chat-indicator></stack-chat-indicator>
+            </li>
+            <li ng-click="StackCtrl.toggleFavourite()">
+                <i class="fa {{StackCtrl.getStarIcon(StackCtrl.state.stackfields)}}"></i>
+            </li>
+        </ul>
+    </div>
+    <div class="pull-right items-nav-bar">
+        <ul class="nav navbar-nav">
+            <li ng-click="StackCtrl.reloadStack()">
+                <i class="fa fa-refresh  fa-fw pull-right"></i>    
+            </li>
+            <li>
+                <div class="btn-group pullright" uib-dropdown  is-open="StackCtrl.menuOpen">
+                    <span class="dropdown-toggle" uib-dropdown-toggle>
+                      <span class="fa fa-ellipsis-v fa-fw"></span>
+                    </span>
+                    <ul uib-dropdown-menu class="dropdown-menu-right" role="menu">
+                        <li><a ng-click="StackCtrl.navigate('favourites')"><i class="fa fa-cloud fa-fw"></i> <translate>My Favourites</translate></a></li>
+                        <li><a ng-click="StackCtrl.navigate('search')"><i class="fa fa-search fa-fw"></i> <translate>Search</translate></a></li>
+                        <li><a ng-click="StackCtrl.navigate('settings')"><i class="fa fa-cog fa-fw"></i> <translate>Settings</translate></a></li>
+                        <li><a ng-click="StackCtrl.navigate('about')"><i class="fa fa-info fa-fw"></i> <translate>About</translate></a></li>
+                        <li ng-if="StackCtrl.userIsLogged" ><a ng-click="StackCtrl.logout()"><i class="fa fa-sign-out fa-fw"></i> <translate>Log Out</translate></a></li>
+                        <li ng-if="!StackCtrl.userIsLogged"><a ng-click="StackCtrl.login()"  ><i class="fa fa-sign-out fa-fw"></i> <translate>Log In</translate></a></li>
+                        
+                        
+                    </ul>
+                </div>
+                
+            </li>
+        </ul>
+        
+    </div>
+    
+    <!-- BEGIN TOP NAVIGATION MENU -->
+
+    <!-- END TOP NAVIGATION MENU -->
+</nav>

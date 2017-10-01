@@ -1,0 +1,13 @@
+<div ng-controller="defaultFullController as FullCtrl">
+    <div class="tile tile-full tile-{{FullCtrl.tile.colour}}">
+        <div class="corner" ng-show="!FullCtrl.tile.settings.htmlPreview && FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <div class="tile-close"  ng-show="!FullCtrl.tile.settings.htmlPreview && FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <div class="tile-header" title="{{FullCtrl.tile.name}}">
+            <div class="tile-full-title">{{FullCtrl.tile.name | cut:true:50:' ...'}}</div>
+        </div>
+        <div class="contentpage contenttitle" ng-show="FullCtrl.tile.settings.title"><strong>{{FullCtrl.tile.settings.title}}</strong></div>
+        <div class="contentpage" ng-if="!FullCtrl.tile.settings.htmlPreview" ng-bind-html="FullCtrl.tile.settings.htmlSafe"></div> 
+		<div class="contentpage" ng-if="FullCtrl.tile.settings.htmlPreview" ng-bind-html="FullCtrl.tile.settings.htmlPreview"></div>  
+        <div style="clear:both;"></div>
+    </div>
+</div>

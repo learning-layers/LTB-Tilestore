@@ -1,0 +1,32 @@
+{
+  "name": "LTB-Tilestore",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Learning Toolbox Tilestore",
+  "repository": "https://github.com/learning-layers/LTB-Tilestore",
+  "license": "",
+  "devDependencies": {
+    "bower": "^1.3.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-angular-gettext": "*",
+    "grunt-contrib-copy": "0.7.0",
+    "grunt-contrib-compress": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-string-replace": "*",
+    "grunt-phonegap-build": "*",
+    "grunt-prompt": "*",
+    "shelljs": "^0.2.6"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1",
+    "pretest": "npm install",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+  }
+}

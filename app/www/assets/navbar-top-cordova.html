@@ -1,0 +1,57 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header" style="width: 100%; position: absolute">
+        <!--<a  class="navbar-brand" style="color:white" href="#">Tilestore</a>-->
+        
+        <ul class="nav navbar-nav pull-left">
+            <a class="navbar-brand" ng-show="StackCtrl.hasBackScreens" ng-click="StackCtrl.goBack()" style="padding-top: 15px; padding-right: 0px" >
+                <i class="fa fa-arrow-left"></i>
+            </a>
+            <a class="navbar-brand" ng-show="StackCtrl.hasFollowingScreens" ng-click="StackCtrl.goForward()" style="padding-top: 15px; padding-right: 0px" >
+                <i class="fa fa-arrow-right"></i>
+            </a>
+            
+            <a class="navbar-brand" style="padding-top: 10px " ng-click="StackCtrl.goScreenHome()">
+                <img src="assets/resources/ltb-logo.png" width="30px" height="30px" alt="logo" class="img"/>
+            </a>
+        </ul>
+         
+        <ul class="nav navbar-nav pull-right">
+            <a class="navbar-brand" ng-show="StackCtrl.isStartScreen()" ng-click="StackCtrl.reloadStack()" style="padding-top: 15px">
+                <i class="fa fa-refresh"></i>
+            </a>
+        </ul>
+    </div>
+    <div class="navbar-header" style="width: 100%; z-index: 10;">
+    <center>
+    <ul class="nav navbar-nav topBar" >
+
+                <li class="" style="float:left">
+                    <a ng-click="StackCtrl.goScreenHome()" href="">
+                        <i class="fa fa-home"></i>
+                    </a>
+                </li>
+
+                <li class="" style="float:left">
+                    <a href="" class="dropdown-toggle">
+                        <i class="fa fa-comments-o"></i>
+                    </a>
+                </li>
+
+                <li class="" style="float:left">
+                    <a href="" class="dropdown-toggle">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                </li>
+
+                <li class="" style="float:left">
+                    <a href="search.html" class="dropdown-toggle">
+                            <i class="fa fa-search"></i>
+                    </a>
+                </li>
+    </ul> </center></div>
+    
+    <!-- BEGIN TOP NAVIGATION MENU -->
+     
+    <!-- END TOP NAVIGATION MENU -->
+</nav>
+

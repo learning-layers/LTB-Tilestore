@@ -1,0 +1,16 @@
+{
+    "app": {
+        "api_uri": "LTB_API_URI",
+        "client_url": "LTB_TS_URI",
+        "default_stack": "DDDDD",
+        "get_settings_always": false,
+        "debug": false
+    },
+    "web": {
+        "api_uri": "LTB_API_URI",
+        "client_url": "LTB_TS_URI",
+        "default_stack": "DDDDD",
+        "get_settings_always": false,
+        "debug": false
+    }
+}

@@ -1,0 +1,72 @@
+<div >  
+    <div class="row">
+        <h3 translate>My Stacks</h3>
+		<span ng-show="MainCtrl.apisettings.debug">{{MainCtrl.apisettings.api_uri}}</span>
+    </div>
+
+    <div class="row rowmason">
+        <waiting-icon label="getMyStacks"></waiting-icon>
+		<div ng-repeat="stack in mySCtrl.myStacks" 
+			 class="panel {{stack.public === '1'?'panel-success':'panel-warning'}} panelbrick frontpanel" 
+			 ng-click="mySCtrl.viewStack(stack.stack_code)">
+			<div class="panel-heading">
+				{{stack.name}}
+			</div>
+            <div class="panel-body">
+                <div class="frontpaneldetails">
+					<div class="clearfix">
+						<span class="owner pull-left small" uib-tooltip="{{'Owner'|translate}}">{{stack['user.name']}}</span>
+						<span class="pull-right fa fa-qrcode"  uib-tooltip="{{'Show QR code'|translate}}" ng-click="$event.stopPropagation(); showQR = !showQR"></span>
+						<span class="pull-right small" uib-tooltip="{{'Last updated'|translate}}">{{stack.update_ts  * 1000 | date:'d MMM yyyy'}} </span>
+					</div>
+					
+                    <div class="text-default" >{{stack.description}}</div>
+					<p class="paneltags" ng-show="stack.tags" >
+						<span class="smalltag label label-primary wordwrap" ng-repeat="tag in stack.tags">{{tag}}</span>
+					</p>
+					
+					<div ng-if="showQR">
+						<qrcode version="5" error-correction-level="M" size="120" data="{{mySCtrl.qrUrl(stack)}}" download></qrcode>
+						<a ng-href="{{mySCtrl.qrUrl(stack)}}" class="small">{{mySCtrl.qrUrl(stack)}}</a>
+					</div>
+					
+				</div>
+            </div>
+		</div>
+    </div>
+
+    <div class="row" ng-show="mySCtrl.myFavourites">
+        <h3 translate>My Favourites</h3>
+    </div>
+
+    <div class="row rowmason" style="margin-bottom: 50px">
+		<waiting-icon label="getFavouriteStacks"></waiting-icon>
+
+		<div ng-repeat="stack in mySCtrl.myFavourites | filter:{favourite:1}" 
+			 class="panel {{stack.public === '1'?'panel-success':'panel-warning'}} panelbrick frontpanel" 
+			 ng-click="mySCtrl.viewStack(stack.stack_code)">
+			<div class="panel-heading">
+				{{stack.name}}
+			</div>
+			<div class="panel-body">
+				<div class="frontpaneldetails">
+					<div class="clearfix">
+						<span class="owner pull-left small" uib-tooltip="{{'Owner'|translate}}">{{stack['user.name']}}</span>
+						<span class="pull-right fa fa-qrcode"  uib-tooltip="{{'Show QR code'|translate}}" ng-click="$event.stopPropagation(); showQR = !showQR"></span>
+						<span class="pull-right small" uib-tooltip="{{'Last updated'|translate}}">{{stack.update_ts  * 1000 | date:'d MMM yyyy'}}</span>
+					</div>
+					
+					<div class="text-default" >{{stack.description}}</div>
+					<p class="paneltags" ng-show="stack.tags">
+						<span class="smalltag label label-primary wordwrap" ng-repeat="tag in stack.tags">{{tag}}</span>
+					</p>
+					<div ng-if="showQR">
+						<qrcode version="5" error-correction-level="M" size="120" data="{{mySCtrl.qrUrl(stack)}}" download></qrcode>
+						<a ng-href="{{mySCtrl.qrUrl(stack)}}" class="small">{{mySCtrl.qrUrl(stack)}}</a>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</div>
+
+</div> 

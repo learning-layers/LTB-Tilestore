@@ -1,0 +1,21 @@
+<div ng-controller="embedFullController as FullCtrl">
+
+    <div class="tile tile-full tile-{{FullCtrl.tile.colour}}">
+        <div class="corner" ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <div class="tile-close"  ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        
+        <div class="tile-header" title="{{FullCtrl.tile.settings.title}}">
+            <div class="tile-full-title">{{FullCtrl.tile.settings.title}}</div>
+        </div>
+        
+        <div id="content" class="tile-embed {{FullCtrl.content_class}}" {{FullCtrl.content_extra}} 
+             ng-bind-html="FullCtrl.tile.settings.htmlSafe"></div>
+        
+        <div class="tile-content-full">
+            <h4>{{FullCtrl.tile.settings.title}}</h4>
+            {{FullCtrl.tile.settings.description}}
+        </div>
+        <div style="clear:both;"></div>
+        
+    </div>
+</div>

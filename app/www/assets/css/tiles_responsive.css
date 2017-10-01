@@ -1,0 +1,657 @@
+/* 
+    Created on : 15-okt-2014, 11:48:52
+    Author     : Raymond Elferink
+*/
+
+
+.tiles {
+  /* margin-right: -5%; */
+  /* padding: 5% 0 0 5%; */
+   width: auto; 
+   height: auto; 
+
+  /*height: 500px;*/
+
+  /*width: 249px;*/
+  /*overflow: scroll;*/
+  /*padding-bottom: 15px;*/
+}
+
+.tiles-home {
+    width: auto; 
+    height: auto; 
+    overflow: scroll;
+    background-color: #d84a38;
+}
+
+.tiles.tiles-black{
+    background-color: #000;
+    padding-right: 10px;
+}
+
+
+.tiles:before, .tiles:after {
+  display: table;
+  content: " ";
+}
+.tiles:after {
+  clear: both;
+}
+.tiles .tile {
+  overflow: hidden;
+  /* display: block; */
+  position: relative;
+  float: left;
+  height: 0px;
+  width: 45%;
+  padding-bottom: 45%;
+  margin: 2.5%;
+  cursor: pointer;
+  /*border: 1px solid #000000;*/
+  text-decoration: none;
+  /*color: #ffffff;*/
+  /*font-weight: 300;*/
+  font-size: small;
+  letter-spacing: 0.02em;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  /* margin-bottom: 21px; */
+  background-color: white;
+  background-position: center center;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+.tiles.tiletypes .tile {
+    /*border: 1px solid #FFFFFF;*/
+}
+.tiles.tiletypes .ui-sortable-placeholder {
+    /* FIX: do not show placeholder in tyletypes menu*/
+	display: none;
+}
+
+.tiles .tile:after, .tiles .tile:before {
+  /* content: ""; */
+  /* float: left; */
+}
+
+
+/*START TILE SIZES*/
+
+.tile.normal{
+    width: 45%;
+    padding-bottom: 45%;
+}
+
+.tile.tile-full {
+  width: 95%;
+  padding-bottom: 0px;
+  height: auto;
+}
+
+.tile-full-title {
+    width:100%; 
+    max-height:40px; 
+    word-break:break-all; 
+    overflow:hidden; 
+    white-space:normal;
+}
+
+.tile.tile-full.tile-none {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  margin: 0px;
+}
+
+.tiles .tile.flex{
+  padding-bottom: 10px;
+  /* display:  block; */
+  /* overflow: visible; */
+  height: auto;
+}
+
+.tile.double {
+    width: 95%;
+    padding-bottom: 45%;
+}
+
+.tile.tile-full.tile-none .tile.double{
+    /*width: 100%;*/
+}
+
+.tiles .tile.double-down {
+    width: 45%;
+    padding-bottom: 95%;
+}
+.tiles .tile.double-down .icontile {
+    margin-top: 60% !important;
+}
+
+/*fix to make tile clickable*/
+.tiles .tile.normal .tile-inner{
+    padding-bottom: 60%;
+}
+
+.tiles .tile.double .tile-inner{
+    padding-bottom: 30%;
+}
+
+.tiles .tile.double-down .tile-inner{
+    padding-bottom: 180%;
+}
+
+/*END TILE SIZES*/
+
+.tiles .tile:hover {
+  border-color: #aaa !important;
+}
+.tiles .tile:active, .tiles .tile.selected {
+   border-color: #ccc !important; 
+}
+.tiles .tile.selected{
+    border: 1px solid #ccc;
+}
+
+.tiles .tile:not(.selected) .corner:after{
+    content: "";
+    display: inline-block;
+    /*border-left: 40px solid transparent;*/
+    border-bottom: 40px solid transparent;
+    border-right: 40px solid #aaa;
+    position: absolute;
+    z-index: 200;
+    top: -3px;
+    right: -3px;
+}
+
+.tiles .tile.selected .corner:after,
+.tiles .tile.tile-full .corner:after{
+  content: "";
+  display: inline-block;
+  border-left: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-right: 40px solid #ccc;
+  position: absolute;
+  z-index: 200;
+  top: -3px;
+  right: -3px;
+}
+.tiles .tile.selected .check:after {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 13px;
+  content: "\f00c";
+  color: red;
+  font-weight: bold;
+  /*display: inline-block;*/
+   position: absolute; 
+  z-index: 201;
+  top: 2px;
+  right: 2px;
+}
+.tiles .tile:not(.preview) .check:after {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 13px;
+  content: "\f044";
+  /*display: inline-block;*/
+   position: absolute; 
+   z-index: 201;
+  top: 2px;
+  right: 2px;
+}
+//Added these EV, 22 jan
+.tiles .tile.selected .trash:after {
+  font-family: FontAwesome;
+  font-size: 13px;
+  content: "\f014";
+  position: absolute;  
+  z-index: 201;
+  top: 2px;
+  right: 2px;
+}
+.tiles .tile:not(.preview) .trash:after {
+  font-family: FontAwesome;
+  font-size: 13px;
+  content: "\f014";
+   position: absolute; 
+  z-index: 201; 
+  top: 2px;
+  right: 2px;
+}
+
+.tiles .tile:not(.preview) .tile-close:after {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 13px;
+  content: "\f00d";
+  /* display: inline-block; */
+  position: absolute;
+  z-index: 201;
+  top: 2px;
+  right: 2px;
+}
+.tiles .tile.icon {
+  padding: 0;
+}
+.tiles .tile.image .tile-body {
+  padding: 0 !important;
+}
+.tiles .tile.image .tile-body > img {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  max-width: 100%;
+}
+.tiles .tile.image .tile-body h3 {
+  display: inline-block;
+}
+
+.tiles .tile .tile-header {
+    position: relative;
+    width: 100%;
+    top: 0px;
+    padding: 10px 10px 15px 10px;
+    /* margin-top: 0px; */
+    /* border-bottom: 1px solid transparent; */
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    background-color: #000000;
+    border-color: #000000;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.tile-header > .tile-headertxt {
+	overflow: hidden;
+}
+
+.tiles .tile .tile-main {
+    width:  100%;
+    /* height: 100%; */
+    /* min-height: 10000px; */
+    position: relative;
+    /* overflow: hidden; */
+    height: inherit;
+    /* top: 0px; */
+    /* padding:inherit; */
+    /* padding: 30px 0px 0px 0px; */
+    /* background-color: #aaaaaa; */
+    color: #000000;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.tiles .tile .tile-main .tile-background {
+    position: absolute;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 0;
+}
+
+.tiles .tile .tile-content-full{
+    position: relative;
+    padding: 2px;
+}
+
+.tiles .tile .tile-content {
+    height: 100%;
+    /* overflow: hidden; */
+    width: 100%;
+    /*position: absolute;*/
+    /* top: 67.5%; */
+    padding: 2px;
+}
+
+.tiles .tile .tile-content.small{
+     line-height: 100%;
+}
+
+.tile-content img,
+.tile-content-full img,
+.tile .contentpage img{
+    max-width: 100%;
+}
+
+
+.tiles .tile .tile-body {
+  /* height: 100%; */
+  /* margin-top: 17px; */
+  vertical-align: top;
+  padding: 10px 10px;
+  overflow: hidden;
+  /* position: absolute; */
+  font-weight: 400;
+  font-size: 12px;
+  color: #000000;
+  /*color: #ffffff;*/
+  margin-bottom: 10px;
+}
+.tiles .tile .tile-body p {
+  font-weight: 400;
+  font-size: 13px;
+  color: #000000;
+  color: #ffffff;
+  line-height: 20px;
+  overflow: hidden;
+}
+.tiles .tile .tile-body p:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+.tiles .tile .tile-body p:active {
+  color: rgba(0, 0, 0, 0.4);
+}
+.tiles .tile .tile-body p:hover {
+  color: #ffffff;
+}
+.tiles .tile .tile-body img {
+  float: left;
+  margin-right: 10px;
+}
+.tiles .tile .tile-body img.pull-right {
+  float: right !important;
+  margin-left: 10px;
+  margin-right: 0px;
+}
+
+.tiles .tile-full .title{
+    padding: 5px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tiles .tile .tile-body > .content {
+  display: inline-block;
+}
+
+.tiles .tile .contentpage {
+  padding: 5px;
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+}
+
+.contenttitle {
+	width: 100%;
+}
+
+.tiles .tile .tile-body > i {
+  /*margin-top: 17px;*/
+  /* display: block; */
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.tiles.tiletypes .tile .tile-body > i {
+  /*margin-top: 12px;*/
+  /* display: block; */
+  font-size: 45px;
+  line-height: 45px;
+  text-align: center;
+}
+.tiles .tile .tile-body h1,
+.tiles .tile .tile-body h2,
+.tiles .tile .tile-body h3,
+.tiles .tile .tile-body h4,
+.tiles .tile .tile-body h5,
+.tiles .tile .tile-body h6,
+.tiles .tile .tile-body p {
+  padding: 0;
+  margin: 0;
+  line-height: 14px;
+}
+.tiles .tile .tile-body h1:hover,
+.tiles .tile .tile-body h2:hover,
+.tiles .tile .tile-body h3:hover,
+.tiles .tile .tile-body h4:hover,
+.tiles .tile .tile-body h5:hover,
+.tiles .tile .tile-body h6:hover,
+.tiles .tile .tile-body p:hover {
+  color: #ffffff;
+}
+.tiles .tile .tile-body h3,
+.tiles .tile .tile-body h4 {
+  margin-bottom: 5px;
+}
+.tiles .tile .tile-object {
+  /* display: inline-block; */
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 30px;
+  background-color: transparent;*zoom:1;
+}
+.tiles .tile .tile-object:before, .tiles .tile .tile-object:after {
+  display: table;
+  content: "";
+}
+.tiles .tile .tile-object:after {
+  clear: both;
+}
+.tiles .tile .tile-object > .name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 15px;
+  font-weight: 400;
+  font-size: 13px;
+  color: #ffffff;
+}
+.tiles .tile .tile-object > .name > i {
+  vertical-align: middle;
+  display: block;
+  font-size: 24px;
+  height: 18px;
+  width: 24px;
+}
+.tiles .tile .tile-object > .number {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 0;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  line-height: 14px;
+  margin-bottom: 8px;
+  margin-right: 10px;
+}
+
+.tiles .tile .tile-bRody > .number {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 0;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  line-height: 14px;
+  margin-bottom: 8px;
+  margin-right: 10px;
+}
+
+#scrollArea {
+    height: 100%;
+    width: 110%;
+    position: relative;
+    /*    overflow: visible;
+    overflow-x: hidden;*/
+}
+
+#scrollAreaHidden {
+    position: absolute;
+    width: 100%;
+    padding-right: 25px;
+    padding-bottom: 60px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    /* right: -17px; *//* Increase this value (in negative) for cross-browser compatibility */
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.tileContent {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#bottom {
+  display: block;
+  margin-top: 2000px;
+}
+
+.boxtstackTags {
+    display:box;
+    height: 53px;
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-orient:horizontal;
+     /* Safari, Opera, and Chrome */
+    display:-webkit-box;
+    -webkit-box-orient:horizontal;
+    /* W3C */
+    display:box;
+    box-orient:horizontal;
+}
+
+.boxtstackTags .column1 {
+    -moz-box-flex:1.0; /* Firefox */
+    -webkit-box-flex:1.0; /* Safari and Chrome */
+    -ms-flex:1.0; /* Internet Explorer 10 */
+    box-flex:1.0;
+}
+
+.boxtstackTags .column2 {
+    -moz-box-flex:1.0;/* Firefox */
+    -webkit-box-flex:1.0;/* Safari and Chrome */
+    -ms-flex:1.0;/* Internet Explorer 10 */
+    box-flex:1.0;
+    word-break: break-word;
+    overflow: hidden;
+    width: 80%;
+}
+
+.tile-icon{
+    position: absolute;
+    z-index: 100;
+    bottom: -15px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    line-height: 26px !important;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 12px !important;
+    /*padding: 8px 10px;*/
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    -moz-box-shadow: 0px 0px 5px #000;
+    -webkit-box-shadow: 0px 0px 5px #000;
+    box-shadow: 0px 0px 5px #000;
+}
+
+/*COLOURED TILES*/
+
+
+.tile-black {
+  border-color: #000 !important;
+}
+
+.tile-black .tile-header{
+  background-color: #000 !important;
+  /*border-color: #000 !important;*/
+  color: #FFFFFF !important;
+}
+
+.tile-black a{
+    color: #000000;
+}
+
+.tile-blue {
+  border-color: #3A3AD8 !important;
+}
+
+.tile-blue .tile-header{
+  background-color: #3A3AD8 !important;
+  /*border-color: #3A3AD8 !important;*/
+  color: #FFFFFF !important;
+}
+
+.tile-blue a{
+    color: #3A3AD8;
+}
+
+.tile-red {
+  border-color: #d84a38 !important;
+}
+
+.tile-red .tile-header{
+  background-color: #d84a38 !important;
+  /*border-color: #d84a38 !important;*/
+  color: #FFFFFF !important;
+}
+
+.tile-red a{
+    color: #d84a38;
+}
+
+.tile-purple {
+    border-color: #8e44ad !important;
+}
+
+.tile-purple .tile-header{
+  background-color: #8e44ad !important;
+  /*border-color: #8e44ad !important;*/
+  color: #FFFFFF !important;
+}
+
+.tile-purple a{
+    color: #8e44ad;
+}
+
+.tile-green {
+  border-color: #119126 !important;
+}
+
+.tile-green .tile-header{
+  background-color: #119126 !important;
+  /*border-color: #119126 !important;*/
+  color: #FFFFFF !important;
+}
+
+.tile-green a{
+    color: #119126;
+}
+
+.tile-orange {
+  border-color: orange !important;
+}
+
+.tile-orange .tile-header{
+  background-color: orange !important;
+  /*border-color: orange !important;*/
+  color: #FFFFFF !important;
+}
+
+.tile-orange a{
+    color: orange;
+}

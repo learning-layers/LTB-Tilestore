@@ -1,0 +1,46 @@
+<div>    
+    <div class="form-group">
+        <label class="control-label" translate>Tile size</label>
+		<select class="form-control" ng-model="tileTCtrl.selectedTile.size" 
+				ng-options="size.value as size.name for size in tileTCtrl.getSizes()" 
+				id="sizeTile" ><option value="" translate>[Choose a Size]</option>
+		</select>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label" translate>Tile colour</label>
+        <select class="form-control" ng-model="tileTCtrl.selectedTile.colour" 
+            ng-options="colour.value as colour.name for colour in tileTCtrl.getColours()" 
+            id="colorTile" ><option value="" translate>[Choose a Colour]</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label" translate>Show Tile on Screen</label>
+        <select class="form-control" ng-model="StackCtrl.screen_id"
+            ng-options="screen.id as screen.name for screen in StackCtrl.state.stack.screens"
+            ng-change="StackCtrl.changeTileScreen()" >
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label" translate>Tile background</label>
+        <input type="text" ng-model="tileTCtrl.selectedTile.image_url" class="form-control"> 
+    </div>
+    
+    <div ng-show="false" class="form-group">
+        <label class="control-label" translate>Icon</label>
+        <select class="form-control" ng-model="tileTCtrl.selectedTile.icon" 
+            ng-options="icon.value as icon.name for icon in tileTCtrl.iconsAvailable" 
+           >
+        </select>
+    </div>
+    
+    <div class="form-group" ng-show="false && tileTCtrl.screens">
+        <label class="control-label" translate>Tile on screen</label>
+        <select class="form-control" ng-model="tileTCtrl.selectedTile.screen" 
+            ng-options="screen.value as screen.name for screen in tileTCtrl.screens" 
+            >
+        </select> 
+    </div>
+</div>

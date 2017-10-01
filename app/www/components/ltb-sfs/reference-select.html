@@ -1,0 +1,21 @@
+
+<h1>SFS</h1>
+<div class="row">
+    <div class="col-sm-4">
+        <ul class="list-group">
+          <li class="list-group-item {{sfsCtrl.active_label === label ? 'active' : ''}}" 
+              ng-repeat="label in sfsCtrl.labels" 
+              ng-click="sfsCtrl.makeActive(label)">
+            <span class="badge">{{sfsCtrl.countRefs(label)}}</span>
+            {{label}}
+          </li>
+        </ul>
+    </div>
+    <div class="col-sm-8" ng-show="sfsCtrl.active_label">
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="ref in sfsCtrl.references | filter: sfsCtrl.filter_object" ng-click="sfsCtrl.showReference(ref);">
+           {{ref.name}}
+          </li>
+        </ul>
+    </div>
+</div>

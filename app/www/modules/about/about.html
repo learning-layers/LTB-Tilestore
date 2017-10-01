@@ -1,0 +1,25 @@
+<div class='ltb-app-page'>
+    <h3 translate>About Learning Toolbox</h3>
+
+    <p ng-show="MainCtrl.version" ng-click="moreinfo = !moreinfo">
+    <translate>Version</translate>: {{MainCtrl.version}}
+    </p>
+    <p ng-show="moreinfo && StackCtrl.next_refresh">
+        <translate>Next token refresh:</translate> {{StackCtrl.next_refresh | date:'d MMM yyyy HH:mm:ss'}}
+    </p>
+    <div>
+        <p translate>The Learning Toolbox is a fully customisable application for people involved in work related learning that facilitates, supports and enables mobile and context based learning.</p>
+        <h4 translate>The Learning Toolbox Team</h4>
+        <ul>
+            <li>Raymond Elferink (RayCom)</li>
+            <li>Edwin Veenendaal (RayCom)</li>
+            <li>Pieter Rozendaal (RayCom)</li>
+            <li>Gilbert Peffer (CIMNE)</li>
+            <li>Andy Tarraco (CIMNE)</li>
+            <li>Graham Attwell (Pontydysgu)</li>
+        </ul>
+    </div>
+        
+    
+    
+</div>

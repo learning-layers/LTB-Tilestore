@@ -1,0 +1,262 @@
+body{
+    height:100%;
+    min-height:100%;
+    position:relative;
+    background-color: #000 !important;
+}
+
+img.ltb-logo-web{
+    position: absolute;
+    height: 94%;
+    top: 3%;
+    left: -10px;
+}
+
+.ltb-topbar, .ltb-topbar.ltb-topbar-ios img.ltb-logo-web{
+    padding-top: 15px; 
+    position: absolute;
+    height: 94%;
+    top: 3%;
+    left: -10px;
+}
+
+alerts{
+    top: auto;
+}
+
+.topbar-menu-indicator{
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    top:1.5rem; /*used to be 6 rem for bottom*/
+    left: 1.5rem; /* used to be right:1.5rem */
+    line-height: 2rem !important;
+    background-color: #ffffff;
+    color: #2c3e50;
+    font-size: 1rem !important;
+    vertical-align:baseline;
+    text-align: center;
+    display: inline-block;
+    -moz-border-radius: 4rem;
+    -webkit-border-radius: 4rem;
+    border-radius: 50%;
+    border: 1px solid #666; /* used to be left red*/;
+}
+
+
+.ltb-app-page{
+/*    display: block;
+    height:100%; 
+    min-height:100%; 
+    position: absolute; 
+    background-color: #FFFFFF;
+    left: 0px;
+    color: #000000;
+  */margin:  10px;padding: 2%;background-color: #FFFFFF;}
+
+.ltb-topbar{
+    text-align: center;
+    height: 50px;
+    min-height: 50px !important;
+}
+
+.ltb-topbar.ltb-topbar-ios{
+    padding-top: 20px;
+    text-align: center;
+    height: 70px;
+    min-height: 50px !important;
+}
+
+.ltb-topbar .navbar-collapse.collapse {
+    display: block!important;   /* override bootstrap collapse */
+}
+
+.ltb-topbar .navbar-nav>li, .navbar-nav {
+    float: left !important;     /* override bootstrap collapse */
+    margin: 0px !important;     /* override bootstrap collapse */
+}
+
+.ltb-topbar .center{
+    display: inline-block;
+    float: none;
+}
+
+.ltb-topbar .navbar-brand{
+    padding: 10px;
+}
+
+.ltb-topbar .navbar-brand img{
+    width: 30px;
+    height: 30px;
+}
+
+.ltb-topbar li{
+    padding: 15px 10px;
+}
+
+
+.ltb-topbar ul.navbar-nav .fa{
+    font-size: 20px;
+}
+
+.ltb-topbar ul.dropdown-menu{
+    position: absolute !important;/* override bootstrap collapse */
+    background-color: #FFFFFF !important; /* override bootstrap collapse */
+    margin-top: 5px;
+    font-size: 20px;
+    /*padding-right: 15px;*/
+}
+
+.ltb-topbar ul.dropdown-menu li a{
+    padding: 0px;
+    color: #000 !important;/* override bootstrap collapse */
+    padding: 15px 25px 15px 10px;
+}
+
+.ltb-topbar ul.dropdown-menu li a:hover,
+.ltb-topbar ul.dropdown-menu li a:hover i{
+    color: #ffffff !important;/* override bootstrap collapse */
+    background-color: #2c3e50 !important;/* override bootstrap collapse */
+}
+
+.ltb-topbar ul.dropdown-menu li i{
+    color: #000 !important;/* override bootstrap collapse */
+}
+
+.ltb-container{
+    /* background-color: black; */
+    z-index:1;
+    padding-top: 50px;
+}
+
+.ltb-container.ltb-container-ios{
+    background-color: black; 
+    z-index:1;
+    padding-top: 60px;
+}
+
+#scrollArea{
+    width: 100%;
+}
+
+.navbar-default li i{
+    color: #FFFFFF;
+}
+.navbar-default .dropdown-toggle{
+    color: #FFFFFF;
+}
+
+
+@media (max-width: 350px) {
+    /* 2 tiles */
+    .ltb-topbar li{
+        padding: 15px 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .small-editor .ta-editor{
+        height: 100px !important;
+        min-height: 100px !important;
+    }
+    
+    /* 2 tiles */
+    .ltb-topbar li{
+        padding: 15px 5px;
+    }
+}
+@media (min-width: 600px) and (max-width: 768px) {
+    .small-editor .ta-editor{
+        height: 150px !important;
+        min-height: 150px !important;
+    }
+    
+    /* 3 tiles */
+    .tile.normal{
+        width: 30% !important;
+        padding-bottom: 30% !important;
+        margin: 1.66% !important;
+    }
+    .tile.double {
+        width: 63.33% !important;
+        padding-bottom: 30% !important;
+        margin: 1.66% !important;
+    }
+    .tile.double-down {
+        width: 30% !important;
+        padding-bottom: 63.33% !important;
+        margin: 1.66% !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+    /* 4 tiles */
+    .container {
+        /* margin-left: 0px !important; */
+        /* margin-right: 0px !important; */
+    }
+    
+    .tile.normal{
+        width: 22.5% !important;
+        padding-bottom: 22.5% !important;
+        margin: 1.25%;
+        border-width: 2px;
+        /*border: 2px solid #000000;*/
+    }
+    .tile.double {
+        width: 47.5% !important;
+        padding-bottom: 22.5% !important;
+        margin: 1.25%;
+        border-width: 2px;
+        font-size: large;
+    }
+    .tile.double-down {
+        width: 22.5% !important;
+        padding-bottom: 47.5% !important;
+        margin: 1.25%;
+        border-width: 2px;
+        font-size: large;
+    }
+}
+@media (min-width: 1000px) {
+    /* 6 tiles */
+    .container {
+        /* margin-left: 0px !important; */
+        /* margin-right: 0px !important; */
+    }
+    .tile.normal{
+        width: 15% !important;
+        padding-bottom: 15% !important;
+        margin: 0.83%;
+        border-width: 2px;
+        /* font-size: large; */
+    }
+    .tile.double {
+        width: 31.66% !important;
+        padding-bottom: 15% !important;
+        margin: 0.83%;
+        border-width: 2px;
+    }
+    .tile.double-down {
+        width: 15% !important;
+        padding-bottom: 31.66% !important;
+        margin: 0.83%;
+        border-width: 2px;
+    }
+    .ltb-container, .ltb-container.ltb-container-ios{                 padding-top: 100px;}
+    .ltb-topbar, .ltb-topbar.ltb-topbar-ios{ height: 100px;      min-height: 100px !important;}
+    .ltb-topbar .navbar-brand img{  width: 60px;        height: 60px;}
+    .ltb-topbar .navbar-brand{      padding: 20px;}
+    .ltb-topbar ul.navbar-nav .fa{      font-size: 40px;}
+    .ltb-topbar li{padding: 30px 15px;}
+    .ltb-topbar ul.dropdown-menu .fa{      font-size: inherit;}
+    .ltb-topbar ul.dropdown-menu li{padding: 0px;}
+     img.ltb-logo-web{    left: -16px;}
+}
+
+.tile .corner,
+.tile .check,
+.tile .trash
+{
+    display: none;
+}

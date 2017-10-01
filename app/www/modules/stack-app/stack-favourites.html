@@ -1,0 +1,31 @@
+<div class='ltb-app-page' style="margin:10px;">
+    <h3 ><span class="fa fa-cog pull-right" ng-click="favStackCtrl.manage = !favStackCtrl.manage"
+               title="{{'Select favourites you want to delete'|translate}}"></span><translate>My Favourites</translate>
+    </h3>
+    
+    <div class="form-group">
+        <label class="control-label" translate>Favourites</label>
+            <waiting-condition-icon-inline 
+                waitingcondition="favStackCtrl.loading.getFavourites || favStackCtrl.loading.deleteFavouriteStack || favStackCtrl.loading.setFavouriteStack"
+                waitingclass="fa fa-spinner fa-pulse fa-3x">
+            </waiting-condition-icon-inline>
+        <ul class="list-group" >
+            <li class="list-group-item" 
+                ng-repeat="fav_stack in favStackCtrl.favourites | orderBy:'name'"
+            >
+                <span ng-click="favStackCtrl.selectStack(fav_stack)">{{fav_stack.name ? fav_stack.name : 'Without Title'}}</span><!-- translate -->
+                
+                <span class='fa fa-minus-circle pull-right' 
+                      ng-show="favStackCtrl.manage && !fav_stack.anonymous_favourite"
+                      ng-click="favStackCtrl.removeFromFavourites(fav_stack)" 
+                      title="{{'Remove from favourites'|translate}}">
+                </span>
+                <span class='fa fa-plus-circle pull-right' 
+                      ng-show="fav_stack.anonymous_favourite"
+                      ng-click="favStackCtrl.addToFavourites(fav_stack)" 
+                      title="{{'Add to favourites'|translate}}">
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>

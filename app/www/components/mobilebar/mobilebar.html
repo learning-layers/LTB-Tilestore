@@ -1,0 +1,12 @@
+<uib-alert type="info" 
+           ng-show="mobCtrl.showappalert" 
+           style="vertical-align: middle;"
+           close="mobCtrl.showappalert = false;">
+    <div style="display:block">
+        <i class="fa {{mobCtrl.alerticon}} fa-2x text-primary" style="vertical-align: middle"></i>
+        <span ng-click="mobCtrl.goApp(stackid_route)" 
+              style="padding-left: 10px; vertical-align: middle;">
+            {{mobCtrl.alertmsg}}
+        </span>
+    </div>
+</uib-alert>

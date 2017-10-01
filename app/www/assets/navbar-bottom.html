@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="navbar-footer">
+        <!--
+        <a class="navbar-brand" href="#">&copy; {{constants.company_name}} {{constants.copyright_year}}</a>
+        -->
+        <button type="button" class="navbar-toggle" 
+                ng-init="navCollapsedFooter = true"
+                ng-click="navCollapsedFooter = !navCollapsedFooter"
+                data-toggle="footercollapse" data-target="#footer-nav">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+
+    <div uib-collapse="navCollapsedFooter" id="footer-nav" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="#/about" translate>About</a></li>
+            <li><a href="#/contact" translate>Contact</a></li>
+            <li ng-show="MainCtrl.current_role.admin"><a href="#/admin" translate>Administration</a></li>
+            <li ng-show="MainCtrl.current_role.eval"><a href="#/eval" translate>Evaluation</a></li>
+        </ul>
+        <language_menu></language_menu>
+    </div>
+</nav>

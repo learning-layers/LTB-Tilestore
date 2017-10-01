@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tilestore</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Preventing favicon load -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+    
+    <!--various icons and favicons-->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicons/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="favicons/manifest.json">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!--end icons and favicons-->
+    
+    <link rel="stylesheet" type="text/css" href="www/assets/css/bootstrap.min.css?v=20160617172822">
+    <link rel="stylesheet" type="text/css" href="www/bower_components/ng-tags-input/ng-tags-input.min.css?v=20160617172822">
+    <link rel="stylesheet" type="text/css" href="www/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css?v=20160617172822">
+    <link rel="stylesheet" type="text/css" href="www/assets/css/app.css?v=20160617172822">  
+    <link rel="stylesheet" type="text/css" href="www/assets/css/tiles_responsive.css?v=20160617172822">
+    <link rel="stylesheet" type="text/css" href="www/assets/css/menu.css?v=20160617172822">
+    <link rel="stylesheet" type="text/css" href="www/assets/css/style.css?v=20160617172822"/>
+    <link rel="stylesheet" type="text/css" href="www/bower_components/fontawesome/css/font-awesome.min.css?v=20160617172822">
+    <link rel='stylesheet' type="text/css" href="www/bower_components/textAngular/src/textAngular.css?v=20160617172822">
+    <link rel="stylesheet" type="text/css" href="www/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css?v=20160617172822" />
+    <link rel="stylesheet" type="text/css" href="www/components/ltb-sfs/ltb-sfs.css?v=20160617172822">   
+    
+    <script type="text/javascript">
+        var version = '0.02.51';
+        var deploy_date = '2016-06-17 17:28:22';
+        var versionScript = "20160617172822";
+        var versionApp = ' ' + version + ' (' + deploy_date + ')';
+        var is_app = false; //are we in app or web mode?
+        var path_root = "www/";
+        var in_app = false; //are we in phonegap?
+    </script>
+        
+    <script type="text/javascript" src="www/components/tile-types/tile-types-css.js?v=20160617172822"></script>
+    
+    <!-- Javascript functions -->
+    <script type="text/javascript" src="www/js/utilities.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/modernizr/modernizr.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/jquery/dist/jquery.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/jquery-ui/jquery-ui.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/angular/angular.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/angular-resource/angular-resource.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/angular-route/angular-route.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/ngCordova/dist/ng-cordova.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/ng-tags-input/ng-tags-input.js?v=20160617172822"></script>
+    
+    
+    <script type="text/javascript" src="www/bower_components/moment/moment.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/bower-qrcode-generator/js/qrcode.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/bower-qrcode-generator/js/qrcode_UTF8.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/angular-qrcode/angular-qrcode.js?v=20160617172822"></script>
+        
+    <!-- for the ng-video plugin-->
+    <link   type="text/css" rel="stylesheet" href="www/bower_components/ng-media/css/video.css">
+    <script type="text/javascript" src="www/bower_components/ng-media/src/video.js"></script>
+    
+    <script type="text/javascript" src="www/bower_components/angular-audio/app/angular.audio.js"></script>
+    <script type="text/javascript" src="www/js/app_web.js?v=20160617172822"></script>
+    
+    <!-- For touch events on the screen, using HammerJs and ryanmullins wrapper -->
+    <script type="text/javascript" src="www/bower_components/hammerjs/hammer.js"></script>
+    <script type="text/javascript" src="www/bower_components/ryanmullins-angular-hammer/angular.hammer.js"></script>
+	
+</head>
+<body>
+    <!-- bootstrap navbar -->
+    <div ng-include="MainCtrl.pathRoot+'assets/navbar-top-web.html'"></div>
+    
+    <!-- ng routes hook -->
+    <div class="container" style="padding-top: 90px; padding-bottom: 90px;">
+        <alerts></alerts>
+        <div ng-view></div>
+    </div>
+    <!-- footer -->
+    <div ng-include="'www/assets/navbar-bottom.html'"></div>
+         
+    <script type="text/javascript" src="www/bower_components/ngstorage/ngStorage.js?v=20160617172822"></script>
+    
+    <!-- Necessary for oauth-ng and encryption -->
+    <script type="text/javascript" src="www/bower_components/cryptojslib/rollups/aes.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/oauth-ng/dist/oauth-ng.js?v=20160617172822"></script>
+    
+    <script type="text/javascript" src="www/bower_components/angular-gettext/dist/angular-gettext.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/angular-ui-sortable/sortable.min.js?v=20160617172822"></script>
+    
+    <script type="text/javascript" src="www/bower_components/textAngular/dist/textAngular-rangy.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/textAngular/dist/textAngular-sanitize.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/textAngular/dist/textAngular.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/re-tree/re-tree.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/bower_components/ng-device-detector/ng-device-detector.min.js?v=20160617172822"></script>
+   
+    <script type="text/javascript" src="www/bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+    
+    
+    <script type="text/javascript" src="www/modules/store/store.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/modules/stack/stack.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/modules/stack/stack_show.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/modules/stack/stacks_my.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/modules/messages/messagesList.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/modules/messages/management-messages.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/modules/admin/admin.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/modules/help/help.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/components/ltb-api/ltb-api.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/components/ltb-sfs/ltb-sfs.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/components/ltb-sfs/ltb-sfs-unsplash.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/components/tools/tools.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/components/tile-types/tile-types.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/components/mobilebar/mobilebar.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/components/filters/filters.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/components/version/version.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/components/version/version-directive.js?v=20160617172822"></script>
+    <script type="text/javascript" src="www/components/version/interpolate-filter.js?v=20160617172822"></script>
+
+</body>
+</html>

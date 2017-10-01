@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="btn-group pull-right">
+       <button class="btn btn-success"  type="button"
+               ng-click="MngMessgCtrl.newMessage()"><span class="fa fa-plus"></span>&nbsp; <translate>New Message</translate></button>
+
+        <button class="btn btn-default"  type="button"
+                ng-click="MngMessgCtrl.closeMessageEditor()" translate>Close Editor</button>
+    </div>
+    <h4><translate>Messages of</translate> {{MngMessgCtrl.state.stackfields.name}}</h4>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="panel panel-primary" style="height:600px">
+            <div class="panel-heading">
+                <h3 class="panel-title" id="panel-title"><translate>Messages</translate><a class="anchorjs-link"
+                    href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+            </div>
+            <div class="list-group">
+                <a class="list-group-item" 
+                   ng-repeat="message in MngMessgCtrl.state.messages['stack']"
+                   ng-click="MngMessgCtrl.selectMessage(message, $index)">{{message.subject}}
+					<span class="badge pull-right" title="{{'number of readers'|translate}}">{{message.nr_read}}</span>
+				</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6" ng-show="MngMessgCtrl.message && MngMessgCtrl.message.mess_type">
+        <div class="form-group">
+            <label class="control-label" translate>Subject</label>
+            <input type="text" placeholder="{{'Subject'|translate}}" ng-model="MngMessgCtrl.message.subject" class="form-control" />
+        </div>
+        <div class="form-group">
+            <text-angular placeholder="{{'Message content'|translate}}" 
+                ta-toolbar="[['undo','redo'],['bold','italics','underline','ul','ol']]" 
+                ta-toolbar-button-class="btn btn-default"
+                ng-model="MngMessgCtrl.message.content"></text-angular>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate>Publish from</label>
+            <div class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="MngMessgCtrl.message.start" is-open="message_start_opened" min-date="minDate" max-date="" datepicker-options="{formatYear: 'yy',startingDay: 1}"  ng-required="true" close-text="{{'Close'|translate}}" />
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="MngMessgCtrl.setOpenCondition($event, 'message_start_opened')"><span class="glyphicon glyphicon-calendar"></span></button>
+                </span>
+            </div>
+            <label class="control-label" translate translate-comment="Published from [date] to [date]">to</label>
+            <div class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="MngMessgCtrl.message.end" is-open="message_end_opened" min-date="MngMessgCtrl.message.start" max-date="" datepicker-options="{formatYear: 'yy',startingDay: 1}"  ng-required="true" close-text="{{'Close'|translate}}" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="MngMessgCtrl.setOpenCondition($event, 'message_end_opened')"><span class="glyphicon glyphicon-calendar"></span>
+                    <span class="halflings halflings-glyph-calendar"></span></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-primary" type="button" ng-disabled="!MngMessgCtrl.MessageValidation()" ng-click="MngMessgCtrl.saveMessage(1)" translate>Save and New</button>
+            <button class="btn btn-primary" type="button" ng-disabled="!MngMessgCtrl.MessageValidation()" ng-click="MngMessgCtrl.saveMessage(0)" translate>Save and Close</button>
+            <button class="btn btn-warning" type="button"  ng-click="MngMessgCtrl.cancelMessage()" translate>Cancel</button>
+            <button class="btn btn-danger" type="button" ng-show="MngMessgCtrl.message.mess_code" ng-click="MngMessgCtrl.deleteMessage()" translate>Delete</button>
+        </div>
+    </div>
+
+    <div class="col-md-3" ng-show="MngMessgCtrl.message && MngMessgCtrl.message.mess_type">
+        <div class="panel panel-primary" style="height:600px">
+            <div class="panel-heading">
+                <h3 class="panel-title" id="panel-title"><translate>Preview</translate><a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+            </div>
+            <div class="panel-body">
+                 <div class="modal-header">
+                    <h3 class="modal-title">
+                        {{MngMessgCtrl.message.subject}}
+                    </h3>
+                </div>
+                <div class="modal-body" ng-bind-html="MngMessgCtrl.message.content"></div>
+            </div>
+        </div>
+    </div>
+</div>

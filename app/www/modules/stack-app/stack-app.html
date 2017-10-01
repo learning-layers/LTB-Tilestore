@@ -1,0 +1,17 @@
+<h4 ng-show="StackCtrl.state.stackfields.name" 
+    class="stack-title"
+>{{StackCtrl.state.stackfields.name}}</h4>
+
+<div class="container" ng-show="!StackCtrl.commOpen">
+    <div style="height:100%;" id="fake" class="fake">
+        <waiting-icon label="getStack" style="text-align: center; margin-top: 50px; color: #FFFFFF"></waiting-icon>
+
+        <div ng-hide="StackCtrl.loading.getStack">
+             <stack-app-player></stack-app-player>
+        </div>
+    </div>
+</div>
+
+<div class="container" ng-show="StackCtrl.commOpen">
+    <stack-chat-room class="chat-room" room="StackCtrl.state.stackid" username="StackCtrl.profile.name" userid="StackCtrl.profile.user_code"></stack-chat-room>
+</div>

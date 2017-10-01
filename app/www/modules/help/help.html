@@ -1,0 +1,9 @@
+<div class='ltb-app-page'>
+    <h3 translate>How to use Learning Toolbox</h3>
+    <p translate>More information on how to use the tool is coming up.</p>
+    <p><translate>In case you encounter unexpected behaviour, we may be able to help you better if you switch on debugging mode. Ask for the code to be able to switch it on</translate>
+    <button class="btn-default" ng-show="HelpCtrl.debugging_on" ng-click="HelpCtrl.stopDebugSession()" translate>Stop Recording Session</button>
+    <span ng-show="!HelpCtrl.debugging_on" ><button class="btn-primary" ng-click="HelpCtrl.startDebugSession()" translate>Start Recording Session</button> <translate> with verification</translate>: 
+        <input type="input" class="form-control inline long" placeholder="{{'Fill in your verification code'| translate}}" ng-model="HelpCtrl.verify_code" /></span>
+    </p>
+</div>

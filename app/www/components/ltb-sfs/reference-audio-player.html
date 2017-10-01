@@ -1,0 +1,18 @@
+<div ng-show="show">
+    <div>
+        <p></p>
+        <div class="row">
+            <div class="col-xs-4">0</div>
+            <div class="col-xs-4" style="text-align: center">{{audio.currentTime | trackTime}} </div>
+            <div class="col-xs-4" style="text-align: right" ng-show="audio.duration">{{audio.duration | trackTime}}</div>
+        </div>
+        <div class="progress" ng-click="skipTo($event)">
+            <div class="progress-bar-static bg-primary" ng-style="progressStyle();"></div>
+        </div>
+        <div class="btn-group">
+            <button class='btn btn-primary' ng-click='audio.paused ? audio.play() : audio.pause()'><i class="fa {{audio.paused ? 'fa-play' : 'fa-pause' }}"></i></button>
+            <button class='btn btn-danger' ng-click='stop()'><i class="fa fa-stop"></i></button>
+            <button class='btn btn-neutral' ng-click='openExternal(path)'><i class="fa fa-download"></i></button>
+        </div>
+    </div>
+</div>

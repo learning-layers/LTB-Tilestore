@@ -1,0 +1,38 @@
+{
+    "env" : "",
+    "app": {
+        "api_uri": "https://api.ltb.io/",
+        "client_url": "http://localhost:8383/LTB-Tilestore-App/app/",
+        "default_stack": "CJZHU",
+        "get_settings_always": true,
+        "debug": false
+    },
+    "web": {
+        "api_uri": "https://api.ltb.io/",
+        "client_url": "https://my.ltb.io/",
+        "default_stack": "CJZHU",
+        "get_settings_always": true,
+        "debug": false
+    },
+    "locallive": {
+        "api_uri": "https://api.ltb.io/",
+        "client_url": "http://localhost:8383/LTB-Tilestore-App/app/",
+        "default_stack": "CJZHU",
+        "get_settings_always": false,
+        "debug": true
+    },
+    "localdev": {
+        "api_uri": "http://devapi.ltb.io/",
+        "client_url": "http://localhost:8383/LTB-Tilestore-App/app/",
+        "default_stack": "CXWEE",
+        "get_settings_always": false,
+        "debug": true
+    },
+    "local": {
+        "api_uri": "http://localhost/LTB-API/public/",
+        "client_url": "http://localhost:8383/LTB-Tilestore-App/app/",
+        "default_stack": "DDDDD",
+        "get_settings_always": false,
+        "debug": true
+    }    
+}

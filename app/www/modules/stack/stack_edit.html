@@ -1,0 +1,211 @@
+<div>
+    <div class="btn-group pull-right">
+        <button class="btn btn-default" type="button" 
+                ng-click="StackCtrl.previewStack()"><span class="fa fa-eye"></span>&nbsp; <translate>Preview</translate></button>
+        <button class="btn btn-success" type="button"
+                ng-click="StackCtrl.saveStack()"><span class="fa fa-th-large"></span> <translate>Save Stack</translate></button>
+        <button class="btn btn-danger" type="button"
+                ng-show="StackCtrl.state.stackid"
+                ng-click="StackCtrl.deleteStack()"><span class="fa fa-trash-o"></span> <translate>Delete Stack</translate></button>
+
+        <button class="btn btn-default" type="button"
+                ng-click="StackCtrl.closeEditor()"><translate>Close Editor</translate></button>
+        <button class="btn btn-default" type="button" ng-show="StackCtrl.apisettings.debug"
+                ng-click="StackCtrl.showStatus()"><translate>Stack status</translate></button>
+    </div>
+
+    <h4>
+        <waiting-condition-icon-inline
+            class="text-warning" 
+            waitingcondition="StackCtrl.loading.saveStack || StackCtrl.loading.deleteStack">
+        </waiting-condition-icon-inline>
+        <i ng-show="!(StackCtrl.loading.saveStack || StackCtrl.loading.deleteStack) && StackCtrl.hasChanges(1)"
+           class="fa fa-exclamation-triangle text-warning"
+           uib-tooltip="{{'There are unsaved changes'|translate}}">
+        </i>
+        <span>{{StackCtrl.state.stackfields.name||(StackCtrl.state.stackid ? '' : MainCtrl.getString('untitled'))}}</span> &nbsp;
+        
+    </h4>
+</div>
+<div class="row" style="margin-top:30px">
+
+    <!-- TileType Menu -->
+    <div class="col-md-3" >
+
+        
+        <div class="panel panel-primary" >
+            <div class="panel-heading"><h4 translate>Tile library</h4></div>
+            <div class="fake">
+                <div ui-sortable="StackCtrl.draggableOptions" class="tiles tiletypes"
+                     ng-model="StackCtrl.alltemplates">
+                    <tile ng-repeat="template in StackCtrl.alltemplates | filter:{deprecated:false}" 
+                          tiletype="template.type" 
+                          tilereadonly="true" 
+                          tiletemplate="true" 
+                          tile='template' 
+                          tileindex="$index" 
+                          style="{{StackCtrl.tileStyle(template)}}"
+                          class="tile {{template.size}} tile-{{template.colour}}"></tile>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Editor -->
+    <div class="col-md-4">
+        <stackemulate></stackemulate>
+    </div>
+    <!-- Tile or Screen Properties -->
+
+    <div class="col-md-5">
+        <!-- Optional Tile properties -->
+        <div class="panel panel-warning" 
+            ng-show="StackCtrl.edit">
+            <div class="panel-heading">
+                <div class="btn-group pull-right">
+                    <button class="btn btn-sm btn-danger" type="button" ng-click="StackCtrl.deleteTile()"><i class="fa fa-trash"></i>&nbsp;<translate>Delete</translate></button>
+                    <!-- Hide Tile clone functionality -->
+                    <button ng-if="false" class="btn btn-sm btn-success" type="button" ng-click="StackCtrl.cloneTile()"><i class="fa fa-clone"></i>&nbsp;<translate>Duplicate</translate></button>
+                    <button class="btn btn-sm btn-primary" type="button" ng-click="StackCtrl.closeTile()"><i class="fa fa-times"></i> &nbsp;<translate>Close</translate></button>
+                </div>
+                <h4>{{StackCtrl.tileTypeName()}}</h4> 
+            </div>
+            <div>
+                <uib-tabset>
+                    <uib-tab>
+                        <uib-tab-heading >
+                            <i class="fa fa-magic"></i> <translate>Settings</translate>
+                        </uib-tab-heading>
+                        <div class="panel-body">
+                            <tile-settings ></tile-settings>
+                        </div>
+                    </uib-tab>
+                    <uib-tab>
+                        <uib-tab-heading >
+                            <i class="fa fa-paint-brush"></i> <translate>Layout</translate>
+                        </uib-tab-heading>
+                        <div class="panel-body">
+                            <tile-prop ></tile-prop>
+                        </div>
+                    </uib-tab>
+                  </uib-tabset>
+            </div>
+        </div>
+
+        <!-- End -->
+        <!-- Optional screen properties -->
+        <div ng-show="!StackCtrl.edit">
+
+            <div class="panel panel-primary" >
+                <div class="panel-heading">
+                    <div class="btn-group pull-right">
+                        <div class="btn-group" uib-dropdown is-open="status.isopen">
+                            <button type="button" 
+                                class="btn btn-primary dropdown-toggle" 
+                                uib-dropdown-toggle 
+                                uib-tooltip="{{'Switch to screen'|translate}}"
+                                ng-disabled="disabled">
+
+                                <span class="caret"></span>
+                            </button>
+
+                            <ul uib-dropdown-menu class="dropdown-menu-right" role="menu">
+                                <li ng-repeat="screen in StackCtrl.state.stack.screens" 
+                                    ng-click="StackCtrl.toScreen(screen.id)" >
+                                    <a><span class="{{StackCtrl.startScreenDistinctionClass(screen)}} pull-right"></span>{{screen.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary" 
+                           ng-click="StackCtrl.goBack()"
+                           uib-tooltip="{{'Back to previous screen'|translate}}: {{StackCtrl.getLastLocationName()}}"
+                           ng-show="StackCtrl.hasHistory()"><span class="fa fa-arrow-left"></span></button>
+                           <!--- Hide duplicate screen --->
+                        <button ng-if="false" class="btn btn-primary" 
+                            uib-tooltip="{{'Duplicate this screen'|translate}}"
+                            type="button" 
+                            ng-click="StackCtrl.cloneScreen()" ><span class="fa fa-clone">
+                            </span>
+                        </button>
+                        <button class="btn btn-primary" 
+                           uib-tooltip="{{'Add new screen'|translate}}"
+                           ng-click="StackCtrl.addScreen();"><span class="fa fa-plus"></span></button>
+                    </div>
+                    <h4><translate>Screen Settings</translate></h4>
+<!--                    <ol class="breadcrumb" ng-show ="!StackCtrl.prevScreen" style="padding-left:0px; margin-bottom: 5px; background-color: #2c3e50">
+                        <li class="active"><span class="fa fa-home"></span>{{" "+StackCtrl.state.screen.name}}</li>
+                    </ol>
+                    <ol class="breadcrumb" ng-show ="StackCtrl.prevScreen" style="margin-bottom: 5px; background-color: #2c3e50">
+                        <li><a ng-click="StackCtrl.gotoPrevScreen()">{{StackCtrl.prevScreen.name}}</a></li>
+                        <li class="active">{{StackCtrl.state.screen.name}}</li>
+                    </ol>-->
+                    <a ng-show ="StackCtrl.prevScreen" title="{{StackCtrl.prevScreen.name}}" ng-click="StackCtrl.gotoPrevScreen()"><translate>previous screen</translate></a>
+                    
+                </div>
+                <div class="panel-body" ng-show="StackCtrl.state.screen">
+                     <div class="form-group">
+                          <label class="control-label">
+                              <span ng-show="StackCtrl.isStartScreen()"><i class="fa fa-home"></i>&nbsp; </span>
+                              <translate>Name</translate>
+                          </label>
+                         <input type="text" ng-model="StackCtrl.state.screen.name" class="form-control">
+                     </div>
+                     <div class="form-group" ng-show="!StackCtrl.isStartScreen()">
+                        <button type="button"
+                            class="btn btn-primary" 
+                            ng-click="StackCtrl.markStartScreen()"
+                            ><span class="fa fa-home"></span> <translate>Set as Start Screen</translate></button>
+
+                        <button type="button" 
+                            class="btn btn-danger" 
+                            ng-show="!StackCtrl.isStartScreen()" 
+                            ng-click="StackCtrl.deleteScreen()" translate>Delete Screen</button>
+                     </div>
+
+                </div>
+            </div>
+
+            <div class="panel panel-primary" >
+                <div class="panel-heading"><h4 translate>Stack Settings</h4></div>
+                <div class="panel-body">
+                    
+                    <div class="form-group">
+                        <label class="control-label" >
+                            <i class="fa fa-th-large"></i>&nbsp; <translate>Stack name</translate>
+                        </label>
+                        <input type="text" class="form-control" placeholder="{{'Name'|translate}}" ng-model="StackCtrl.state.stackfields.name" /><br/>
+                        
+                        <label class="control-label" >
+                            <i class="fa fa-info"></i>&nbsp; <translate>Stack description</translate>
+                        </label>
+                        <textarea id="description" class="form-control" placeholder="{{'Description'|translate}}" ng-model="StackCtrl.state.stackfields.description">
+
+                        </textarea>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label class="control-label" >
+                            <i class="fa fa-users"></i>&nbsp; <translate>Communication</translate>
+                        </label>
+                        <ul class="list-unstyled">
+                            <li style="display: flex;align-items: center;">
+                                <togglebutton ng-model="StackCtrl.state.stack.settings.chat"></togglebutton>&nbsp; <translate>Allow chat</translate>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            <i class="fa fa-tags"></i>&nbsp; <translate>Tags</translate>
+                        </label>
+                        <tags-input placeholder="{{'Add a tag'|translate}}" ng-model="StackCtrl.state.stackfields.current_tags"></tags-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End -->
+    </div>
+
+</div>
+<!--<reference-select ng-show="StackCtrl.apisettings.debug"></reference-select>-->

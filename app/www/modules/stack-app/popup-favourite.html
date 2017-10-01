@@ -1,0 +1,16 @@
+<div class="appPopup" style="background-color: #2C3E50 !important; color: #ffffff; padding: 10px; max-width: 600px; margin-left: auto; margin-right: auto; ">
+    <i class="fa fa-times pull-right" ng-click="favPCtrl.favourite(false);"></i>
+    <div class="centered">
+        <h4 translate>Add this Stack to your favourites?</h4>
+        
+        <button type="button" 
+                class="btn btn-success" 
+                ng-click="favPCtrl.favourite(true);"
+                translate>Yes</button>
+        <button type="button" 
+                class="btn btn-danger" 
+                ng-click="favPCtrl.favourite(false);"
+                translate>No</button>
+        
+    </div>   
+</div>

@@ -1,0 +1,38 @@
+<div ng-controller="localcontentMenuController as MSettingCtrl">
+    
+    <div>
+        <div class="form-group">
+            <label class="control-label" translate>Tile title</label>
+            <input type="text" ng-model="tileTCtrl.selectedTile.name" class="form-control">  
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" translate>Search for</label>
+            <select ng-model="MSettingCtrl.selectedTile.settings.entity_type" 
+                    ng-options="entity.type as entity.label for entity in MSettingCtrl.entities" 
+                    class="form-control"
+                    >
+            </select>
+            
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate>Search on</label>
+            <label>
+                <input type="radio" ng-model="MSettingCtrl.selectedTile.settings.search_type" value="tags"> <translate>Tags</translate>
+            </label>
+            <label>
+                <input type="radio" ng-model="MSettingCtrl.selectedTile.settings.search_type" value="words"> <translate>Keywords</translate>
+            </label>
+        </div>
+        <div class="form-group" ng-show="MSettingCtrl.selectedTile.settings.search_type == 'tags'">
+            <label class="control-label" translate>Tags</label>
+            <input type="text" ng-model="MSettingCtrl.selectedTile.settings.search_tags">
+        </div>
+        <div class="form-group" ng-show="MSettingCtrl.selectedTile.settings.search_type == 'words'">
+            <label class="control-label" translate>Search terms</label>
+            
+            <input type="text" ng-model="MSettingCtrl.selectedTile.settings.search_terms">
+           
+        </div>
+    </div>
+</div>

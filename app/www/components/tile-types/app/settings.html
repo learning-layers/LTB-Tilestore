@@ -1,0 +1,23 @@
+<div ng-controller="appMenuController as MSettingCtrl">
+    <div class="form-group">
+        <label class="control-label" translate>Tile title</label>
+        <input type="text" ng-model="tileTCtrl.selectedTile.name" class="form-control">  
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label" translate>Launch App</label>
+        <waiting-icon label="getAppsAvailable"></waiting-icon>
+        <select 
+            ng-show="appsAvailable.apps.length"
+            ng-model="tileTCtrl.selectedTile.settings" 
+            class="form-control"
+            ng-options="app.name for app in appsAvailable.apps | orderBy: 'name' track by app.package" 
+            ng-change="MSettingCtrl.selectApp()"
+            id="app_name">
+            <option value="" translate>[no app selected]</option>
+            
+            
+        </select>
+   
+    </div>
+</div>

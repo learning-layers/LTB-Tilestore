@@ -1,0 +1,44 @@
+
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="top-nav-bar">
+   
+        <div class="navbar-header  text-nowrap">
+            <img class="ltb-logo-web" ng-src="www/assets/resources/ltb-logo-2016-rgb-white.gif">
+            <button ng-init="navCollapsedMain = true"
+                    ng-click="navCollapsedMain = !navCollapsedMain"
+                    class="navbar-toggle" 
+                    type="button" 
+                    data-toggle="collapse" 
+                    data-target="#navbarr-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div uib-collapse="navCollapsedMain" class="navbar-collapse collapse pull-right" id="navbarr-main">
+            <ul class="nav navbar-nav">
+                <li><a href="#/" translate>Home</a></li>
+                <li><a href="#/store" translate>Search</a></li>
+                <li ng-if="MainCtrl.current_role.user"><a href="#/my-stacks" translate>My Stacks</a></li>
+                <li ng-if="MainCtrl.current_role.user"><a href="#/stack_edit/0" translate>Create Stack</a></li>
+                <li><a href="#/help" translate>Help</a></li>
+                <li><oauth
+                    site="{{MainCtrl.apisettings.authprovider}}"
+                    authorize-path="{{MainCtrl.apisettings.authprovider_path}}"
+                    client-id="{{MainCtrl.apisettings.authclientid}}"
+                    profile-uri="{{MainCtrl.apisettings.profile_uri}}"
+                    redirect-uri="{{MainCtrl.apisettings.redirect_uri}}"
+                    refresh-uri="{{MainCtrl.apisettings.refresh_uri}}"
+                    response-type="{{MainCtrl.apisettings.response_type}}"
+                    scope="{{MainCtrl.apisettings.auth_scope}}"
+                    template="www/components/oauth-ng-custom/button.html"
+                    access-type="{{MainCtrl.apisettings.auth_access_type}}"
+                    approval-prompt="0"
+                    encrypt="true"
+                    ></oauth>
+                </li>
+            </ul>
+            <iframe ng-src="{{MainCtrl.logoutURL}}" ng-show="false" style="display:none;"></iframe>
+        </div>
+    </nav>

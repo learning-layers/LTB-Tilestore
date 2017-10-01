@@ -1,0 +1,59 @@
+<div class="ltb-app-page">
+    <h3 translate>Settings</h3>
+    <waiting-icon label="getStacks"></waiting-icon>
+    <div class="form-group" ng-show="MainCtrl.inapp || settCtrl.app_debug">
+        <label class="control-label" translate>Data Server</label> <span ng-if="!MainCtrl.inapp">(You can only see this in debug modus)</span>
+        <div class="input-group">
+            <input class="form-control" 
+                ng-disabled="!settCtrl.api_uri_edit"
+                ng-model="settCtrl.api_uri" />
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-show="!settCtrl.api_uri_edit"  ng-click="settCtrl.api_uri_edit = true" ><i class="fa fa-cog"></i></button>
+                <button class="btn btn-default" type="button" ng-show="settCtrl.api_uri_edit"  ng-click="settCtrl.api_uri_edit = !settCtrl.updateApiLocation()" translate>Apply</button>
+                <button class="btn btn-default" type="button" ng-show="settCtrl.api_uri_edit"  ng-click="settCtrl.api_uri_edit = !settCtrl.restoreApiLocation()" translate>Cancel</button>
+            </span>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label" translate>Start with</label><br />
+        <input type="radio" ng-model="settCtrl.open_stack" value="last">
+        <label translate>Last opened Stack</label><br />
+        <input type="radio" ng-model="settCtrl.open_stack" value="preferred">
+		<label translate>Preferred Stack</label>
+    </div>
+
+    <div class="form-group" ng-show="settCtrl.open_stack === 'preferred'">
+        <label class="control-label" translate>Preferred Stack</label>
+        <select class="form-control" 
+            ng-model="settCtrl.preferred_stack" 
+            ng-options="stack.name for stack in settCtrl.stacks">
+            <option value="" translate>[Choose your preferred stack]</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label class="control-label" translate>Preferred Language</label>&nbsp;(<i>{{settCtrl.getCurrentLang()}}</i>)
+        <select class="form-control" ng-model="settCtrl.language"
+                ng-options="key as lan for (key, lan) in settCtrl.languages">
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label" translate>Switch on/off Debugging</label>&nbsp;(
+    <strong><i><span ng-show="settCtrl.debugging_on" translate>switched on</span>
+          <span ng-hide="settCtrl.debugging_on" translate>switched off</span></i></strong>)<BR/>
+        <label class="control-label" translate>Verification code</label>&nbsp;
+        <input class="form-control" style="width:200px;display: inline;" type="text"
+           ng-model="settCtrl.verify_code" /><BR/>
+        
+        <label class="control-label" translate>Debug Recording</label>
+        <input type="radio" ng-model="settCtrl.debugging_on" value="1" />
+        <label class="control-label" translate>No Debug Recording</label>
+        <input type="radio" ng-model="settCtrl.debugging_on" value="0" />
+     </div>
+
+    <div class="btn-group">
+        <button class="btn btn-primary" ng-disabled="settCtrl.api_uri_edit" type="button" ng-click="settCtrl.saveSettings()" translate>Save</button>
+        <button class="btn btn-default" ng-disabled="settCtrl.api_uri_edit" type="button" ng-click="settCtrl.cancel()" translate>Cancel</button>
+    </div>
+</div>

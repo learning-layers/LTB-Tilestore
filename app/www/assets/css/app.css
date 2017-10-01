@@ -1,0 +1,179 @@
+/* Styles added by Edwin, should get a appropriate place @todo */
+/*.jumbotron .bigTile h5 {
+    font-weight: bolder; 
+}*/
+.padding_block{
+  padding: 5px;  
+}
+.link {
+    color:blue;
+}
+.debitem {
+  min-width: 50px;
+  display: inline-block;
+  padding: 0px 10px;
+}
+.debitem.debitem_grey{
+    background-color: #687b7c;
+    color:white;
+}
+.debitem.debitem_white{
+    background-color: whitesmoke;
+}
+.form-control.inline {
+  display: inline;
+  width: 100px;
+}
+.form-control.inline.long {
+  width: 200px;
+}
+.screenFirst {
+    background-color: green;
+    background-image:none;
+    color: white;
+}
+.screenNotFirst{
+   //no extra style at the moment 
+   color: white;
+}
+.api_error {
+    background-color: red;
+}
+.api_success {
+    background-color: yellow;
+}
+
+h4.stack-title{
+    border-bottom: 3px solid #375a7f;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}
+
+/* Fix for: https://angular-ui.github.io/bootstrap/#/getting_started */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+/* fix for caret position in accordion when title is long */
+.accordion-toggle:after {
+    position: absolute;
+}
+
+#top-nav-bar{
+    padding: 8px;
+}
+
+#top-nav-bar .navbar-brand{
+    /* padding: 0px; */
+    white-space: nowrap;
+    /* padding: 19px 0px 0px 200px; */
+    padding-left: 200px;
+}
+#top-nav-bar .navbar-brand > img{
+    display: inline;
+    margin-right: 20px;
+}
+
+.language_menu {
+/*    color: #fff;*/
+    
+}
+
+.qrcode {
+      display: block;
+      margin: 24px auto 16px;
+      max-width: 100%;
+    }
+    .qrcode-link {
+      display: table;
+      margin: 24px auto 16px;
+    }
+    .qrcode-link .qrcode {
+      margin: 0;
+    }
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.bigTile {
+    width:257px;  
+    height:252px; 
+    padding-top:5px;  
+    padding-left:10px; 
+    padding-right:10px; 
+    padding-bottom:10px; 
+    float:left; 
+    margin-right:20px
+}
+.bigTile:link {
+    background-color: transparent;
+}
+
+.bigTile:hover {
+    background-color: #def;
+}
+
+.container-tiles{
+    padding: 30px 400px 10px 400px;
+}
+
+.emulator_iphone{
+    background-image: url(../resources/iphone_bg.png);
+}
+
+.content_iphone {
+    width:430px;
+    height:610px;
+    padding-top:144px;
+    padding-bottom:79px;
+    padding-left:48px;
+    padding-right: 140px;
+}
+
+.emulator_phone{
+    background-image: url(../resources/phone-bg.png);
+    width:300px;
+    height:588px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.content_phone {
+    width: 300px;
+    height: 588px;
+    padding-top: 110px;
+    padding-bottom: 75px;
+    padding-left: 16px;
+    padding-right: 17px;
+}

@@ -1,0 +1,125 @@
+{
+    "apps":[
+        {
+            "name":"Whatsapp",
+            "urlScheme":"whatsapp",
+            "package":"com.whatsapp",
+            "appleid": "310633997",
+            "urlImgAndroid":"https://lh6.ggpht.com/mp86vbELnqLi2FzvhiKdPX31_oiTRLNyeK8x4IIrbF5eD1D5RdnVwjQP0hwMNR_JdA=w300",
+            "urlImgIOS":"https://lh6.ggpht.com/mp86vbELnqLi2FzvhiKdPX31_oiTRLNyeK8x4IIrbF5eD1D5RdnVwjQP0hwMNR_JdA=w300"
+        },
+        {
+            "name":"AchSo!",
+            "urlScheme":"achso",
+            "package":"fi.aalto.legroup.achso",
+            "appleid" : "1078968376",
+            "urlImgAndroid":"https://lh3.ggpht.com/r4i8GzWuBiXxLcaiepnDer5ot4wT5wB1_Kv3WB_Sv6YmiFb27ug0y9z6oPqsl1mdMIA=w300",
+            "urlImgIOS":"https://lh3.ggpht.com/r4i8GzWuBiXxLcaiepnDer5ot4wT5wB1_Kv3WB_Sv6YmiFb27ug0y9z6oPqsl1mdMIA=w300"
+        },
+        {
+            "name":"Dropbox",
+            "urlScheme":"dbapi-1",
+            "package":"com.dropbox.android",
+            "appleid": "327630330",
+            "urlImgAndroid":"https://lh6.ggpht.com/fR_IJDfD1becp10IEaG2ly07WO4WW0LdZGUaNSrscqpgr9PI53D3Cp0yd2dXOgyux8w=w300",
+            "urlImgIOS":"https://lh6.ggpht.com/fR_IJDfD1becp10IEaG2ly07WO4WW0LdZGUaNSrscqpgr9PI53D3Cp0yd2dXOgyux8w=w300"
+        },
+        {
+            "name":"Instagram",
+            "urlScheme":"instagram",
+            "package":"com.instagram.android",
+            "appleid": "389801252",
+            "urlImgAndroid":"https://lh3.ggpht.com/vFpQP39LB60dli3n-rJnVvTM07dsvIzxrCL5xMiy1V4GV4unC1ifXkUExQ4N-DBCKwI=w300",
+            "urlImgIOS":"https://lh3.ggpht.com/vFpQP39LB60dli3n-rJnVvTM07dsvIzxrCL5xMiy1V4GV4unC1ifXkUExQ4N-DBCKwI=w300"
+        },
+        {
+            "name":"My Measures",
+            "urlScheme":"myMeasures",
+            "package":"si.topapp.mymeasurespro",
+            "appleid": "628109928",
+            "urlImgAndroid":"https://lh3.googleusercontent.com/tgA5DxZyE9t84bjKt7vX7Hg2IPXc4t_R4SI1d3vlb_ea3d2OMD_tqt4iGiVbyTqyUuc=w300",
+            "urlImgIOS":"http://a2.mzstatic.com/us/r30/Purple4/v4/ee/41/f7/ee41f746-697b-e785-c846-26adaae7adaf/icon175x175.jpeg"
+        },
+        {
+            "name":"Leica DISTO™ sketch",
+            "urlScheme":"leicasketch",
+            "package":"de.ffuf.leica.sketch",
+            "appleid": "580422524",
+            "urlImgAndroid":"https://lh4.ggpht.com/k_P_iMu2u7_BRqUPsbQH6zldg98J6Qb0ZLeVIHhzLZzXlQJ7vNH8tL9mLuy4bu_r_qt-=w300",
+            "urlImgIOS":"https://lh4.ggpht.com/k_P_iMu2u7_BRqUPsbQH6zldg98J6Qb0ZLeVIHhzLZzXlQJ7vNH8tL9mLuy4bu_r_qt-=w300"
+        },
+        {
+            "name":"Leica DISTO™ transfer",
+            "urlScheme":"",
+            "package":"leica.disto.transfer",
+            "appleid": "",
+            "urlImgAndroid":"https://lh5.ggpht.com/jDcuAdmorBw8dnxTC8RloEQ-DpAhXt3OrDb2Qv5GzW0dGNSfBLDnxtBn6Nm4pr3ax9U=w300",
+            "urlImgIOS":"https://lh5.ggpht.com/jDcuAdmorBw8dnxTC8RloEQ-DpAhXt3OrDb2Qv5GzW0dGNSfBLDnxtBn6Nm4pr3ax9U=w300"
+        },
+        {
+            "name":"Leica DISTO™ transfer BT LE",
+            "urlScheme":"",
+            "package":"leica.disto.transferBLE",
+            "appleid": "",
+            "urlImgAndroid":"https://lh3.ggpht.com/s6QkEohzs-2lu8u_tprAzgaRmbJ8SSK4EDVkF4ITJVj8Trm2-6Kvyb9CRdnN-tIMJW0=w300",
+            "urlImgIOS":"http://a1.mzstatic.com/eu/r30/Purple4/v4/bb/93/19/bb931955-2049-78b6-33fd-c5b300809525/icon350x350.png"
+        },
+        {
+            "name":"Bosch Toolbox",
+            "urlScheme":"boschtoolbox",
+            "package":"de.convisual.bosch.toolbox2",
+            "appleid": "497324032",
+            "urlImgAndroid":"https://lh3.ggpht.com/HM1rrcqDmqMsMywBcIQNmYpmkuMBOZyXRliGIHzkKNYl71d_2EqFsQNQdWeNqbmCXA=w300",
+            "urlImgIOS":"https://lh3.ggpht.com/HM1rrcqDmqMsMywBcIQNmYpmkuMBOZyXRliGIHzkKNYl71d_2EqFsQNQdWeNqbmCXA=w300"
+        },
+        {
+            "name":"GoConqr",
+            "urlScheme":"com.examtime.ExamTime",
+            "package":"com.examtime.android",
+            "appleid": "918156891",
+            "urlImgAndroid":"https://lh3.googleusercontent.com/cPvcg8eCN645Rl_0a5aRG7owsZxga0tBgTWpR4x0R46ktcc8p_GFHeZcIO1Qp9CoH5I=w300",
+            "urlImgIOS":"http://a2.mzstatic.com/eu/r30/Purple6/v4/94/49/ae/9449ae35-45c6-27e5-04ac-3935e38f70c0/icon175x175.png"
+        },
+        {
+            "name":"Brunnen-IQ",
+            "urlScheme":"",
+            "package":"de.opwoco.app.brunneniq",
+            "appleid": "1083938720",
+            "urlImgAndroid":"https://lh3.googleusercontent.com/SbeLcBDVDy7CIKulGUHXaE_iu463zf8BGhcZYrk4pc6E5PXkdquyWNqFXrSYQoAwpzY=w300",
+            "urlImgIOS":"http://a3.mzstatic.com/us/r30/Purple69/v4/fc/b5/68/fcb56896-4352-ca3b-397c-1c47c36e841b/icon175x175.png"
+        },
+        {
+            "name":"Slideshare",
+            "urlScheme":"slideshare-app",
+            "package":"net.slideshare.mobile",
+            "appleid": "917418728",
+            "urlImgAndroid":"https://lh5.ggpht.com/dQRDgj18XXi5RsbxkVDQy1bxjsuNFsD99gDu3D5pMZ_Y1ZFIVl_8F5RAOI9B5oo9_Q=w300",
+            "urlImgIOS":"http://a5.mzstatic.com/eu/r30/Purple2/v4/99/6e/ae/996eaeec-7302-6ad6-a92b-fbac8d986d39/icon175x175.png"
+        },
+        {
+            "name":"Bausteine der BG BAU",
+            "urlScheme":"",
+            "package":"de.bcverlag.bausteine",
+            "appleid": "482014496",
+            "urlImgAndroid":"https://lh6.ggpht.com/MPM8LrzALY2JA-N15KpgNy5B74tvlwNsMbOZsORfDMS6vEoQzrVB_1iPEA6Zk2m7JkA=w300",
+            "urlImgIOS":"http://a1.mzstatic.com/eu/r30/Purple2/v4/1d/7a/fb/1d7afbae-ec79-594d-dd4d-c48e1b3d1e3a/icon175x175.jpeg"
+        },
+        {
+            "name":"Xodo PDF Reader & Editor",
+            "urlScheme":"",
+            "package":"com.xodo.pdf.reader",
+            "appleid": "805075929",
+            "urlImgAndroid":"https://lh3.googleusercontent.com/rD9ugZrgxKQCs0UXLbT6MiWpTJk-RBXhQF24GOGI1T-n6e48GE30P6Auw9oYIG0LDQ=w300",
+            "urlImgIOS":"http://a4.mzstatic.com/eu/r30/Purple5/v4/35/13/62/35136254-ddbd-e261-e7ef-f07b2e341bce/icon175x175.png"
+        },
+        {
+            "name":"RRAPID",
+            "urlScheme":"",
+            "package":"lime.leedsuni.rrapid",
+            "appleid": "574407225",
+            "urlImgAndroid":"https://lh3.googleusercontent.com/HWnrIeU1c8DGuRiVpoXjaIbDK31VStY_zeAPdjW2WiM-jsoFnYV3PTIZozEHQh409Co=w300",
+            "urlImgIOS":"http://a3.mzstatic.com/us/r30/Purple3/v4/b0/06/f9/b006f93f-6b60-f3f9-253a-a0b54fe9d253/icon175x175.jpeg"
+        }
+    
+    ]
+}

@@ -1,0 +1,33 @@
+<div ng-controller="localcontentFullController as FullCtrl">
+    <div class="tile tile-full tile-none" ng-show="FullCtrl.subscreen() === 0">
+        <div class="corner" ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <div class="tile-close"  ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <waiting-condition-icon class="tile-responsive-waiter" condition="FullCtrl.loading.searchEntities || FullCtrl.loading.searchStacks"></waiting-condition-icon>
+        <div ng-show="(!FullCtrl.entities.length) && !(FullCtrl.loading.searchEntities || FullCtrl.loading.searchStacks)"
+             id="no_results" style="color:white;" translate>No entities found</div>
+        <div ng-hide="FullCtrl.loading.searchEntities || FullCtrl.loading.searchStacks">
+           <div class="tile double tile-black sss-entity {{FullCtrl.tile.settings.entity_type}}" 
+               ng-repeat="entity in FullCtrl.entities"
+               style="{{StackCtrl.tileStyle(FullCtrl.setThumbnailUrl(entity))}}"
+               ng-click="FullCtrl.play(entity)">
+                <div class="tile-header"> 
+                    <div class="tile-icon">
+                        <span class="fa fa-globe" ng-show="entity.type !== 'video'"></span>
+                        <span class="fa fa-video-camera" ng-show="entity.type == 'video'"></span>
+                    </div>
+                    {{entity.label}}
+                </div>
+
+           </div> 
+        </div>
+    </div>
+    
+    <div class="tile tile-full tile-none" ng-show="FullCtrl.subscreen() === 1">
+        <div class="corner" ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <div class="tile-close"  ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <div class="tile-body">
+            <div class="tile-embed embed-responsive-object" ng-bind-html="FullCtrl.htmlSafe"></div> 
+        </div>
+
+    </div>
+</div>

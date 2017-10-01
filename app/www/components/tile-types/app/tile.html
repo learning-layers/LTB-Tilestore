@@ -1,0 +1,13 @@
+<div class="corner" ng-show="!tilereadonly"></div>
+<div class="check"  ng-show="!tilereadonly" ng-click="TileCtrl.tileEdit($event)"></div>
+<div class="tile-inner" ng-click="TileCtrl.openApp()">
+    <div class="tile-header">
+        <i class="tile-icon fa fa-{{tile.icon}}"></i>
+        <div class="tile-title tile-headertxt">{{tile.name | cut:true:50:' ...'}}&nbsp;</div>
+    </div>
+
+    <div class="tile-content" style="text-align: center;">  <!--class="tile-emulate-object"-->
+        <img class="icontile" ng-src="{{tile.settings.urlImgAndroid}}" width="50%"
+             ng-show="tile.settings.urlImgAndroid && !tile.image_url.length" />
+    </div>
+</div>

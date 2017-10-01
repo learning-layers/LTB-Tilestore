@@ -1,0 +1,80 @@
+<div ng-controller="externalcontentFullController as FullCtrl">
+    <div class="tile tile-full tile-none" 
+         ng-show="FullCtrl.subscreen() === 0 && FullCtrl.tile.settings.externalcontent.length !== 1"
+         ng-swipe-left="FullCtrl.tileClose($event)" 
+         ng-swipe-right="FullCtrl.tileClose($event)">
+        <div class="corner" ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <div class="tile-close"  ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        
+        <div class="tile double tile-{{FullCtrl.tile.colour}} {{FullCtrl.tile.settings.entity_type}}" 
+            ng-repeat="entity in FullCtrl.tile.settings.externalcontent"
+            style="{{StackCtrl.tileStyle(entity)}}"
+            ng-click="FullCtrl.play(entity)"
+            >
+            <div class="tile-header"> 
+                <div class="tile-icon">
+                    <span class="fa fa-globe" ng-show="!entity.favicon_url"></span>
+                    <span class="provider-favicon" ng-show="entity.favicon_url">
+                        <img src="{{entity.favicon_url}}" width="16" height="16" class="provider-favicon">
+                    </span>
+
+                </div>
+                <div class="tile-full-title">{{entity.title}}</div>
+            </div>
+            <div class="tile-icon tile-icon-link" ng-click="MainCtrl.openExternal(FullCtrl.entity.url)"><i class="fa fa-external-link"></i></div>
+        </div>
+        
+        <div ng-show="!FullCtrl.tile.settings.externalcontent.length" id="no_results">
+            <span translate> There are no content items</span>
+        </div>
+                
+    </div>
+    
+    
+    <div class="tile tile-full tile-{{FullCtrl.tile.colour}}" 
+         ng-show="FullCtrl.subscreen() === 1 || FullCtrl.tile.settings.externalcontent.length === 1"
+         ng-swipe-left="FullCtrl.tileClose($event)" 
+         ng-swipe-right="FullCtrl.tileClose($event)">
+        <div class="corner" ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <div class="tile-close"  ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        
+        <div class="tile-header" ng-click="MainCtrl.openExternal(FullCtrl.entity.url)"> 
+            <div class="tile-icon">
+                <span class="fa fa-globe" ng-show="!FullCtrl.entity.favicon_url"></span>
+                <span class="provider-favicon" ng-show="FullCtrl.entity.favicon_url">
+                    <img src="{{FullCtrl.entity.favicon_url}}" width="16" height="16" class="provider-favicon">
+                </span>
+
+            </div>
+            {{FullCtrl.entity.title}}
+        </div>
+        <div class="tile-content-full">
+            <div class="tile-link">
+                <div id="content" 
+                     ng-show="FullCtrl.entity.embed"
+                    class="tile-embed {{FullCtrl.entity.embed.content_class}}" {{FullCtrl.entity.embed.content_extra}} 
+                    ng-bind-html="FullCtrl.entity.media.htmlSafe"></div>
+
+                <span class="art-bd" ng-show="!FullCtrl.entity.embed && FullCtrl.entity.images && FullCtrl.entity.images.length>0">
+                    <a ng-click="MainCtrl.openExternal(FullCtrl.entity.url)">
+                        <img class="art-bd-img" ng-src="{{FullCtrl.entity.images[0].url}}" style="opacity: 1;" width="100%">
+                    </a>
+                </span>
+                <span class="text-bd">
+                    {{FullCtrl.entity.description}}
+
+                    <br style="clear: right" />
+                    <a class="action" ng-click="MainCtrl.openExternal(FullCtrl.entity.url)"><translate>read full article</translate> <i class="fa fa-external-link"></i></a>
+                </span>
+                <div class="provider">
+                    <translate>Published on</translate> <a class="provider-name" ng-click="MainCtrl.openExternal(FullCtrl.entity.provider_url)">{{FullCtrl.entity.provider_name}} <i class="fa fa-external-link"></i></a>
+                    <span ng-show="FullCtrl.entity.authors && FullCtrl.entity.authors.length > 0" translate>by</span>
+                    <span class="author" ng-repeat="author in FullCtrl.entity.authors">
+                        <a ng-click="MainCtrl.openExternal(author.url)">{{author.name}} <i class="fa fa-external-link"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+                
+    </div>
+</div>

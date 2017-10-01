@@ -1,0 +1,65 @@
+<div class="row">
+   
+    <h1 translate>Administration page</h1>
+    <div ng-show="MainCtrl.current_role.not_admin" id="admin_forbidden" translate>You are not allowed to see this page</div>
+    <div ng-show="MainCtrl.current_role.admin" id="admin_content">
+        <div ><translate>You can start a debugging session for an individual or a group of people. That only depends on who you share the generated key with. If you generate a key, it will be shown here:</translate><br/>
+            <div style="text-align:center;" ><span id="verify_field">{{AdminCtrl.verify_code}}</span></div>
+            <button class="btn-default" ng-click="AdminCtrl.createDebugVerification()" translate>Start Debug Option</button> <translate>with end date</translate>:
+            <input type="input" class="form-control inline long" ng-model="AdminCtrl.verification_end_date" /><BR/>
+            <button class="btn-default" ng-show="!AdminCtrl.debugging_on" ng-click="AdminCtrl.startDebugSession()" translate>Start Test Session</button> <translate> with verification</translate>: 
+            <input type="input" class="form-control inline" ng-model="AdminCtrl.verify_code" /> <translate>and end date</translate>:
+            <input type="input" class="form-control inline long" ng-model="AdminCtrl.end" />
+        </div>
+
+        <h2 translate>Debugging Messages</h2>
+        <translate>Verification code</translate>: <input type="text" class="form-control inline" ng-model="AdminCtrl.verify_code"  />
+
+        <translate>Debug Code</translate>:  <input type="text" class="form-control inline long" ng-model="AdminCtrl.debug_code"  />
+        <translate>User id</translate>:  <input type="text" class="form-control inline" ng-model="AdminCtrl.user_id" />
+        <button ng-click="AdminCtrl.getMessages()" class="btn-primary" translate>Get Messages</button>
+        <button ng-click="AdminCtrl.purgeMessages()" class="btn-primary" translate>Delete Messages</button>
+        <div ng-show="AdminCtrl.messages">
+            <div><translate>Number of messages</translate>: {{AdminCtrl.messages_count}}</div>
+            <style>
+                pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; width: fit-content; } 
+                .string { color: green; }
+                .number { color: darkorange; } 
+                .boolean { color: blue; } 
+                .null { color: magenta; } 
+                .key { color: red; }
+
+            </style>
+            <waiting-icon label="debugRetrieve"></waiting-icon>
+        </div>
+        <ul class="list-group" >
+            <li class="list-group-item" 
+                ng-repeat="deb_item in AdminCtrl.messages">
+                <!-- <span class="debitem debitem_grey">{{deb_item.verify_code}}</span>
+                <span class="debitem debitem_white">{{deb_item.debug_code}}</span> -->
+
+                <span class="debitem debitem_white" id="session_{{deb_item.record_id}}" ng-click="AdminCtrl.toggleDetails(deb_item)" translate>Session details</span>
+                <span class="debitem debitem_grey" id="time_{{deb_item.record_id}}" ng-mouseover="AdminCtrl.showTime(deb_item)">{{deb_item.time}}</span>
+                <span class="debitem debitem_white">{{deb_item.message}}</span>
+
+                <span ng-show="{{deb_item.val1}}" id="val_{{deb_item.record_id}}_1" ng-click="AdminCtrl.toggleVal(deb_item, 1)" class="debitem debitem_grey">V1</span><!-- we had this but it takes too much space: {{deb_item.val1 | cut:true:20:' ...'}}-->
+                    <span ng-hide="{{deb_item.val1}}" class="debitem debitem_grey" >{{AdminCtrl.no_value}}</span>
+                <span ng-show="{{deb_item.val2}}" id="val_{{deb_item.record_id}}_2" ng-click="AdminCtrl.toggleVal(deb_item, 2)" class="debitem debitem_white">V2</span>
+                    <span ng-hide="{{deb_item.val2}}" class="debitem debitem_white" >{{AdminCtrl.no_value}}</span>
+                <span ng-show="{{deb_item.val3}}" id="val_{{deb_item.record_id}}_3" ng-click="AdminCtrl.toggleVal(deb_item, 3)" class="debitem debitem_grey">V3</span>
+                    <span ng-hide="{{deb_item.val3}}" class="debitem debitem_grey" >{{AdminCtrl.no_value}}</span>
+
+                <span class="debitem debitem_white">{{deb_item.name}} ({{deb_item.role}})</span>
+                <span class="debitem debitem_grey">{{(deb_item.app == "1") ? 'Toolbox': 'Tilestore'}}</span><!-- translate -->
+                <span class="debitem debitem_white">{{deb_item.version}}</span>
+                <span id="device_{{deb_item.record_id}}_" ng-click="AdminCtrl.toggleVal(deb_item, 1, 'device')" class="debitem debitem_grey" translate>Show device</span>
+                    <span ng-hide="{{deb_item.device}}" class="debitem debitem_grey" >{{AdminCtrl.no_value}}</span>
+
+            </li>
+        </ul>
+        
+        <div id="refactor files">
+            <button ng-click="AdminCtrl.refactor()" class="btn-primary">Refactor files</button>
+        </div>
+    </div>
+</div>

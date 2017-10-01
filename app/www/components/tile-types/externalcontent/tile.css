@@ -1,0 +1,24 @@
+.tile-link{
+    width: 100%;
+    display: inline-block;
+    /* margin-bottom: 10px; */
+    padding: 5px;
+}
+
+.tile-link .txt-bd{
+    line-height: 100%;
+}
+
+.tile-link .art-bd{
+    width:40%; 
+    float: left; 
+    margin-right: 5px; 
+}
+
+.tile-link .provider{
+    margin-top: 20px;
+}
+
+.tile-icon.tile-icon-link{
+    bottom: 10px !important;
+}

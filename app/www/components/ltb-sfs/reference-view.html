@@ -1,0 +1,97 @@
+
+<uib-accordion close-others="true">
+    <uib-accordion-group ng-repeat="ref in sfsCtrl.references | filter: sfsCtrl.filter_object"
+        heading="{{ref.name ? ref.name : (ref.ref_type == 'link' ? MainCtrl.getString('[Untitled] on')+ ' ' +ref.details.provider_name : ref.file_name)}}"
+        is-open="sfsCtrl.open_references[ref.reference_code]">
+        <div ng-hide="sfsCtrl.visible_edits[ref.reference_code]">
+            
+            <div class="btn-group pull-right">
+                <button ng-click="sfsCtrl.removeRef(ref.reference_code, $index)" class="btn btn btn-danger"><i class="fa fa-trash"></i></button>
+                <button ng-click="sfsCtrl.editRef(ref, $index)" class="btn btn btn-primary"><i class="fa fa-edit"></i></button>
+            </div>
+            <waiting-icon-inline label="deleteReference" waitingclass="fa fa-spinner fa-pulse fa-2x"></waiting-icon-inline> 
+            <div class="row">
+                <div ng-show="ref.details.image_url" class="col-sm-4">
+                    <img ng-src="{{ref.details.image_url}}" alt="{{'No image'|translate}}" width="100%">
+                </div>
+                <div class="col-sm-8" style="overflow:hidden; word-break:break-word">
+                    <label translate>Type</label>: {{ref.ref_type ? ref.ref_type : 'link'}}<br/>
+                    <span ng-show="ref.ref_type == 'file'"><label  translate>File Type</label>: {{ref.file_type}}<br/></span>
+                    <span ng-hide="ref.ref_type == 'file'"><label translate>Url</label>: {{ref.url}}<br/></span>
+                    <label translate>Title</label>: {{ref.name ? ref.name : (ref.ref_type == 'link' ? MainCtrl.getString('[Untitled] on')+ ' '+ref.details.provider_name : ref.file_name)}}<br/>
+                    <label translate>Description</label>: {{ref.description ? ref.description : '-'}}<br/>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-info" ng-show="sfsCtrl.visible_edits[ref.reference_code]">
+            <div class="panel-heading">
+                <h3 class="panel-title">Edit {{ref.name ? ref.name : (ref.ref_type == 'link' ? MainCtrl.getString('[Untitled] on')+ ' '+ref.details.provider_name : ref.file_name)}}</h3>
+                <span 
+                    ng-click="sfsCtrl.cancelEdit(ref.reference_code, $index)" style="margin-top: -20px"
+                    class="pull-right fa fa-times small">
+                </span>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+
+                    <div class="form-group">
+                        <label for="title" class="col-lg-3 control-label" translate>Title</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="title" placeholder="{{sfsCtrl.title_txt}}"  ng-model="ref.name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description" class="col-lg-3 control-label" translate>Description</label>
+                        <div class="col-lg-9">
+                            <textarea class="form-control" rows="3" id="description" placeholder="{{sfsCtrl.descr_txt}}" ng-model="ref.description"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        
+                        <label class="col-lg-3 control-label" translate>Options</label>
+                        <div class="col-lg-9">
+                            <ul class="list-unstyled">
+                                <li style="display: flex;align-items: center;">
+                                    <togglebutton default="false"
+                                        ng-model="ref.details.direct"></togglebutton>&nbsp; <translate>Skip preview screen for this item</translate>
+                               </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="title" class="col-lg-3 control-label" translate>Image</label>
+                        
+                        <div class="col-lg-9">
+                            <div class="col-sm-12" 
+                                ng-show="ref.ref_type == 'link' && ref.details.images.length">
+                                <div ng-repeat="image in ref.details.images" class="col-sm-4">
+                                    <img ng-src="{{image.url}}" 
+                                         class="ref_icon {{image.url === ref.details.image_url?'selected':''}}" 
+                                         ng-click="ref.details.image_url = image.url"
+                                     alt="{{'No image'|translate}}" width="100%">
+                                </div>
+                                
+                            </div>
+                            <small ng-show="ref.ref_type == 'link' && ref.details.images.length" translate>Pick an image or supply an alternative image URL below</small>
+                            <input type="text" class="form-control" id="title"  ng-model="ref.details.image_url">
+                        </div>
+                    </div>
+
+                </form>
+                <div>
+                        <div class="col-lg-12">
+                            <div class="btn-group pull-right">
+                                <button ng-click="sfsCtrl.saveEdit(ref)" class="btn btn-primary" translate>Save</button>
+                                <button ng-click="sfsCtrl.removeRef(ref.reference_code, $index)" class="btn btn-danger" translate>Delete</button>
+                                <button ng-click="sfsCtrl.cancelEdit(ref.reference_code, $index)" class="btn btn-default" translate>Cancel</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </uib-accordion-group>
+</uib-accordion>

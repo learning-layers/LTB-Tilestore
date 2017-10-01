@@ -1,0 +1,131 @@
+<style>
+.panel-heading {
+    cursor: pointer;
+}
+
+/* CSS Method for adding Font Awesome Chevron Icons */
+ .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family:'FontAwesome';
+    content:"\f077";
+    float: right;
+    color: inherit;
+}
+.panel-heading.collapsed .accordion-toggle:after {
+    /* symbol for "collapsed" panels */
+    content:"\f078";
+}
+</style>
+<div ng-controller="collectionMenuController as MSettingCtrl">
+    
+    <div class="form-group">
+        <label class="control-label" translate>Tile title</label>
+        <input type="text" ng-model="tileTCtrl.selectedTile.name" class="form-control"> 
+        
+        <ul  ng-if="!MSettingCtrl.selectedTile.settings.allow_upload" class="list-unstyled">
+            <li style="display: flex;align-items: center;">
+                <togglebutton ng-model="MSettingCtrl.selectedTile.settings.force_title"></togglebutton>&nbsp; <translate>Use item title for single item collection</translate>
+           </li>
+        </ul>
+    </div>
+    
+    <div class="form-group">
+        <label for="sizeTile" class="control-label" 
+           translate>Size of tiles in collection </label>
+        <select class="form-control" ng-model="MSettingCtrl.selectedTile.settings.member_size" 
+            ng-options="size.value as size.name for size in MSettingCtrl.collection_tile_sizes" 
+            id="sizeTile">
+        </select>
+    </div>
+    
+    <div class="form-group" ng-show="MSettingCtrl.reference_count > 1">
+        <label class="control-label" translate>Description (max 100 char)</label>
+        <textarea ng-model="MSettingCtrl.selectedTile.settings.description" 
+            ng-maxlength="100"
+            class="form-control">
+        </textarea>
+    </div>
+    
+    <div class="form-group"  style="border-top: 4px solid #ecf0f1">
+        <label class="control-label" translate>Name of collection</label>
+        <div class="input-group">
+           <input type="text" 
+                  class="form-control" 
+                  id="name" 
+                  placeholder="{{'Name of collection'|translate}}" 
+                  ng-disabled="!collectionname_edit"
+                  ng-model="MSettingCtrl.selectedTile.settings.collection_name">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-show="collectionname_edit" ng-click="collectionname_edit = !MSettingCtrl.collection_name_change();"><i class="fa fa-check"></i></button>
+            <button class="btn btn-default" type="button" ng-show="!collectionname_edit" ng-click="collectionname_edit = true"><i class="fa fa-cog"></i></button>
+          </span>
+        </div>
+    </div>
+    
+    <div ng-show="MSettingCtrl.selectedTile.settings.collection_name && !collectionname_edit"
+         class="form-group">
+        <label for="allow" class="control-label" translate>Sharing</label>
+        <ul class="list-unstyled">
+            <li style="display: flex;align-items: center;">
+                <togglebutton default="true"
+                    ng-model="MSettingCtrl.selectedTile.settings.download_content"></togglebutton>&nbsp; <translate>Provide download link of files to users</translate>
+           </li>
+            <li style="display: flex;align-items: center;">
+                <togglebutton default="false"
+                    ng-model="MSettingCtrl.selectedTile.settings.allow_upload"></togglebutton>&nbsp; <translate>Allow users to add files or urls</translate>
+           </li>
+           <li style="display: flex;align-items: center;"
+               ng-show="MSettingCtrl.selectedTile.settings.allow_upload">
+               <ul class="list-unstyled">
+                    <li ng-repeat="input_type in MSettingCtrl.user_input_types | filter:{active:true}"
+                        style="padding-left: 20px;">
+                        <togglebutton sub="true" default="false" ng-model="MSettingCtrl.selectedTile.settings.allow_upload_type[input_type.key]"></togglebutton>&nbsp; {{input_type.value}}
+                    </li>    
+                </ul>
+           </li>
+            <li style="display: flex;align-items: center;"
+               ng-show="MSettingCtrl.selectedTile.settings.allow_upload">
+                <togglebutton ng-model="MSettingCtrl.selectedTile.settings.private_content"></togglebutton>&nbsp; <translate>Users can only see their own content</translate>
+           </li>
+        </ul>
+    </div>
+    <!-- other ideas: allowed media types, allowed size -->
+    
+    <div ng-show="MSettingCtrl.selectedTile.settings.collection_name && !collectionname_edit">
+        <div class="pull-right" ng-show="!MSettingCtrl.open_add_ref">
+            <div class="btn-group" uib-dropdown keyboard-nav>
+                <button id="simple-btn-keyboard-nav" type="button"
+                        class="btn btn-primary"uib-dropdown-toggle>
+                    <translate>Add</translate><span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+                    <li role="menuitem" ><a ng-click="MSettingCtrl.addUrlForm();" translate>Add Link</a></li>
+                    <li role="menuitem"> <a ng-click="MSettingCtrl.addFileForm();" translate>Add File</a></li>
+                    <!-- <li class="divider"></li>
+                    <li role="menuitem"><a ng-click="MSettingCtrl.addReferenceForm();"translate>Add existing reference</a></li>-->
+                </ul>
+            </div> 
+        </div><BR/>
+
+        <div class="panel panel-info" ng-show="MSettingCtrl.open_add_ref">
+                <div class="panel-heading"><!-- translate -->
+                    <h3 class="panel-title">Add {{MSettingCtrl.visible_add_url_form ? ' Link ' : (MSettingCtrl.visible_add_file_form ? 'File' : 'Existing reference')}}</h3>
+                    <span ng-show="MSettingCtrl.open_add_ref"
+                        ng-click="MSettingCtrl.cancelAddReferenceForm()" style="margin-top: -20px"
+                        class="pull-right fa fa-times-circle small">
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <reference-add reftype="link" show="MSettingCtrl.visible_add_url_form" collection="MSettingCtrl.selectedTile.settings.collection_name"></reference-add>
+                    <reference-add reftype="file" show="MSettingCtrl.visible_add_file_form" collection="MSettingCtrl.selectedTile.settings.collection_name"></reference-add>
+                    <reference-add reftype="link" show="MSettingCtrl.visible_add_reference_form" collection="MSettingCtrl.selectedTile.settings.collection_name"></reference-add>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label><translate>Items in the collection</translate> "<i>{{MSettingCtrl.selectedTile.settings.collection_name}}</i>"</label>
+            <reference-view collection="MSettingCtrl.selectedTile.settings.collection_name"></reference-view>
+         </div>
+    </div>
+</div>

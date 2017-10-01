@@ -1,0 +1,43 @@
+<div class="ltb-app-page">
+    <h3 translate>Search</h3><span class="fa fa-info" ng-mouseover="srchCtrl.showSearchInfo(1)" ng-mouseleave="srchCtrl.showSearchInfo(0)">
+        <i ng-show="srchCtrl.show_info" translate>You can search on terms and tags. By separating them by a comma, you indicate you want stacks only with all these terms and/or tags. Separating them by one or more spaces, indicates you want stacks to match any of these terms and/or tags. You can freely combine them and mark literal string by using quotes around it. Furthermore, you can restrict the search to the title, the author or the tags only.</i></span>
+    <input type="text" class="form-control" ng-model="srchCtrl.search_term"
+           ng-change="srchCtrl.searchLater()" ng-keydown="srchCtrl.startSearchOnEnter($event)" /> <br />
+      
+    <span>
+        <input type="radio" ng-model="srchCtrl.search_option" value="all"
+            ng-checked="srchCtrl.search_option === 'all'"
+            ng-change="srchCtrl.search()" /> <translate>All options</translate></span> <br />
+    <span>
+        <input type="radio" ng-model="srchCtrl.search_option"  value="tags"
+            ng-checked="srchCtrl.search_option === 'tags'"
+            ng-change="srchCtrl.search()" /> <translate>Tags only</translate></span> <br />
+    <span>
+        <input type="radio" ng-model="srchCtrl.search_option" value="title"
+            ng-checked="srchCtrl.search_option === 'title'"
+            ng-change="srchCtrl.search()" /> <translate>Title only</translate></span><br />
+    <span>
+        <input type="radio" ng-model="srchCtrl.search_option" value="author"
+            ng-checked="srchCtrl.search_option === 'author'"
+            ng-change="srchCtrl.search()" /> <translate>Author only</translate></span><br />
+    
+            
+    <waiting-icon label="searchStacks"></waiting-icon>
+    
+    <div ng-show="srchCtrl.search_results.length > 0">
+        <h3 ><translate>Results for</translate>: "{{srchCtrl.last_search_term}}"</h3>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="stack in srchCtrl.search_results" >
+                 <span ng-click="srchCtrl.selectStack(stack)">{{stack.name}}</span>
+                 <span class="pull-right fa {{stack.favourite == '1'?'fa-star':'fa-star-o'}}"
+                       ng-click="srchCtrl.toggleFavourite(stack)"></span>
+            </li>
+            <li ng-show="!srchCtrl.no_results" 
+                ng-click="srchCtrl.search(true)">
+                <span class="fa fa-search-plus"></span><span translate>Show more results</span>
+            </li>
+        </ul>
+    </div>
+    <div ng-show="srchCtrl.no_results" style="margin-left: 10px;font-weight: bold;font-style: italic">{{srchCtrl.no_results}}</div>
+    
+</div>

@@ -1,0 +1,257 @@
+<div ng-controller="collectionFullController as FullCtrl"> 
+    
+<!--    SCREEN 0: SHOW TILES-->
+    <div ng-show="FullCtrl.subscreen() === 0" class="tile tile-full tile-none" >
+        <div class="corner" ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <div class="tile-close"  ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+        <div>
+            <div ng-show="FullCtrl.allowUpload()"
+                class="tile {{FullCtrl.tile.settings.member_size}} tile-{{FullCtrl.tile.colour}} {{FullCtrl.tile.settings.entity_type}}" 
+                ng-click="FullCtrl.addReference()"
+                title="{{'Create a new collection item'|translate}}">
+                <div>
+                    <div class="tile-header"> 
+                        <translate>Add</translate>
+                    </div>
+                    <div class="tile-main" style="text-align: center; padding: 10%">
+                          <i class="fa fa-plus fa-{{FullCtrl.size_multiplier_icons}}x" ></i>
+                    </div>
+                </div>
+            </div>
+        
+            <div ng-repeat="entity in FullCtrl.references"
+                class="tile {{FullCtrl.tile.settings.member_size}} tile-{{FullCtrl.tile.colour}} {{FullCtrl.tile.settings.entity_type}}" 
+                style="{{StackCtrl.tileStyle(entity)}}" 
+                
+                >
+                <div class="tile-inner" 
+                    ng-click="FullCtrl.play(entity)"
+                    title="{{'Play this item'|translate}}"
+                    hm-press="FullCtrl.onHammer" 
+                    hm-manager-options='{"enable":true,"preventGhosts":true,"stopPropagation": true}'
+                    ng-if="entity.ref_type === 'link'">
+                    <div class="tile-header"> 
+                        <div class="tile-icon">
+                            <span class="fa {{FullCtrl.fileIcon(entity)}}" 
+                              ng-show="!entity.favicon_url"></span>
+                            <span class="provider-favicon" ng-show="entity.favicon_url">
+                                <img ng-if="entity.favicon_url" ng-src="{{entity.favicon_url}}" width="16" height="16" class="provider-favicon">
+                            </span>
+
+                        </div>
+                        {{entity.name?entity.name: MainCtrl.getString('[Untitled] on')+ ' ' +entity.details.provider_name}}
+                    </div>
+                    <div class="tile-icon tile-icon-link-square" 
+                         ng-click="$event.stopPropagation(); MainCtrl.openExternal(entity.url)"
+                         title="{{'Open url in external browser'|translate}}">
+                        <i class="fa fa-external-link"></i>
+                    </div>
+                
+                    <div class="tile-main" 
+                         ng-bind-html="StackCtrl.tileAutoContent(entity, FullCtrl.size_multiplier_icons)" 
+                         style="text-align: center; padding: 0%;" >
+                    </div>
+                    <span ng-show="entity.selected"
+                          ng-click="FullCtrl.onPincer(entity)"
+                          title="{{'Deselect this item'|translate}}" 
+                        class="fa fa-check-circle tile-icon tile-selected">
+                    </span>
+                </div>
+
+                <div class="tile-inner" 
+                    ng-click="FullCtrl.play(entity)"
+                    title="{{'Play this item'|translate}}"
+                    hm-press="FullCtrl.onHammer"
+                    ng-keypress="alert('zien we dit wel?');"
+                    ng-dblclick="alert('zien we dit wel? HET WAS DUBBEL');"
+                    hm-manager-options='{"enable":true,"preventGhosts":true,"stopPropagation": true}'
+                    ng-if="entity.ref_type === 'file'">
+                    <div class="tile-header"> 
+                        <div ng-show="FullCtrl.allowUpload()"
+                             class="tile-icon tile-icon-name">
+                            {{entity["user.name"]|initials}}
+                        </div>
+                        
+                        <div class="tile-icon">
+                            <span class="fa {{FullCtrl.fileIcon(entity)}}" 
+                              ng-if="!entity.favicon_url"></span>
+                        </div>
+                        {{entity.name}}
+                        
+                    </div>
+                    <span ng-show="entity.selected"
+                        ng-click="FullCtrl.onPincer(entity)"
+                        title="{{'Deselect this item'|translate}}"
+                        class="fa fa-check-circle tile-icon tile-selected">
+                    </span>
+                    <div class="tile-icon tile-icon-link-square" 
+                         ng-show="FullCtrl.tile.settings.download_content !== false"
+                         ng-click="$event.stopPropagation(); MainCtrl.openExternal(entity.url)"
+                         title="{{'Open url in external browser'|translate}}">
+                        <i class="fa fa-external-link"></i>
+                    </div>
+                    
+                    <div class="tile-main" 
+                         ng-bind-html="StackCtrl.tileAutoContent(entity, FullCtrl.size_multiplier_icons)" 
+                         style="text-align: center; padding: 10%;" >
+                    </div>
+                </div> 
+            </div>
+            
+            <div ng-show="FullCtrl.allowUpload() && FullCtrl.nr_selected"
+                class="tile {{FullCtrl.tile.settings.member_size}} tile-{{FullCtrl.tile.colour}} {{FullCtrl.tile.settings.entity_type}}" 
+                ng-click="FullCtrl.deleteReferences()"
+                title="{{'Remove this collection item'|translate}}">
+                <div>
+                    <div class="tile-header"> 
+                        <translate>Remove</translate>
+                    </div>
+                    <div class="tile-main" style="text-align: center; padding: 10%">
+                          <i class="fa fa-trash fa-{{FullCtrl.size_multiplier_icons}}x" ></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    SCREEN 2: SHOW SINGLE TILE or NEW COLLECTION ITEMS-->    
+    <div ng-if="FullCtrl.subscreen() === 1">
+        <div ng-show="!FullCtrl.add_reference" class="tile tile-full tile-{{FullCtrl.tile.colour}}">
+            <div class="corner" ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+            <div class="tile-close"  ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+            <div class="tile-inner">
+                <div class="tile-header"> 
+                    <div class="tile-icon" ng-click="MainCtrl.openExternal(FullCtrl.entity.url, FullCtrl.tile.settings.download_content === false)">
+                        <span class="fa {{FullCtrl.fileIcon(FullCtrl.entity)}}" 
+                              ng-if="!FullCtrl.entity.favicon_url"></span>
+                        <span class="provider-favicon" ng-show="FullCtrl.entity.favicon_url">
+                            <img ng-if="FullCtrl.entity.favicon_url" ng-src="{{FullCtrl.entity.favicon_url}}" width="16" height="16" class="provider-favicon">
+                        </span>
+
+                    </div>
+                    <div class="tile-full-title">
+                        {{FullCtrl.entity.name ? FullCtrl.entity.name : (FullCtrl.entity.ref_type == 'link' ? MainCtrl.getString('[Untitled] on')+ ' '+FullCtrl.entity.details.provider_name : FullCtrl.entity.file_name)}}
+                    </div>
+                </div>
+                <div class="tile-content-full">
+                    <div class="tile-link">
+                        <reference-player ref="FullCtrl.entity"></reference-player>                    
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div ng-if="FullCtrl.add_reference" 
+             class="tile tile-full tile-none" >
+            <div class="corner" ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+            <div class="tile-close"  ng-show="FullCtrl.edit_stack" ng-click="FullCtrl.tileClose($event)"></div>
+            
+            <div class="tile normal tile-{{FullCtrl.tile.colour}}"
+                 ng-show="FullCtrl.uploadTypes().length">
+                <div class="tile-inner"
+                     ng-click="FullCtrl.openGallery()"
+                     title="{{'Open gallery'|translate}}">
+                    <div class="tile-header" translate>Open Gallery</div>
+                    <div class="tile-content" style="text-align: center"><i class="fa fa-photo fa-4x" style="margin-top: 8px;"></i></div>
+                </div>
+            </div>
+            <div class="tile normal tile-{{FullCtrl.tile.colour}}"
+                 ng-show="FullCtrl.allowUpload('photo')">
+                <div class="tile-inner"
+                     ng-click="FullCtrl.takePhoto()"
+                     title="{{'Take photo'|translate}}">
+                    <div class="tile-header" translate>Take Picture</div>
+                    <div class="tile-content" style="text-align: center"><i class="fa fa-camera fa-4x" style="margin-top: 8px;"></i></div>
+                </div>
+            </div>
+            <div class="tile normal tile-{{FullCtrl.tile.colour}}"
+                 ng-show="FullCtrl.allowUpload('video')">
+                <div class="tile-inner"
+                     ng-click="FullCtrl.recordVideo()"
+                     title="{{'Record video'|translate}}">
+                    <div class="tile-header" translate>Record Video</div>
+                    <div class="tile-content" style="text-align: center"><i class="fa fa-video-camera fa-4x" style="margin-top: 8px;"></i></div>
+                </div>
+            </div>
+            <div class="tile normal tile-{{FullCtrl.tile.colour}}"
+                 ng-show="FullCtrl.allowUpload('audio')">
+                <div class="tile-inner"
+                      ng-click="FullCtrl.recordNote()"
+                      title="{{'Record note'|translate}}">
+                    <div class="tile-header" translate>Record Note</div>
+                    <div class="tile-content" style="text-align: center"><i class="fa fa-microphone fa-4x" style="margin-top: 8px;"></i></div>
+                </div>
+            </div>
+            <div class="tile normal tile-{{FullCtrl.tile.colour}}"
+                 ng-show="FullCtrl.allowUpload('text')">
+                <div class="tile-inner"
+                      ng-click="FullCtrl.recordText()"
+                      title="{{'Record note'|translate}}">
+                    <div class="tile-header" translate>Write Note</div>
+                    <div class="tile-content" style="text-align: center"><i class="fa fa-pencil fa-4x" style="margin-top: 8px;"></i></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+<!--    SCREEN 2: SHOW NEW CONTENT FORMS-->
+    <div  ng-if="FullCtrl.subscreen() === 2" class="tile tile-full tile-{{FullCtrl.tile.colour}}">
+        <div class="ltb-app-page">
+                
+            <div ng-show="!FullCtrl.is_loading">
+                <h4 ng-if="!FullCtrl.fileCapture.richtext" translate>Your contribution is ready for upload</h4>
+                <small ng-if="!FullCtrl.fileCapture.richtext" translate>Enter a title and description and press upload below.</small>
+                <h4 ng-if="FullCtrl.fileCapture.richtext" translate>Prepare your contribution for upload</h4>
+                <small ng-if="FullCtrl.fileCapture.richtext" translate>Enter a title and description and press upload below.</small>
+                
+                <reference-player ng-if="!FullCtrl.fileCapture.richtext" ref="FullCtrl.tempResource"></reference-player>
+                
+                <div style="margin-top: 15px">
+                    <label class="control-label" translate>Title</label>
+                    <input type="text" ng-model="FullCtrl.contentTitle" class="form-control">
+                </div>
+                <div style="margin-top: 10px"
+                     ng-if="!FullCtrl.fileCapture.richtext">
+                    <label class="control-label" translate>Description</label>
+                    <textarea type="text" ng-model="FullCtrl.contentDescription" class="form-control" style="height:150px; resize:none"> </textarea>
+                </div>
+                <div style="margin-top: 10px"
+                     ng-if="FullCtrl.fileCapture.richtext">
+                    <label class="control-label" translate>Message</label>
+                    <text-angular ng-model="FullCtrl.contentDescription"
+                                  class="small-editor"
+                          ta-toolbar="[['h1','h2','h3','p','pre','quote'],['bold','italics','underline','strikeThrough','ul','ol','undo','redo','clear'],['justifyLeft','justifyCenter','justifyRight','indent','outdent']]"
+                          ta-toolbar-button-class="btn btn-xs btn-default"></text-angular>
+                </div>
+                
+                <div class="btn-group pull-right" style="margin-top:10px; margin-bottom: 55px">
+                    <button class="btn btn-sm btn-danger" type="button" style="margin-left: 10px"
+						ng-click="FullCtrl.cancelUploadFile()">
+                        <span class="ng-scope" translate>Cancel</span>
+                    </button>
+                    <button class="btn btn-sm btn-primary" 
+                            type="button" 
+                            ng-if="!FullCtrl.fileCapture.richtext"
+                            ng-click="FullCtrl.uploadFile()">
+                        <span class="ng-scope" translate>Upload</span>
+                    </button>
+                    <button class="btn btn-sm btn-primary" 
+                            type="button" 
+                            ng-if="FullCtrl.fileCapture.richtext"
+                            ng-click="FullCtrl.uploadHtml()">
+                        <span class="ng-scope" translate>Upload</span>
+                    </button>
+                </div>
+                
+            </div>
+            <div ng-show="FullCtrl.is_loading">
+                
+                <p><translate>Uploading</translate>: {{FullCtrl.contentTitle}}</p>
+                
+                <uploadprogress ng-show="FullCtrl.fileProgress !== false" perc="FullCtrl.fileProgress"></uploadprogress>
+                
+                <button type="button" class="btn btn-danger" ng-click="FullCtrl.abortUploadFile()"><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;<translate>Abort</translate></button>
+            </div>
+            
+        </div>
+    </div>
+</div>

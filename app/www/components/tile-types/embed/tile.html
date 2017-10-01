@@ -1,0 +1,14 @@
+<div class="corner" ng-show="!tilereadonly"></div>
+<div class="check"  ng-show="!tilereadonly" ng-click="TileCtrl.tileEdit($event)"></div>
+<div class="tile-inner" ng-click="TileCtrl.tileClick($event)">
+    <div class="tile-header"> 
+       <i ng-show="tile.icon" class="tile-icon fa fa-{{tile.icon}} "></i>
+       <div class="tile-headertxt">{{tile.name | cut:true:50:' ...'}}&nbsp;</div>
+    </div>
+    <div class="tile-main">
+        <div class="tile-content">
+           
+        </div>        
+    </div>
+    
+</div>

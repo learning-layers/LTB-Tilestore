@@ -1,0 +1,28 @@
+<div class="tileContent">
+     
+    <h4 class="stack-title"
+        ng-bind="StackCtrl.state.stackfields.name"
+    ></h4>
+    <div ng-show="!StackCtrl.fullscreen"  id="scrollArea" >
+        <waiting-icon label="getStack"></waiting-icon>
+        <div id="scrollAreaHidden" 
+             ui-sortable="StackCtrl.sortableOptions" 
+             class="tiles tiles-black worksheet" ng-model="StackCtrl.state.tiles">
+            <tile ng-repeat="tile in StackCtrl.state.tiles" 
+                  tiletype="tile.type"
+                  tilereadonly="StackCtrl.tilereadonly" 
+                  tile='tile'
+                  tileindex="$index"
+                  size="tile.size"
+                  style="{{StackCtrl.tileStyle(tile)}}"
+                class="tile tile-tile {{tile.size?tile.size:'normal'}} tile-{{tile.colour}}
+                {{StackCtrl.isCurrentTileId(tile.tile_id)?'selected':''}}">
+            </tile>
+        </div>
+     
+    </div>
+    <div id="scrollArea" class="tiles tiles-black" ng-show="StackCtrl.fullscreen">
+        <waiting-icon label="getStack"></waiting-icon>
+        <tile-full id="scrollAreaHidden"></tile-full>
+    </div>
+</div>

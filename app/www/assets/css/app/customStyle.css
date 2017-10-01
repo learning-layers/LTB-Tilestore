@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-abr-2015, 17:36:20
+    Author     : Andy
+*/
+
+h4.stack-title{
+    border-bottom: 3px solid #375a7f;
+    padding-bottom: 4px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}
+
+/* Fix for: https://angular-ui.github.io/bootstrap/#/getting_started */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.loginScreen{
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    margin-top: 10%;
+    /*margin-top:100px;*/
+}
+
+.customBtnLogin {
+    width:90% !important;
+    background: #DF171E !important;
+    color: white !important;
+    border: 2px solid #FFFFFF !important;
+    border-radius: 6px !important;
+    text-shadow: 0 1px 0 #c50000 !important;
+}
+
+@media only screen and (max-width: 430px) {
+   .customBtnLogin {
+       font-size: 15px !important;
+   }
+}
+
+@media only screen and (max-width: 370px) {
+   .customBtnLogin {
+       font-size: 12px !important;
+   }
+   .imgbtnnLogin {
+       height: 25px;
+   }
+}

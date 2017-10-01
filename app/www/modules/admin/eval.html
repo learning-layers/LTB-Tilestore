@@ -1,0 +1,32 @@
+<div class="row">
+    <h1 translate>Evaluation</h1>
+    <div ng-show="MainCtrl.current_role.not_eval === true" id="admin_forbidden" translate>You are not allowed to see this page</div>
+    <waiting-icon label="getLogFile"></waiting-icon>
+        
+    <div id="moderator_content" ng-show="MainCtrl.current_role.eval">
+        <translate>For every action of a user we keep an anonymised log at the data server. If you are an evaluator you can download these in csv-format.</translate><br/>
+        <div class="input-group">
+            <translate>Start</translate>:
+            <input type="text" width="20px" class="form-control" uib-datepicker-popup="yyyy-MM-dd"
+               ng-model="AdminCtrl.start_date" is-open="log_start_opened"
+               datepicker-options="{formatYear: 'yy',startingDay: 1}" 
+               ng-required="true" close-text="{{'Close'|translate}}" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="AdminCtrl.setOpenCondition($event, 'log_start_opened')"><span class="fa fa-calendar"></span></button>
+            </span>
+        </div>        
+        
+<!--        <input type="date" ng-model="AdminCtrl.start_date"/><br/>-->
+        <div class="input-group">
+            <translate>End</translate>:
+            <input type="text" width="20px" class="form-control" uib-datepicker-popup="yyyy-MM-dd"
+                   ng-model="AdminCtrl.end_date" is-open="log_end_opened"
+                   datepicker-options="{formatYear: 'yy',startingDay: 1}" 
+                   ng-required="true" close-text="{{'Close'|translate}}" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="AdminCtrl.setOpenCondition($event, 'log_end_opened')"><span class="fa fa-calendar"></span></button>
+            </span>
+        </div>
+        <button ng-click="AdminCtrl.getLog()" translate>Get Log file</button>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div id="content" 
+    ng-show="ref.embed"
+    class="tile-embed {{ref.embed.content_class}}" {{ref.embed.content_extra}} 
+    ng-bind-html="ref.embed.htmlSafe"></div>
+
+<span class="art-bd" ng-show="!ref.embed && ref.details.images && ref.details.images.length>0">
+    <a ng-click="sfsPCtrl.openExternal(ref.url)">
+        <img class="art-bd-img" ng-src="{{ref.details.image_url?ref.details.image_url:ref.details.images[0].url}}" style="opacity: 1;" width="100%">
+    </a>
+</span>
+<span class="text-bd">
+    {{ref.description}}
+
+    <br style="clear: right" />
+    <div>
+        <a class="action" ng-click="sfsPCtrl.openExternal(ref.url)"><translate>read full article</translate> <i class="fa fa-external-link"></i></a>
+    </div>
+</span>
+<div class="provider">
+    <translate>Published on</translate> <a class="provider-name" ng-click="sfsPCtrl.openExternal(ref.details.provider_url)">{{ref.details.provider_name}} <i class="fa fa-external-link"></i></a>
+    <span ng-show="ref.authors && ref.authors.length > 0" translate>by</span>
+    <span class="author" ng-repeat="author in ref.authors">
+        <a ng-click="sfsPCtrl.openExternal(author.url)">{{author.name}} <i class="fa fa-external-link"></i></a>
+    </span>
+</div>

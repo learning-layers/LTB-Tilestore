@@ -1,0 +1,43 @@
+<div ng-controller="navigateMenuController as MSettingCtrl">
+    <div class="form-group">
+        <label class="control-label" translate>Tile title</label>
+        <input type="text" ng-model="tileTCtrl.selectedTile.name" class="form-control">  
+    </div>
+    
+    <div class="form-group">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-click="MSettingCtrl.toggleNavigationType()" ng-checked="MSettingCtrl.is_screen_navigation"> <translate>Screen</translate>
+            </label>
+            <label>
+                <input type="checkbox" ng-click="MSettingCtrl.toggleNavigationType()" ng-checked="!MSettingCtrl.is_screen_navigation"> <translate>Stack</translate>
+            </label>
+        </div>
+        <div ng-show='MSettingCtrl.is_screen_navigation'>
+            <label class="control-label" translate>Screen</label>
+            <select ng-model="MSettingCtrl.selectedTile.settings.target" 
+                    ng-change="MSettingCtrl.createNewScreen(MSettingCtrl.selectedTile.settings.target)"
+                    ng-options="screen.id as screen.name for screen in StackCtrl.state.stack.screens" 
+                    class="form-control"
+                    id="navTarget"><option value=""><translate>Create new screen</translate> </option>
+            </select>
+        </div>
+        <div ng-show='!MSettingCtrl.is_screen_navigation'>
+            <label class="control-label" translate>Stack</label>
+            <select ng-model="MSettingCtrl.selectedTile.settings.target_stackcode" 
+                    ng-options="stack.stack_code as stack.name for stack in MSettingCtrl.allStacks | filter:{stack_code:'!'+MSettingCtrl.currentStackCode}" 
+                    ng-change="MSettingCtrl.stackTargetChange('navStackCode')"
+                    class="form-control"
+                    id="navStackCode">
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate>Navigation icon</label>
+            <select class="form-control" 
+                    ng-model="tileTCtrl.selectedTile.settings.navicon" 
+                ng-options="icon.value as icon.name for icon in MSettingCtrl.NavIconsAvailable" 
+                ><option value=""><translate>No Icon</translate></option>
+            </select> 
+        </div>
+    </div>
+</div>

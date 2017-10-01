@@ -1,0 +1,57 @@
+<div class="corner" ng-if="!tilereadonly" >
+    <div class="check" ng-show="!tilereadonly"
+        ng-click="$event.stopPropagation(); TileCtrl.tileEdit($event)">
+    </div>
+</div>
+
+<div class="tile-inner" ng-click="TileCtrl.tileClick($event)">
+    <div class="tile-header" 
+         ng-if="tile.template || (TileCtrl.reference_count !== 1)">
+        <i ng-show="tile.icon !== '' && !(tile.settings)"
+           class="tile-icon fa fa-{{tile.icon}} "></i>
+        <div ng-show="TileCtrl.reference_count" class="tile-icon"
+             >{{TileCtrl.reference_count}}
+        </div>        
+        <div class="tile-headertxt">{{tile.name | cut:true:50:' ...'}}&nbsp;</div>
+    </div>
+    <div class="tile-main" 
+         ng-if="TileCtrl.reference_count !== 1">
+        <div class="tile-content small" style="margin-top: 15px;">{{tile.settings.description}}</div>
+    </div>
+    
+    <div ng-if="TileCtrl.reference_count === 1">
+        <div class="tile-header">
+
+            <div ng-show="tile.settings.allow_upload"
+                 class="tile-icon tile-icon-name">
+                {{TileCtrl.references[0]["user.name"]|initials}}
+            </div>
+            
+            <div class="tile-icon">
+                <span class="fa {{TileCtrl.fileIcon(TileCtrl.references[0])}}" 
+                    ng-show="!(TileCtrl.references[0].details && TileCtrl.references[0].details.favicon_url)">
+                </span>
+
+                <span class="provider-favicon" ng-if="TileCtrl.showFirstProviderFavicon()">
+                    <img ng-if="TileCtrl.showFirstProviderFavicon()" ng-src="{{TileCtrl.getFirstProviderFavicon()}}" width="16" height="16" class="provider-favicon">
+                </span>
+            </div>
+            
+            <div class="tile-headertxt">{{TileCtrl.getNameSingletonCollection()}}</div>
+            
+        </div>
+        
+        <div class="tile-icon tile-icon-link-square" 
+             ng-if="!tile.template && (TileCtrl.references[0].ref_type === 'link' || tile.settings.download_content !== false)" 
+             ng-click="$event.stopPropagation(); TileCtrl.openExternal(TileCtrl.references[0].url)">
+            <i class="fa fa-external-link"></i>
+        </div>
+        
+        <div class="tile-main" 
+             ng-if="!tile.template"
+             ng-bind-html="TileCtrl.tileAutoContent(TileCtrl.references[0])" 
+            style="text-align: center; {{tile.size == 'double-down'?'padding: 10%':'padding: 1%'}};" >
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js"> <!--<![endif]-->
+<!-- Starting page for mobile application -->
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>Tilestore App</title>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src * ltb: 'unsafe-inline' 'unsafe-eval'"/>
+    
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <!-- Preventing favicon load <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">-->
+    
+    <link rel="shortcut icon" href="../favicons/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/app/index.css?v=20160617172822"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/tiles_responsive.css?v=20160617172822"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=20160617172822"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/app/app.css?v=20160617172822"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/app/customStyle.css?v=20160617172822"/>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css?v=20160617172822">
+    <link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.min.css?v=20160617172822">
+    <link rel='stylesheet' type="text/css" href="bower_components/textAngular/src/textAngular.css?v=20160617172822">
+    <link rel="stylesheet" type="text/css" href="assets/css/app/cordova-custom.css?v=20160617172822">
+    <link rel="stylesheet" type="text/css" href="bower_components/stack.services.client/dist/css/stack.chat.css?v=20160617172822">
+    <link rel="stylesheet" type="text/css" href="components/ltb-sfs/ltb-sfs.css?v=20160617172822">
+    
+    <!-- Javascript functions -->
+    <script type="text/javascript" src="js/utilities.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/modernizr/modernizr.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/angular-touch/angular-touch.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/angular-route-styles/route-styles.js?v=20160617172822"></script>
+    
+    <!-- for the ng-video plugin  --> 
+    <link rel="stylesheet" type="text/css" href="bower_components/ng-media/css/video.css?v=20160617172822">
+    <script type="text/javascript" src="bower_components/ng-media/src/video.js?v=20160617172822"></script>
+
+    <!-- For audio files -->
+    <script type="text/javascript" src="bower_components/angular-audio/app/angular.audio.js?v=20160617172822"></script>
+    
+    <!-- WEB: <script type="text/javascript" src="http://stack.services/socket.io/socket.io.js?v=20160617172822"></script>-->
+    <script type="text/javascript" src="bower_components/stack.services.socket/index.js?v=20160617172822"></script>
+    <!-- APP: -->
+    <script type="text/javascript" src="bower_components/angular-socket-io/socket.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/stack.services.client/dist/stack.chat.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/stack.services.client/dist/stack.services.js?v=20160617172822"></script>
+    
+    <script type="text/javascript" src="bower_components/ngCordova/dist/ng-cordova.js?v=20160617172822"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/app_mobile.js?v=20160617172822"></script>
+    
+    <script type="text/javascript">
+        var path_root = '';
+        var version = '0.02.51';
+        var deploy_date = '2016-06-17 17:28:22';
+        var versionScript = "20160617172822";
+        var versionApp = ' ' + version + ' (' + deploy_date + ')';
+        var is_app = true; //Indicated whether we are we in app (true) or 
+        //web mode (false)? Should be considered as constant in this file
+        //So when previewing, the application behaves as an app with restrictions
+        //since in_app will be false.
+        
+       function openExternal(elem){
+            //window.open(elem.href, '_blank', 'location=yes');
+            window.open(elem.href, '_system');
+            return false; // Prevent execution of the default onClick handler 
+        }
+        
+        function handleOpenURL(url){
+            //redirect ltb://stack/[id]
+            
+            var stackwrapper = document.getElementById("stackwrapper");
+            var stackControllerScope = angular.element(stackwrapper).scope();
+            stackControllerScope.customAppLaunched(url);
+        }
+        
+        if (typeof cordova !== 'undefined' && cordova){
+            var in_app = true; //are we in phonegap, i.e. an app environment
+            
+//        For backwards compatibility, cordova-plugin-inappbrowser also hooks 
+//        window.open. However, the plugin-installed hook of window.open can 
+//        have unintended side effects (especially if this plugin is included 
+//        only as a dependency of another plugin). The hook of window.open will 
+//        be removed in a future major release. Until the hook is removed from 
+//        the plugin, apps can manually restore the default behaviour:
+            delete window.open // Reverts the call back to it's prototype's default
+        } else {
+            var in_app = false; //are we in phonegap?
+        }
+    </script>
+    
+</head>
+<body>
+    <div id="stackwrapper" ng-controller="StackAppController as StackCtrl">
+        
+        <div >
+            <div ng-include="'assets/navbar-top-app.html'"></div>
+                       
+            <div class="{{MainCtrl.ltbContainer}}" ng-swipe-right="StackCtrl.navigateBackApp()">
+                <alerts></alerts>
+                <div ng-view></div>
+            </div>
+        </div>
+        
+        
+    
+    </div>
+    
+    <script type="text/javascript" src="bower_components/ngstorage/ngStorage.js?v=20160617172822"></script>
+    
+    <!-- Necessary for oauth-ng and encryption -->
+    <script type="text/javascript" src="bower_components/cryptojslib/rollups/aes.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/oauth-ng/dist/oauth-ng.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/angular-gettext/dist/angular-gettext.min.js?v=20160617172822"></script>
+    
+    <script type="text/javascript" src="bower_components/textAngular/dist/textAngular-rangy.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/textAngular/dist/textAngular-sanitize.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/textAngular/dist/textAngular.min.js?v=20160617172822"></script>
+    
+    <script type="text/javascript" src="bower_components/re-tree/re-tree.min.js?v=20160617172822"></script>
+    <script type="text/javascript" src="bower_components/ng-device-detector/ng-device-detector.js?v=20160617172822"></script>
+    
+    <!-- For touch events on the screen, using HammerJs and ryanmullins wrapper -->
+    <script type="text/javascript" src="bower_components/hammerjs/hammer.js"></script>
+    <script type="text/javascript" src="bower_components/ryanmullins-angular-hammer/angular.hammer.js"></script>
+    
+    <!-- hammerjs: for detecting touch events minimised
+    <script type="text/javascript" src="bower_components/hammerjs/hammer.min.js"></script>
+    <script type="text/javascript" src="bower_components/ryanmullins-angular-hammer/angular.hammer.min.js"></script>
+    -->
+    
+    <script type="text/javascript" src="components/ltb-api/ltb-api.js?v=20160617172822"></script>
+    <script type="text/javascript" src="components/ltb-sfs/ltb-sfs.js?v=20160617172822"></script>
+    <script type="text/javascript" src="components/tools/tools.js?v=20160617172822"></script>
+    <script type="text/javascript" src="components/tile-types/tile-types.js?v=20160617172822"></script>
+    <script type="text/javascript" src="components/tile-types/tile-types-css.js?v=20160617172822"></script>
+    
+    <script type="text/javascript" src="modules/stack-app/stack-app.js?v=20160617172822"></script>
+    <script type="text/javascript" src="modules/stack-app/login-app.js?v=20160617172822"></script>
+    <script type="text/javascript" src="modules/stack-app/stack-favourites.js?v=20160617172822"></script>
+    <script type="text/javascript" src="modules/stack-app/search.js?v=20160617172822"></script>
+    <script type="text/javascript" src="modules/stack-app/settings.js?v=20160617172822"></script>
+    
+    <script type="text/javascript" src="modules/messages/messagesList.js?v=20160617172822"></script>
+    
+    <script type="text/javascript" src="components/filters/filters.js?v=20160617172822"></script>
+</body>
+</html>

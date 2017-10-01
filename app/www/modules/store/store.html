@@ -1,0 +1,60 @@
+<div >
+
+	<div class="row">
+		<h3 translate>Search Stacks <i class="fa fa-info-circle" ng-click="showInfo = !showInfo"></i></h3>
+		<div class="alert-info" style="width: 50%; padding: 10px; margin: 10px 0" ng-if="showInfo" translate><i class="fa fa-info-circle"></i> &nbsp;If you want to narrow your search, separate search terms with commas. If you want to widen your search, add more terms separated by spaces. You can group words by enclosing them with quotes.
+		</div>
+	</div>
+	
+    
+        <div class="row">
+			<div class="input-group" style="padding-bottom:10px">
+				<input type="text" class="form-control" ng-model="text_to_search" ng-keydown="$event.which === 13 && searchCtrl.setSearchText(text_to_search)">
+				<span class="input-group-btn">
+					<a class="btn btn-primary" data-dismiss="modal" ng-click="searchCtrl.setSearchText(text_to_search)" style="margin-left:0px" >
+						<i class="fa fa-search"></i>
+					</a>
+				</span>
+			</div>
+        </div>
+	
+	
+		<div class="row">
+			<div ng-show="!searchCtrl.results.length && searchCtrl.search_done" id="no_stacks" translate>No Stacks found</div>
+			<div ng-show="searchCtrl.loading.searchStacks || searchCtrl.loading.getStacks" style="text-align: center;top-margin:30px">
+			   <span class="fa fa-spinner fa-pulse fa-5x"></span> 
+			</div>
+		</div>
+
+
+		
+	<div class="row rowmason">
+
+		<div ng-repeat="stack in searchCtrl.results" 
+		     class="frontpanel panel {{stack.public === '1'?'panel-success':'panel-warning'}} panelbrick" 
+			 ng-click="searchCtrl.openDetailsScope(stack.stack_code)">
+			<div class="panel-heading">
+				{{stack.name}}
+			</div>
+			<div class="panel-body">
+				<div class="frontpaneldetails">
+					<div class="clearfix" >
+						<span class="owner pull-left small" uib-tooltip="{{'Owner'|translate}}">{{stack['user.name']}}</span>
+						<span class="pull-right fa fa-qrcode"  uib-tooltip="{{'Show QR code'|translate}}" ng-click="$event.stopPropagation(); showQR = !showQR"></span>
+						<span class="pull-right small" uib-tooltip="{{'Last updated'|translate}}">{{stack.update_ts  * 1000 | date:'d MMM yyyy'}}</span>
+					</div>
+					<div class="text-info">{{stack.description}}</div>
+					<p class="paneltags" ng-show="stack.tags">
+						<span class="smalltag label label-primary wordwrap" ng-repeat="tag in stack.tags">{{tag}}</span>
+					</p>
+					<div ng-if="showQR">
+						<qrcode version="5" error-correction-level="M" size="120" data="{{searchCtrl.qrUrl(stack)}}" download></qrcode>
+						<a ng-href="{{searchCtrl.qrUrl(stack)}}" class="small">{{searchCtrl.qrUrl(stack)}}</a>
+					</div>						
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	
+</div>

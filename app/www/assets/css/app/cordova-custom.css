@@ -1,0 +1,24 @@
+.tiles {
+    height: auto;
+    width: auto;
+    overflow: scroll;
+}
+
+.tile-tile .check, 
+.tile-tile .corner{
+    display: none;
+}
+
+#scrollArea {
+  overflow: auto;
+/*  margin-top: 50px;*/
+}
+
+.item_topBar {
+    float: left;
+}
+
+.topBar {
+    width: 180px;
+    /* margin-top: 5px; */
+}

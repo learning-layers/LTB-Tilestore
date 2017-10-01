@@ -1,0 +1,12 @@
+/* 
+    Created on : 4-dec-2014, 18:46:44
+    Author     : Raymond
+*/
+.rss_list {
+    color: black;
+    list-style-type: none;
+}
+
+.tile-body .number {
+    vertical-align: top;
+}

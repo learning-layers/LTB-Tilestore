@@ -1,0 +1,50 @@
+.tile-link{
+    display: inline-block;
+    /* margin-bottom: 10px; */
+    padding: 5px;
+}
+
+.tile-link .txt-bd{
+    line-height: 100%;
+}
+
+.tile-link .art-bd{
+    width:40%; 
+    float: left; 
+    margin-right: 5px; 
+}
+
+.tile-link .provider{
+    margin-top: 20px;
+}
+
+.tile-icon.tile-icon-link{
+    bottom: 10px !important;
+}
+
+
+.tile-icon.tile-icon-link-square{
+    bottom: 10px !important;
+    border-radius: 10%;
+}
+
+.tile-icon.tile-icon-name{
+    right: auto;
+    left: 10px;
+}
+
+.tile-icon.tile-selected{
+    position:absolute;
+    color: red;
+    top:50%;
+    left:50%; /* based on 30px width of tile icons and a width of 110 for tiles */
+    transform: translate(-15px);
+}
+
+/* zo was t
+.tile-icon.tile-selected{
+    text-align: center;
+    bottom: 30%;
+    color: red;
+    left:40%; /* based on 30px width of tile icons and a width of 110 for tiles * /
+}*/
